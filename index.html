@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Murim Simulator</title> 
+    <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/energy.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/upgrade.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/realm_class.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/tab.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/action/home_action.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/places/home.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/places/places.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/main.js" charset="utf-8" type="text/javascript"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body onload="loadingFunc()">
+    <div class="main">
+      <div class="left">
+        <p>Realm : <span id="realm">Civi</span></p>
+        <p>Age : <span id="age"></span></p>
+        <p>Stamina : <span id="stam"></span> / <span id="max_stam"></span></p>
+        <p>Silver Nyang : <span id="money"></span></p>
+        <p>Internal Energy : <span id="qi_reserve"></span></p>
+        <p>Max Internal Energy : <span id="max_qi"></span></p> 
+        <img src="assets/Capture d’écran 2025-01-25 144241.png" alt="" class="cultivationImage" draggable="false" >
+      </div>
+      <div class="midle">
+      <div class="tab">
+        <button class="tab_button" onclick="switch_tab(tab[1])">World</button>
+        <button class="tab_button" onclick="switch_tab(tab[2])">Cultivation</button>
+        <button class="tab_button" onclick="switch_tab(tab[3])">Nano</button>
+        <button class="tab_button" onclick="switch_tab(tab[4])">Relationship</button>
+        <button class="tab_button" onclick="switch_tab(tab[5])">Option</button>
+
+      </div>
+      <div class="tabs" id="world_tab">
+        <h1>Place :</h1>
+        <h2 id="place_you_in_id">place_you_in</h1>
+        <h3 id="place_desc_id">place_desc</h2>
+        <div class="going_in_places">
+        <button class="go_to" id="go_to_1" onclick="places_go_to(places.place_you_in.places_in[1])"></button>
+        <button class="go_to" id="go_to_2" onclick="places_go_to(places.place_you_in.places_in[2])"></button>
+        <button class="go_to" id="go_to_3" onclick="places_go_to(places.place_you_in.places_in[3])"></button>
+        <button class="go_to" id="go_to_4" onclick="places_go_to(places.place_you_in.places_in[4])"></button>
+        <button class="go_to" id="go_to_5" onclick="places_go_to(places.place_you_in.places_in[5])"></button>
+        <button class="go_to" id="go_to_6" onclick="places_go_to(places.place_you_in.places_in[6])"></button>
+        <button class="go_to" id="go_to_7" onclick="places_go_to(places.place_you_in.places_in[7])"></button>
+        <button class="go_to" id="go_to_8" onclick="places_go_to(places.place_you_in.places_in[8])"></button>
+        <button class="go_back_to" id="go_back" onclick="to_go_back()">Go Back</button>
+        </div>
+        <h1>Action :</h1>
+        <div class="actions">
+          <button class="go_to" id="action_1" onclick="places.place_you_in.actions[1].action_function()"></button>
+          <button class="go_to" id="action_2" onclick="places.place_you_in.actions[2].action_function()"></button>
+          <button class="go_to" id="action_3" onclick="places.place_you_in.actions[3].action_function()"></button>
+          <button class="go_to" id="action_4" onclick="places.place_you_in.actions[4].action_function()"></button>
+          <button class="go_to" id="action_5" onclick="places.place_you_in.actions[5].action_function()"></button>
+          <button class="go_to" id="action_6" onclick="places.place_you_in.actions[6].action_function()"></button>
+          <button class="go_to" id="action_7" onclick="places.place_you_in.actions[6].action_function()"></button>
+          <button class="go_to" id="action_8" onclick="places.place_you_in.actions[7].action_function()"></button>
+        </div>
+      </div>
+        <div class="tabs" id="cultivation_tab">
+          <button onclick="cultivate(gameData.qi_days_per_click),aging(1)">Gathering Qi</button>
+          <button id="Breakthrough" onclick="breakthrough()">Breakthrough</button>
+        </div>
+        <div class="tabs" id="nano_tab">
+          <p>This is the nano tab</p>
+        </div>
+        <div class="tabs" id="relationship_tab">
+          <p>This is the relationship tab</p>
+        </div>
+        <div class="tabs" id="options_tab">
+          <p>This is the options tab</p>
+          <div class="save-load">
+            <button class="save_load_button" onclick="save_game()">Save</button>
+            <button class="save_load_button" onclick="load_game(),loadingFunc()">Load</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <button onclick="addItem()">Add Random Item</button>
+        <div id="inventory"></div>
+        <script src="javascript/inventory.js"></script>
+        <div class="upgrades">
+          <div class="upgrade" onclick="constant_cultivation_upgrade_buy()">
+            <div class="upgrade-left-part">
+              <img src="assets/pngtree-energy-ball-for-special-effects-png-image_14532998.png" alt="">
+            </div>
+            <div class="upgrade-middle-part">
+                <h1>Constant Cultivation</h1>
+                <h2>Learn to cultivate at everytime when you are awake, while eating, running, talking, cultivation never end</h2>
+                <h3>Gain <span id="constant_cultivation_effect">0</span> days worth of ki every second.</h3>
+            </div>
+            <div class="upgrade-right-part">
+              <h1 id="constant_cultivation_cost">Cost : 7</h1>
+              <h2 id="constant_cultivation_level">Level : 0
+              </h2>
+            </div>
+          </div>
+            <div class="upgrade" onclick="meridian_cleansing_upgrade_buy()">
+              <div class="upgrade-left-part">
+                <img src="assets/pngtree-energy-ball-for-special-effects-png-image_14532998.png" alt="">
+              </div>
+              <div class="upgrade-middle-part">
+                <h1>Meridian Cleansing</h1>
+                <h2>Clean your qi path-ways to hasten the speed of gathering qi</h2>
+                <h3>Days worth of ki gained by day cultivated : <span id="meridian_cleansing_effect">0</span></h3>
+              </div>
+              <div class="upgrade-right-part">
+                <h1>Cost : <span id="meridian_cleansing_cost">28</span></h1>
+                <h2>Level : <span id="meridian_cleansing_level">0</span></h2>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
