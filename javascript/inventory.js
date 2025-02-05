@@ -1,4 +1,4 @@
-const inventory = [iron_dagger]
+const inventory = [iron_dagger,iron_dagger,iron_dagger]
 
 function addItem(item) {
     // Add item to inventory array
