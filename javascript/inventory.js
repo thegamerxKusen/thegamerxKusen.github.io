@@ -1,4 +1,4 @@
-const inventory = []
+const inventory = [iron_dagger]
 
 function addItem(item) {
     // Add item to inventory array
@@ -17,7 +17,7 @@ function updateInventory() {
     inventory.forEach((item, index) => {
         const itemDiv = document.createElement("div");
         itemDiv.classList.add("item");
-        itemDiv.textContent = item;
+        itemDiv.textContent = item.name;
         inventoryDiv.appendChild(itemDiv);
     });
 }

@@ -33,13 +33,6 @@ var gameData = {
     document.getElementById("age").innerHTML = days_to_year_month_week_day(gameData.age)
     document.getElementById("qi_reserve").innerHTML = days_to_year_month_week_day(gameData.qi_days)
 
-    document.getElementById("constant_cultivation_cost").innerHTML="Cost : "+constant_cultivation_upgrade.cost
-    document.getElementById("constant_cultivation_level").innerHTML= "Level : "+constant_cultivation_upgrade.level
-    document.getElementById("constant_cultivation_effect").innerHTML= constant_cultivation_upgrade.effect
-
-    document.getElementById("meridian_cleansing_cost").innerHTML=meridian_cleansing_upgrade.cost
-    document.getElementById("meridian_cleansing_level").innerHTML=meridian_cleansing_upgrade.level
-    document.getElementById("meridian_cleansing_effect").innerHTML=meridian_cleansing_upgrade.effect
     
     document.getElementById("stam").innerHTML = gameData.energy
     document.getElementById("max_stam").innerHTML = gameData.max_energy
