@@ -22,4 +22,9 @@ var actions ={
     limit: 1,
     current_uses: 0,
 },
+ look_for_usefull_book : {
+    name:"Look for usefull book",
+    limit:1,
+    current_uses:0,
+ }
 }

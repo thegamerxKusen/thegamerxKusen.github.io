@@ -39,6 +39,9 @@ function doAction(action){
             addItem(wood_dagger)
             where_can_you_go()
             break 
+        case "Look for usefull book":
+            
+            break
         default:
         console.log("wtf?");
     }
