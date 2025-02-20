@@ -1,4 +1,4 @@
-var inventory = [iron_dagger,iron_spear,iron_hidden_weapon,iron_sword]
+var inventory = []
 
 function select_item(item){
     const show_item_div= document.getElementById("selected_item");
@@ -31,7 +31,18 @@ function updateInventory() {
         itemDiv.appendChild(icon)
     });
 }
-
+function addItem(item){
+    inventory.push(item)
+    sendMessage(item.name+" obtained!")
+    updateInventory();
+}
+function removeItem(item){
+    var index = inventory.indexOf(item);
+    if (index > -1) {
+        inventory.splice(index, 1);
+    }
+    updateInventory();
+}
 
 // Initialize inventory display
 updateInventory();

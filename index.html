@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Murim Simulator</title> 
+    
     <script src="javascript/items/item.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/energy.js" charset="utf-8" type="text/javascript"></script>
@@ -11,6 +12,7 @@
     <script src="javascript/action/home_action.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/places/home.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/places/places.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/console_message.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/main.js" charset="utf-8" type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
@@ -78,6 +80,8 @@
             <button class="save_load_button" onclick="load_game(),loadingFunc()">Load</button>
           </div>
         </div>
+        <div id="console"></div>
+        <div id="choices"></div>
       </div>
       <div class="right">
         <h1 class="title">Inventory</h1>

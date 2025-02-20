@@ -50,12 +50,7 @@ body{
     margin: 5px;
     padding: 0;
 }
-.left,.right,.midle {
-    float: left;
-    width: 33.33%;
-    height: 100%;
-    border: 4px solid wheat;
-  }
+
 
 .go_back_to{
     width: 130px;
@@ -72,12 +67,20 @@ body{
 
 .main{
     display: flex;
-    gap: 200px;
-    margin: 10px;
+    flex-direction: row;
+    height: 100vh;
 }
 
+.left,.right,.midle {
+    flex: 1; /* Each row takes equal space */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    border: 1px solid white; /* Just for visualization */
+  }
+
+
 .tab{
-    display: flexx;
+    display: flex;
     
 }
 .tab_button{
@@ -98,6 +101,7 @@ body{
 
 .cultivationImage{
     width: 300px;
+    
 }
 
 

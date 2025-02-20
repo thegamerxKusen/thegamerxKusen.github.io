@@ -9,7 +9,7 @@ const wood_dagger = {
     can_consume: false,
     type: type_Weapon,
     damage: 3,
-    icon: "assets/item/weapon/wood_dagger.webp",
+    icon: "assets/item/weapon/iron_dagger.png",
 };
 
 const iron_dagger = {

@@ -5,6 +5,8 @@ var gameData = {
     
     realm:0,
     
+    story_progress:0,
+
     age:4032,
     lifespan:0,
     qi_days_per_click_upgrade_cost: 10,
@@ -27,6 +29,7 @@ var gameData = {
   }
 
   function loadingFunc(){
+    
     where_can_you_go()
     document.getElementById("money").innerHTML = gameData.silver_nyang
     document.getElementById("realm").innerHTML = realms[gameData.realm]["realm_name"]

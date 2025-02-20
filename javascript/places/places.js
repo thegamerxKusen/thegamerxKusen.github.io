@@ -35,13 +35,18 @@ function where_can_you_go(){
         document.getElementById(places.action_).style.display="none"
         places.action_ = "action_"
         }
+
+        
     places.action_ = "action_"
     if(places.place_you_in.actions!=null){
         for (let i = 1; i <= places.place_you_in.numb_actions; i++) {
         places.action_+=i
-        console.log(places.action_)
-        document.getElementById(places.action_).style.display="block"
-        document.getElementById(places.action_).innerHTML=places.place_you_in.actions[i].name
+        console.log(places.place_you_in.actions[i].canOnlyBeOnce)
+        if(places.place_you_in.actions[i].canOnlyBeOnce!="Done"){
+            document.getElementById(places.action_).style.display="block"
+            document.getElementById(places.action_).innerHTML=places.place_you_in.actions[i].name
+        }
+        
         places.go_to = "action_"
         }
        }
@@ -66,10 +71,9 @@ function to_go_back(){
 }
 
 function places_go_to(place){
-    if(place==null){
-        
+    if(place==null){    
     }else{
         places.place_you_in=place
-        where_can_you_go()}
+    }
     where_can_you_go()
 }

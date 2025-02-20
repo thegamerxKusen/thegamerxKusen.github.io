@@ -4,7 +4,7 @@ var Room={
     number_of_going_in_options:0,
     places_in :null,
     actions:{
-        1:sleep,
+        1:actions.sleep,
     },
     numb_actions:1,
 }
@@ -15,7 +15,7 @@ var Bathroom={
     number_of_going_in_options:0,
     places_in :null,
     actions:{
-        1:bath,
+        1:actions.bath,
     },
     numb_actions:1,
 }
@@ -25,8 +25,10 @@ var TrainingGround={
     description:"Training Ground",
     number_of_going_in_options:0,
     places_in :null,
-    actions:null,
-    numb_actions:null,
+    actions:{
+        1:actions.talk_to_guard,
+    },
+    numb_actions:1,
 }
 
 var Kitchen={
@@ -35,7 +37,7 @@ var Kitchen={
     number_of_going_in_options:0,
     places_in :null,
     actions:{
-        1:eat,
+        1:actions.eat,
     },
     numb_actions:1,
 }
