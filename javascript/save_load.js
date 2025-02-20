@@ -21,12 +21,15 @@ function load_game(){
     if (save_game_data != null) {
         gameData = save_game_data
         inventory = save_inventory
-        actions = save_action   
+        actions = save_action
         TrainingGround=save_place_home_train_ground
         Home = save_place_home
-        console.log(TrainingGround.actions[1])
+        
         sendMessage("Game loaded!")
+        
     }
+    console.log(actions.talk_to_guard)
+    places_go_to(Home)
     where_can_you_go()
     updateInventory()
 }

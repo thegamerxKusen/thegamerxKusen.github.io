@@ -41,8 +41,7 @@ function where_can_you_go(){
     if(places.place_you_in.actions!=null){
         for (let i = 1; i <= places.place_you_in.numb_actions; i++) {
         places.action_+=i
-        console.log(places.place_you_in.actions[i].canOnlyBeOnce)
-        if(places.place_you_in.actions[i].canOnlyBeOnce!="Done"){
+        if(canPerformAction(places.place_you_in.actions[i])){
             document.getElementById(places.action_).style.display="block"
             document.getElementById(places.action_).innerHTML=places.place_you_in.actions[i].name
         }
@@ -55,14 +54,14 @@ function where_can_you_go(){
 }
 
 function to_go_back(){
-    switch (places.place_you_in) {
-        case Kitchen:places_go_to(Home)
+    switch (places.place_you_in.name) {
+        case "Kitchen":places_go_to(Home)
             break
-        case TrainingGround:places_go_to(Home)
+        case "Training Ground":places_go_to(Home)
             break
-        case Bathroom:places_go_to(Home)
+        case "Bathroom":places_go_to(Home)
             break
-        case Room:places_go_to(Home)
+        case "Room":places_go_to(Home)
             break
         default:
         console.log("Can't get out");

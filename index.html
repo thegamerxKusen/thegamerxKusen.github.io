@@ -5,15 +5,17 @@
     <title>Murim Simulator</title> 
     
     <script src="javascript/items/item.js" charset="utf-8" type="text/javascript"></script>
-    <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
+    
     <script src="javascript/energy.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/realm_class.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/tab.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/action/home_action.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/action/action_function.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/places/home.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/places/places.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/console_message.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/main.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body onload="loadingFunc()">
@@ -53,15 +55,17 @@
         </div>
         <h1>Action :</h1>
         <div class="actions">
-          <button class="go_to" id="action_1" onclick="places.place_you_in.actions[1].action_function()"></button>
-          <button class="go_to" id="action_2" onclick="places.place_you_in.actions[2].action_function()"></button>
-          <button class="go_to" id="action_3" onclick="places.place_you_in.actions[3].action_function()"></button>
-          <button class="go_to" id="action_4" onclick="places.place_you_in.actions[4].action_function()"></button>
-          <button class="go_to" id="action_5" onclick="places.place_you_in.actions[5].action_function()"></button>
-          <button class="go_to" id="action_6" onclick="places.place_you_in.actions[6].action_function()"></button>
-          <button class="go_to" id="action_7" onclick="places.place_you_in.actions[6].action_function()"></button>
-          <button class="go_to" id="action_8" onclick="places.place_you_in.actions[7].action_function()"></button>
+          <button class="go_to" id="action_1" onclick="doAction(places.place_you_in.actions[1])"></button>
+          <button class="go_to" id="action_2" onclick="doAction(places.place_you_in.actions[2])"></button>
+          <button class="go_to" id="action_3" onclick="doAction(places.place_you_in.actions[3])"></button>
+          <button class="go_to" id="action_4" onclick="doAction(places.place_you_in.actions[4])"></button>
+          <button class="go_to" id="action_5" onclick="doAction(places.place_you_in.actions[5])"></button>
+          <button class="go_to" id="action_6" onclick="doAction(places.place_you_in.actions[6])"></button>
+          <button class="go_to" id="action_7" onclick="doAction(places.place_you_in.actions[7])"></button>
+          <button class="go_to" id="action_8" onclick="doAction(places.place_you_in.actions[8])"></button>
         </div>
+        
+
       </div>
         <div class="tabs" id="cultivation_tab">
           <button onclick="cultivate(gameData.qi_days_per_click),aging(1)">Gathering Qi</button>
