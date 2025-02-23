@@ -15,7 +15,7 @@ var gameData = {
 
     silver_nyang:100,
 
-    breathing_manual_equiped:cultivation_manual.three_power,
+    breathing_manual_equiped:cultivation_manual.celestial_ascent_method,
 
     //equipment
     head_gear:null,
@@ -30,8 +30,19 @@ var gameData = {
     year:336,
   }
 
+  function stat_update(){
+    document.getElementById("breathing_manual").innerHTML = gameData.breathing_manual_equiped.name
+    document.getElementById("money").innerHTML = gameData.silver_nyang
+    document.getElementById("realm").innerHTML = realms[gameData.realm]["realm_name"]
+    document.getElementById("age").innerHTML = days_to_year_month_week_day(gameData.age)
+    document.getElementById("qi_reserve").innerHTML = days_to_year_month_week_day(gameData.qi_days.toFixed(2))
+
+    
+    document.getElementById("stam").innerHTML = gameData.energy
+    document.getElementById("max_stam").innerHTML = gameData.max_energy
+  }
+
   function loadingFunc(){
-    day_to_cultivate=document.getElementById("day_cultivate")
     where_can_you_go()
     document.getElementById("breathing_manual").innerHTML = gameData.breathing_manual_equiped.name
     document.getElementById("money").innerHTML = gameData.silver_nyang

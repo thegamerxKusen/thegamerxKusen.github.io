@@ -37,6 +37,7 @@ function doAction(action){
             sendMessage("You : Hi Guard Jang, you called for me?")
             sendMessage("Guard Jang : Hello Young Master, in a year or so you will join the cut-throat demonic academy. So i will teach you my daggers technique. Here take this training weapon.")
             addItem(wood_dagger)
+            addItem(black_dragon_ball)
             where_can_you_go()
             break 
         case "Look for usefull book":

@@ -6,3 +6,9 @@ var template_cultivation_manual = {
     effect:0,
     mastery:0,
 }
+
+function swith_manual(){
+
+}
+
+function acquire_manual(){}
