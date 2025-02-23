@@ -38,6 +38,7 @@ body{
 .item:hover{
     background-color: white;
     color: #0b0d0c;
+    border: 4px solid black;
 }
 .tabs{
     display: none;
@@ -132,6 +133,7 @@ button:hover{
 button:active{
     background-color: darkgray;
     border: 4px solid darkgray;
+
     
 }
 
@@ -148,4 +150,14 @@ button:active{
 
 #cult_tab,#ma_tab{
     display: none;
+}
+
+input{
+    background-color: #0b0d0c;
+    color: white;
+    width: 90px;
+}
+
+.consume_button{
+
 }

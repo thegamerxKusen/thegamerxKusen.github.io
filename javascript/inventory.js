@@ -7,11 +7,21 @@ function select_item(item){
     title.textContent = item.name
     const desc=document.createElement("h2")
     desc.textContent = item.desc
-    const damage=document.createElement("h2")
-    damage.textContent ="Damage : "+item.damage
+    
     show_item_div.appendChild(title)
     show_item_div.appendChild(desc)
-    show_item_div.appendChild(damage)
+    if(item.damage){
+        const damage=document.createElement("h2")
+        damage.textContent ="Damage : "+item.damage
+        show_item_div.appendChild(damage)
+    }
+    if(item.can_consume==true){
+        const consume=document.createElement("button")
+        consume.textContent = "Consume"
+        consume.setAttribute("class","consume_button")
+        consume.setAttribute('onclick',"use_item("+item.const_name+")")
+        show_item_div.appendChild(consume)
+    }
 }
 function updateInventory() {
     const inventoryDiv = document.getElementById("inventory");
@@ -46,3 +56,24 @@ function removeItem(item){
 
 // Initialize inventory display
 updateInventory();
+
+
+
+
+function use_item(item){
+    // Assuming all items are stored in an object like this:
+    if (!item) {
+        console.log("Item not found!");
+        return;
+    }
+
+    if (!item.can_consume) {
+        console.log("Item can't be consumed");
+        return;
+    }
+
+    item.consume(); // Calls the consume function of the item
+    removeItem(item); // Removes the item from inventory
+    const show_item_div= document.getElementById("selected_item");
+    show_item_div.innerHTML = ""
+}
