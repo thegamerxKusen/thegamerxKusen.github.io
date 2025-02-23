@@ -31,7 +31,7 @@ var gameData = {
   }
 
   function loadingFunc(){
-    
+    day_to_cultivate=document.getElementById("day_cultivate")
     where_can_you_go()
     document.getElementById("breathing_manual").innerHTML = gameData.breathing_manual_equiped.name
     document.getElementById("money").innerHTML = gameData.silver_nyang
@@ -59,22 +59,7 @@ var gameData = {
   //var mainGameLoop = window.setInterval(function() {})
 
 
-  function cultivate(qi_up) {
-    if(gameData.qi_days+qi_up<=realms[gameData.realm]["max_qi_days"]){
-        gameData.qi_days += qi_up
-    }
-    else{
-      gameData.qi_days=realms[gameData.realm]["max_qi_days"]
-    }
-    document.getElementById("qi_reserve").innerHTML = days_to_year_month_week_day(gameData.qi_days.toFixed(2))
-    if(gameData.qi_days==realms[gameData.realm]["max_qi_days"]){
-      document.getElementById("Breakthrough").style.display="block"
-    }
-    else{
-      document.getElementById("Breakthrough").style.display="none"
-    }
-
-  }
+  
 
   function aging(day){
     gameData.age+=day

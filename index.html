@@ -10,6 +10,8 @@
     <script src="javascript/martial_art_manual/martial_art_manual_base.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/cultivation_manual/cultivation_manuals.js" charset="utf-8" type="text/javascript"></script>
 
+    <script src="javascript/cultivation.js" charset="utf-8" type="text/javascript"></script>
+
     <script src="javascript/energy.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/realm_class.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/tab.js" charset="utf-8" type="text/javascript"></script>
@@ -73,12 +75,25 @@
 
       </div>
         <div class="tabs" id="cultivation_tab">
-          //cultivation manual selected : blabla / Effect: blabla:
-          cultivate for []days (manualy set)/ Qi days you will have after/ Age You will have after
-          //Maybe when player click on cultivate or train MA it open new windows with all this?
-          <button onclick="cultivate(gameData.breathing_manual_equiped.effect),aging(1)">Cultivate</button>
-          <button >Train Martial Art</button>
+          <button onclick="close_culti_ma_tab()" id="go_back_cult_button">Go Back</button>
+          <button onclick="open_cultivation_tab()" id="cult_tab_button">Cultivate</button>
+          <button onclick="open_train_martial_art_tab()" id="ma_tab_button">Train Martial Art</button>
           <button id="Breakthrough" onclick="breakthrough()">Breakthrough</button>
+          <div id="ma_tab">Ma tab
+            
+          </div>
+          <div id="cult_tab">
+            <div class="right_part">
+              <p>Manual Effect: <span id="manual_effect"></span> days worth of qi by day.</p>
+              <p>Room Bonus: <span id="cult_room_bonus"></span></p>
+              <p>Days: <input type="number" id="days_to_cult"></span></p>
+            </div>
+            <div class="left_part">
+              <button onclick="breathing_start()" id="cultivate_button">START</button>
+              <p>Qi days gained after <span id="days_to_cult_show"></span> Days: <span id="future_cult_effect"></span></p>
+            </div>
+          </div>
+
         </div>
         <div class="tabs" id="nano_tab">
           <p>This is the nano tab</p>

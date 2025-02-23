@@ -26,5 +26,10 @@ var actions ={
     name:"Look for usefull book",
     limit:1,
     current_uses:0,
- }
+ },
+ go_to_demonic_academy : {
+    name:"Depart for the demonic academy",
+    limit: 1,
+    current_uses: 0,
+},
 }

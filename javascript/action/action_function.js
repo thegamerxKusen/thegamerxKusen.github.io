@@ -42,6 +42,9 @@ function doAction(action){
         case "Look for usefull book":
             
             break
+        case "Depart for the demonic academy":
+            
+            break
         default:
         console.log("wtf?");
     }
