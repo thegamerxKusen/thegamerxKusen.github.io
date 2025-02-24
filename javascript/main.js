@@ -15,7 +15,7 @@ var gameData = {
 
     silver_nyang:100,
 
-    breathing_manual_equiped:cultivation_manual.celestial_ascent_method,
+    breathing_manual_equiped:cultivation_manual.three_power,
 
     //equipment
     head_gear:null,

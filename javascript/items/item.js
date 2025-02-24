@@ -233,7 +233,7 @@ const black_dragon_ball = {
     consume: function consume_func() {
         sendMessage("You consume the black dragon ball and manage to get 15 year worht of Qi.")
         if(gameData.qi_days+15*constante.year<=realms[gameData.realm]["max_qi_days"]){
-            gameData.qi_days += qi_up*day_of_cultivation
+            gameData.qi_days += 15*constante.year
         } 
         else{
             gameData.qi_days=realms[gameData.realm]["max_qi_days"]

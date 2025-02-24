@@ -13,11 +13,11 @@ body{
     font-size: 40px;
     text-align: center;
 }
-#inventory{
+#inventory,#cultivation_manual_inventory{
     display: flex;
     flex-wrap: wrap;
 }
-.item{   
+.item,.manual{   
     width: 60px;
     height: 60px;
     font-size: 15px;
@@ -29,13 +29,13 @@ body{
     background-color: #0b0d0c;
     color: white;
 }
-.item img{
+.item img,.manual img{
     object-fit: fill;
     padding: 0;
     width: 60px;
     height: 60px;
 }
-.item:hover{
+.item:hover,.manual:hover{
     background-color: white;
     color: #0b0d0c;
     border: 4px solid black;
@@ -158,10 +158,29 @@ input{
     width: 90px;
 }
 
-.consume_button{
-
-}
-
 #cultivation_manual_inventory{
     display: none;
+}
+
+#switch_breathing_manual{
+    width: 100px;
+    height: 60px;
+    font-size: 20px;
+}
+
+#selected_manual h1{
+    font-size: 35px;
+}
+#selected_manual h2{
+    font-size: 30px;
+}
+#selected_manual h3{
+    font-size: 24px;
+}
+
+.switch_cult_manual_button{
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    margin-left: 2px;
 }
