@@ -161,3 +161,7 @@ input{
 .consume_button{
 
 }
+
+#cultivation_manual_inventory{
+    display: none;
+}

@@ -12,6 +12,7 @@ function breathing_start(){
   }
   else{
   gameData.qi_days=realms[gameData.realm]["max_qi_days"]
+  aging(day_of_cultivation)
   }
   stat_update()
   if(gameData.qi_days==realms[gameData.realm]["max_qi_days"]){

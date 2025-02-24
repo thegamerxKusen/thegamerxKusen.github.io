@@ -74,6 +74,5 @@ function use_item(item){
 
     item.consume(); // Calls the consume function of the item
     removeItem(item); // Removes the item from inventory
-    const show_item_div= document.getElementById("selected_item");
-    show_item_div.innerHTML = ""
+    document.getElementById("selected_item").innerHTML = ""
 }
