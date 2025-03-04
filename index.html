@@ -26,7 +26,14 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body onload="loadingFunc()">
-    <div class="main">
+    <div id="character_creation">
+      <div id="question-container">
+        <h1 id="question-text">Starfullah</h1>
+        <div id="options-container"></div>
+      </div>
+    </div>
+    <script src="javascript/character_creation/character_creation.js" charset="utf-8" type="text/javascript"></script>
+    <div class="main" id="main">
       <div class="left">
         <p>Realm : <span id="realm">Civi</span></p>
         <p>Age : <span id="age"></span></p>
@@ -88,7 +95,6 @@
               <p>Manual Effect: <span id="manual_effect"></span> days worth of qi by day.</p>
               <button id="switch_breathing_manual" onclick="switch_breathing_manual_func()">Change manual</button>
               <div id="cultivation_manual_inventory"></div>
-              
               <p>Room Bonus: <span id="cult_room_bonus"></span></p>
               <p>Days: <input type="number" id="days_to_cult"></span></p>
               <div id="selected_manual"></div>

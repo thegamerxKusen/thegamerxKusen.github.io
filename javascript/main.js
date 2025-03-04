@@ -1,4 +1,8 @@
 var gameData = {
+    //char creation var
+    sex:null,
+    faction:null,
+
     qi_days: 0,
   
     qi_days_per_click: 1,
