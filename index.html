@@ -25,10 +25,10 @@
     <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
-  <body onload="loadingFunc()">
+  <body onload="loadingFunc()" id="body">
     <div id="character_creation">
       <div id="question-container">
-        <h1 id="question-text">Starfullah</h1>
+        <h1 id="question-text"></h1>
         <div id="options-container"></div>
       </div>
     </div>
@@ -48,9 +48,7 @@
       <div class="tab">
         <button class="tab_button" onclick="switch_tab(tab[1])">World</button>
         <button class="tab_button" onclick="switch_tab(tab[2])">Cultivation</button>
-        <button class="tab_button" onclick="switch_tab(tab[3])">Nano</button>
-        <button class="tab_button" onclick="switch_tab(tab[4])">Relationship</button>
-        <button class="tab_button" onclick="switch_tab(tab[5])">Option</button>
+        <button class="tab_button" onclick="switch_tab(tab[3])">Option</button>
 
       </div>
       <div class="tabs" id="world_tab">
@@ -79,8 +77,6 @@
           <button class="go_to" id="action_7" onclick="doAction(places.place_you_in.actions[7])"></button>
           <button class="go_to" id="action_8" onclick="doAction(places.place_you_in.actions[8])"></button>
         </div>
-        
-
       </div>
         <div class="tabs" id="cultivation_tab">
           <button onclick="close_culti_ma_tab()" id="go_back_cult_button">Go Back</button>
@@ -106,12 +102,6 @@
           </div>
 
         </div>
-        <div class="tabs" id="nano_tab">
-          <p>This is the nano tab</p>
-        </div>
-        <div class="tabs" id="relationship_tab">
-          <p>This is the relationship tab</p>
-        </div>
         <div class="tabs" id="options_tab">
           <p>This is the options tab</p>
           <div class="save-load">
@@ -119,8 +109,9 @@
             <button class="save_load_button" onclick="load_game(),loadingFunc()">Load</button>
           </div>
         </div>
+
         <div id="console"></div>
-        <div id="choices"></div>
+        
       </div>
       <div class="right">
         <h1 class="title">Inventory</h1>
