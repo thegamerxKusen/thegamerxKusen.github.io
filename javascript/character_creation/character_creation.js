@@ -1,4 +1,4 @@
-const main_game_div=document.getElementsByClassName("main")
+const main_game_div=document.getElementById("main")
 const character_creation_div = document.getElementById("character_creation")
 const body = document.getElementById("body")
 var character_creation_var= {
@@ -31,7 +31,8 @@ function show_name_choice(){
         if (event.key === "Enter") {
             if (name_input.value.trim() !== "") {
                 putChoiceInGameData()
-                gameData.name=name_input.value.trim();
+                let tempName = name_input.value.trim()
+                gameData.name=tempName
                 character_creation_div.innerHTML = ""
                 //next text for the story
                 var story_intro=document.createElement("p");
@@ -42,22 +43,19 @@ function show_name_choice(){
                 //click to go next
                 body.addEventListener("click",function(event){
                     character_creation_div.innerHTML = ""
+                    let son ="daughter"
+                    if(gameData.sex==="boy"){
+                        son = "son"
+                    }
                     switch(gameData.faction){
                         case "Forces of Justice":
-                            let son ="daughter"
-                            if(gameData.sex==="boy"){
-                                son = "son"
-                            }
+                            
                             story_intro.textContent=("You were born as a little " + gameData.sex + " named Namgung " + gameData.name + " in the grand and noble Sword User Namgung Family part of the 5 great families of the " + gameData.faction + " faction as the patruarch first" +son+".")
-                            gameData.name="Namgung "+gameData.name
+                            gameData.name="Namgung "+tempName
                             break
                         case "Forces of Evil": 
-                            son ="daughter"
-                            if(gameData.sex==="boy"){
-                                son = "son"
-                            }
                             story_intro.textContent=("You were born as a little " + gameData.sex + " named Hang " + gameData.name + " in the " + gameData.faction + " faction as the Force of evil leader's first" +son+".")
-                            gameData.name="Hang "+gameData.name
+                            gameData.name="Hang "+tempName
                             break
                         case "Sky Demon Cult":
                             let prince = ""
@@ -67,7 +65,7 @@ function show_name_choice(){
                                 prince = "princess"
                             }
                             story_intro.textContent=("You were born as a little " + gameData.sex + " named Chun " + gameData.name + " in the " + gameData.faction + " faction as the first " +prince+".")
-                            gameData.name="Chun "+gameData.name
+                            gameData.name="Chun "+tempName
                             break
                         default:
                             console.log("Unitended faction")
@@ -75,7 +73,7 @@ function show_name_choice(){
                     }
                     character_creation_div.appendChild(story_intro)
                     body.addEventListener("click",function(event){
-                        end_character_creation()
+                            end_character_creation()
                     });
                 });
                 
@@ -131,5 +129,6 @@ function putChoiceInGameData(){
 function end_character_creation(){
     character_creation_div.style.display="none"
     main_game_div.style.display="flex"
-    
+    document.getElementById("player_name").innerHTML = gameData.name
+    document.getElementById("player_faction").innerHTML = gameData.faction
 }

@@ -23,6 +23,7 @@
     
     <script src="javascript/main.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
+    
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <body onload="loadingFunc()" id="body">
@@ -32,13 +33,15 @@
         <div id="options-container"></div>
       </div>
     </div>
-    <script src="javascript/character_creation/character_creation.js" charset="utf-8" type="text/javascript"></script>
     <div class="main" id="main">
       <div class="left">
-        <p>Realm : <span id="realm">Civi</span></p>
+        <p>Name : <span id="player_name"></span></p>
         <p>Age : <span id="age"></span></p>
+        <p>Faction : <span id="player_faction"></span></p>
         <p>Stamina : <span id="stam"></span> / <span id="max_stam"></span></p>
         <p>Silver Nyang : <span id="money"></span></p>
+
+        <p>Realm : <span id="realm">Civi</span></p>
         <p>Internal Energy : <span id="qi_reserve"></span></p>
         <p>Max Internal Energy : <span id="max_qi"></span></p> 
         <p>Breathing Manual : <span id="breathing_manual"></span></p> 
@@ -119,5 +122,7 @@
         <div id="selected_item"></div>
       </div>
     </div>
+    <script src="javascript/character_creation/character_creation.js" charset="utf-8" type="text/javascript"></script>
+
   </body>
 </html>

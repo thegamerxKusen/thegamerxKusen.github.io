@@ -46,6 +46,7 @@ var gameData = {
   }
 
   function loadingFunc(){
+    //load or new game option new game lead to character creation
     where_can_you_go()
     
     stat_update()
@@ -86,11 +87,6 @@ var gameData = {
     }
   }
 
-
   function days_to_year_month_week_day(days){
     return(Math.floor(days/constante.year)+" years "+ Math.floor(days/constante.month)%12 + " months "+Math.floor(days/constante.week)%4 + " weeks " + days%constante.week + " days")
-  }
-
-  function reset(){
-
   }
