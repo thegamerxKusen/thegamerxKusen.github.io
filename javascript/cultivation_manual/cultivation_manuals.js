@@ -76,4 +76,41 @@ var cultivation_manual={
         effect: 200,
         mastery: 0,
     },
+
+    //sky demon cult
+    sword_force_of_the_heavenly_demon:{
+        name: "Sword Force of the Heavenly Demon",
+        description: "A breathing technique created by created by the Heavenly Demon Patriarch, the founder and Ancestor of the Heavenly Demon Divine Cult. It allows one to train sword skills and meditate at the same time with rapid accompanying and stable qi energy circulation.",
+        rank: "heaven grade",
+        effect: 150,
+        mastery: 0,
+    },
+
+    //forces of justice
+    holy_light_breathing: {
+        name: "Holy Light Breathing",
+        description: "A technique that channels the power of the heaven, enhancing healing and granting immense power.",
+        rank: "heaven grade",
+        effect: 150,
+        mastery: 0,
+    },
+
+
+    //forces of evil
+    dark_shadow_breathing: {
+        name: "Dark Shadow Breathing",
+        description: "A technique that channels the power of the underworld, enhancing raw strenght and destruction abilities.",
+        rank: "heaven grade",
+        effect: 150,
+        mastery: 0,
+    },
+    //forbidden
+
+    black_dragon_breath: {
+        name: "Black Dragon's Breath",
+        description: "A forbidden technique that consumes the user's life force to unleash devastating power.",
+        rank: "forbidden",
+        effect: 500,
+        mastery: 0,
+    },
 }

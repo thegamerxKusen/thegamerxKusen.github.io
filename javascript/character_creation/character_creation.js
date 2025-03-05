@@ -17,6 +17,36 @@ const questions = [
     }
 ];
 
+//end char creation
+function end_character_creation(){
+    character_creation_div.style.display="none"
+    character_creation_div.innerHTML = ""
+    main_game_div.style.display="flex"
+    document.getElementById("player_name").innerHTML = gameData.name
+    document.getElementById("player_faction").innerHTML = gameData.faction
+
+    switch(gameData.faction){
+        case "Forces of Justice":
+            acquire_manual(cultivation_manual.holy_light_breathing)
+            swith_manual(cultivation_manual.holy_light_breathing)
+            places.place_you_in=Namgung_Clan_Main_Residence
+            break
+        case "Forces of Evil": 
+            acquire_manual(cultivation_manual.dark_shadow_breathing)
+            swith_manual(cultivation_manual.dark_shadow_breathing)
+            places.place_you_in=Hang_Familly_House_main
+            break
+        case "Sky Demon Cult":
+            acquire_manual(cultivation_manual.sword_force_of_the_heavenly_demon)
+            swith_manual(cultivation_manual.sword_force_of_the_heavenly_demon)
+            places.place_you_in=Demon_Palace_main
+            break
+        default:
+            console.log("Unitended faction")
+            break
+    }
+}
+
 let currentQuestionIndex = 0;
 
 //char creation phase 2 : name 
@@ -72,10 +102,8 @@ function show_name_choice(){
                             break
                     }
                     character_creation_div.appendChild(story_intro)
-                    body.addEventListener("click",function(event){
-                            end_character_creation()
-                    });
-                });
+                    body.addEventListener("click",end_character_creation,{ once: true });
+                },{ once: true });
                 
             }
         }
@@ -126,9 +154,3 @@ function putChoiceInGameData(){
     
 }
 
-function end_character_creation(){
-    character_creation_div.style.display="none"
-    main_game_div.style.display="flex"
-    document.getElementById("player_name").innerHTML = gameData.name
-    document.getElementById("player_faction").innerHTML = gameData.faction
-}

@@ -1,5 +1,5 @@
 var places={
-    place_you_in:Home,
+    place_you_in:Demon_Palace_main,
     go_to:"go_to_",
     go_to_reset:"go_to_",
     action_:"action_"
@@ -54,17 +54,10 @@ function where_can_you_go(){
 }
 
 function to_go_back(){
-    switch (places.place_you_in.name) {
-        case "Kitchen":places_go_to(Home)
-            break
-        case "Training Ground":places_go_to(Home)
-            break
-        case "Bathroom":places_go_to(Home)
-            break
-        case "Room":places_go_to(Home)
-            break
-        default:
-        console.log("Can't get out");
+    if(places.place_you_in.go_back_place==null){
+        console.log("You can't go back from here")
+    }else{
+        places.place_you_in=places.place_you_in.go_back_place
     }
     where_can_you_go()
 }

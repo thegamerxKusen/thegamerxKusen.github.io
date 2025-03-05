@@ -1,4 +1,4 @@
-var cultivation_manual_inventory = [cultivation_manual.three_power]
+var cultivation_manual_inventory = []
 
 var template_cultivation_manual = {
     name:"",
