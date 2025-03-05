@@ -49,6 +49,7 @@ function show_name_choice(){
                                 son = "son"
                             }
                             story_intro.textContent=("You were born as a little " + gameData.sex + " named Namgung " + gameData.name + " in the grand and noble Sword User Namgung Family part of the 5 great families of the " + gameData.faction + " faction as the patruarch first" +son+".")
+                            gameData.name="Namgung "+gameData.name
                             break
                         case "Forces of Evil": 
                             son ="daughter"
@@ -56,6 +57,7 @@ function show_name_choice(){
                                 son = "son"
                             }
                             story_intro.textContent=("You were born as a little " + gameData.sex + " named Hang " + gameData.name + " in the " + gameData.faction + " faction as the Force of evil leader's first" +son+".")
+                            gameData.name="Hang "+gameData.name
                             break
                         case "Sky Demon Cult":
                             let prince = ""
@@ -65,6 +67,7 @@ function show_name_choice(){
                                 prince = "princess"
                             }
                             story_intro.textContent=("You were born as a little " + gameData.sex + " named Chun " + gameData.name + " in the " + gameData.faction + " faction as the first " +prince+".")
+                            gameData.name="Chun "+gameData.name
                             break
                         default:
                             console.log("Unitended faction")
