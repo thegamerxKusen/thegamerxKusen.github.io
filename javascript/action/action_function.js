@@ -42,7 +42,6 @@ function doAction(action){
             addItem(black_dragon_ball)
             acquire_manual(cultivation_manual.blazing_sun_fist)
             
-            
             where_can_you_go()
             break 
         case "Look for usefull book":

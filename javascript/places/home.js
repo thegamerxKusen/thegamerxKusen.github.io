@@ -5,9 +5,8 @@ var Room={
     places_in :null,
     actions:{
         1:actions.sleep,
-        2:actions.look_for_usefull_book,
     },
-    numb_actions:2,
+    numb_actions:1,
     
 }
 
