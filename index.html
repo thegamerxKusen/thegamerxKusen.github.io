@@ -95,7 +95,7 @@
               <button id="switch_breathing_manual" onclick="switch_breathing_manual_func()">Change manual</button>
               <div id="cultivation_manual_inventory"></div>
               <p>Room Bonus: <span id="cult_room_bonus"></span></p>
-              <p>Days: <input type="number" id="days_to_cult"></span></p>
+              <p>Days: <input type="number" id="days_to_cult" min="0" max="365"></span></p>
               <div id="selected_manual"></div>
             </div>
             <div class="left_part">
@@ -123,6 +123,5 @@
       </div>
     </div>
     <script src="javascript/character_creation/character_creation.js" charset="utf-8" type="text/javascript"></script>
-
   </body>
 </html>

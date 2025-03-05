@@ -197,3 +197,8 @@ input{
 #console{
     height: 328px;
 }
+
+.option:hover{
+    background-color: aliceblue;
+    color:black;
+}
