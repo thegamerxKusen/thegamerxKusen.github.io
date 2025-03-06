@@ -27,6 +27,7 @@ function load_game(){
     var save_combat_stats = JSON.parse(localStorage.getItem("nano_murim_base_combat_stats"))
     var save_breathing_manual_inventory = JSON.parse(localStorage.getItem("nano_murim_breathing_manual_inventory"))
     if (save_game_data != null) {
+        
         console.log(save_game_data)
         gameData = save_game_data
         inventory = save_inventory
@@ -34,10 +35,17 @@ function load_game(){
         places = save_places
         cultivation_manual_inventory = save_breathing_manual_inventory
         base_combat_stats = save_combat_stats
-        sendMessage("Game loaded!")   
+        sendMessage("Game loaded!")
+        set_straight_places_to_go_back() // Ensure go_back_place properties are correctly set
+        stat_update()
+        where_can_you_go()
+        updateInventory()   
+        return true
     }
     set_straight_places_to_go_back() // Ensure go_back_place properties are correctly set
     stat_update()
     where_can_you_go()
     updateInventory()
+    start_character_creation()
+    return false
 }

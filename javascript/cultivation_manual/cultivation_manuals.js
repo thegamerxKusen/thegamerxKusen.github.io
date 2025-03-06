@@ -5,6 +5,7 @@ var cultivation_manual={
         rank:"3rd rate",
         effect:1/30,
         mastery:0,
+        breath_effect:1,
     },
     iron_bone_forge: {
         name: "Iron Bone Forging Tempering",
@@ -12,6 +13,7 @@ var cultivation_manual={
         rank: "3rd rate",
         effect: 1 / 28,
         mastery: 0,
+        breath_effect:1,
     },
     flowing_river_qi: {
         name: "Flowing River Qi Cultivation",
@@ -19,6 +21,7 @@ var cultivation_manual={
         rank: "2nd rate",
         effect: 1,
         mastery: 0,
+        breath_effect:1,
     },
     blazing_sun_fist: {
         name: "Blazing Sun Circulation",
@@ -26,6 +29,7 @@ var cultivation_manual={
         rank: "2nd rate",
         effect: 1.5,
         mastery: 0,
+        breath_effect:1,
     },
     storm_wind_breathing: {
         name: "Storm Wind Breathing",
@@ -33,6 +37,7 @@ var cultivation_manual={
         rank: "1st rate",
         effect: 2,
         mastery: 0,
+        breath_effect:1,
     },
     heavenly_turtle_breathing: {
         name: "Heavenly Turtle Breathing",
@@ -40,6 +45,7 @@ var cultivation_manual={
         rank: "human grade",
         effect: 5,
         mastery: 0,
+        breath_effect:1,
     },
     azure_dragon_method: {
         name: "Azure Dragon Body Refinement",
@@ -47,6 +53,7 @@ var cultivation_manual={
         rank: "master grade",
         effect: 8,
         mastery: 0,
+        breath_effect:1,
     },
     phantom_shadow_steps: {
         name: "Phantom Shadow Steps",
@@ -54,6 +61,7 @@ var cultivation_manual={
         rank: "grand master grade",
         effect: 20,
         mastery: 0,
+        breath_effect:1,
     },
     tyrant_king_qi: {
         name: "Tyrant King's Qi Manipulation",
@@ -61,6 +69,7 @@ var cultivation_manual={
         rank: "earth grade",
         effect: 100,
         mastery: 0,
+        breath_effect:1,
     },
     void_sky_breathing: {
         name: "Void Sky Breathing",
@@ -68,6 +77,7 @@ var cultivation_manual={
         rank: "sky grade",
         effect: 100,
         mastery: 0,
+        breath_effect:1,
     },
     celestial_ascent_method: {
         name: "Celestial Ascent Method",
@@ -75,6 +85,7 @@ var cultivation_manual={
         rank: "heaven grade",
         effect: 200,
         mastery: 0,
+        breath_effect:1,
     },
 
     //sky demon cult
@@ -84,6 +95,7 @@ var cultivation_manual={
         rank: "heaven grade",
         effect: 150,
         mastery: 0,
+        breath_effect:1,
     },
 
     //forces of justice
@@ -93,6 +105,7 @@ var cultivation_manual={
         rank: "heaven grade",
         effect: 150,
         mastery: 0,
+        breath_effect:1,
     },
 
 
@@ -103,6 +116,7 @@ var cultivation_manual={
         rank: "heaven grade",
         effect: 150,
         mastery: 0,
+        breath_effect:1,
     },
     //forbidden
 
@@ -112,5 +126,6 @@ var cultivation_manual={
         rank: "forbidden",
         effect: 500,
         mastery: 0,
+        breath_effect:1,
     },
 }
