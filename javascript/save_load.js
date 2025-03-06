@@ -11,7 +11,9 @@ function save_game(){
 //places
     reset_places_to_go_back()
     save_something("nano_murim_places",places)
+    console.log(Hang_Familly_House_My_Room.go_back_place)
     set_straight_places_to_go_back()
+    console.log(Hang_Familly_House_My_Room.go_back_place)
 
     console.log(JSON.stringify(gameData))
     sendMessage("Game saved!")
@@ -31,11 +33,8 @@ function load_game(){
         cultivation_manual_inventory = save_breathing_manual_inventory
         sendMessage("Game loaded!")   
     }
-    set_straight_places_to_go_back()
+    set_straight_places_to_go_back() // Ensure go_back_place properties are correctly set
     stat_update()
     where_can_you_go()
     updateInventory()
-    
 }
-
-

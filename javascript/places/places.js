@@ -59,6 +59,9 @@ function where_can_you_go(){
 }
 
 function to_go_back(){
+    set_straight_places_to_go_back()
+    console.log("Current place:", places.place_you_in.name);
+    console.log("Go back place:", places.place_you_in.go_back_place);
     if(places.place_you_in.go_back_place==null){
         console.log("You can't go back from here")
     }else{
@@ -72,30 +75,12 @@ function places_go_to(place){
     }else{
         places.place_you_in=place
     }
-    places.go_to = "go_to_"; // Reset the go_to variable
     where_can_you_go()
 }
 
-
-function reset_places_to_go_back(){
-    let value = null
-    //hang familly house
-    Hang_Familly_House_Bathroom.go_back_place=value
-    Hang_Familly_House_My_Room.go_back_place=value
-    Hang_Familly_House_PrivateTrainingRoom.go_back_place=value
-    Hang_Familly_House_library.go_back_place=value
-    //Namgung Clan Main Residence
-    Namgung_Clan_Main_Residence_Bathroom.go_back_place=value
-    Namgung_Clan_Main_Residence_My_Room.go_back_place=value
-    Namgung_Clan_Main_Residence_PrivateTrainingRoom.go_back_place=value
-    Namgung_Clan_Main_Residence_library.go_back_place=value
-    //Demon Palace
-    Demon_Palace_Bathroom.go_back_place=value
-    Demon_Palace_My_Room.go_back_place=value
-    Demon_Palace_PrivateTrainingRoom.go_back_place=value
-    Demon_Palace_library.go_back_place=value 
-}
 function set_straight_places_to_go_back(){
+    console.log("setting places to go back")
+    //bug here
     //hang familly house
     Hang_Familly_House_Bathroom.go_back_place=Hang_Familly_House_main
     Hang_Familly_House_My_Room.go_back_place=Hang_Familly_House_main
@@ -112,4 +97,39 @@ function set_straight_places_to_go_back(){
     Demon_Palace_PrivateTrainingRoom.go_back_place=Demon_Palace_main
     Demon_Palace_library.go_back_place=Demon_Palace_main
 
+}
+
+function reset_places_to_go_back(){
+    
+    console.log("reseting places to go back")
+    var value = null
+    //hang familly house
+    Hang_Familly_House_Bathroom.go_back_place=value
+    Hang_Familly_House_My_Room.go_back_place=value
+    Hang_Familly_House_PrivateTrainingRoom.go_back_place=value
+    Hang_Familly_House_library.go_back_place=value
+    //Namgung Clan Main Residence
+    Namgung_Clan_Main_Residence_Bathroom.go_back_place=value
+    Namgung_Clan_Main_Residence_My_Room.go_back_place=value
+    Namgung_Clan_Main_Residence_PrivateTrainingRoom.go_back_place=value
+    Namgung_Clan_Main_Residence_library.go_back_place=value
+    //Demon Palace
+    Demon_Palace_Bathroom.go_back_place=value
+    Demon_Palace_My_Room.go_back_place=value
+    Demon_Palace_PrivateTrainingRoom.go_back_place=value
+    Demon_Palace_library.go_back_place=value 
+    
+    switch(gameData.faction){
+        case "Forces of Justice":
+            places.place_you_in=Namgung_Clan_Main_Residence
+            break
+        case "Forces of Evil": 
+            places.place_you_in=Hang_Familly_House_main
+            break
+        case "Sky Demon Cult":
+            places.place_you_in=Demon_Palace_main
+            break
+        default:
+            break
+    }
 }

@@ -52,7 +52,7 @@ function start_character_creation(){
 function stat_update(){
     document.getElementById("player_name").innerHTML = gameData.name
     document.getElementById("player_faction").innerHTML = gameData.faction
-    
+
     document.getElementById("breathing_manual").innerHTML = gameData.breathing_manual_equiped.name
     document.getElementById("money").innerHTML = gameData.silver_nyang
     document.getElementById("realm").innerHTML = realms[gameData.realm]["realm_name"]
@@ -77,6 +77,7 @@ function stat_update(){
     where_can_you_go()
     stat_update()
     open_main_menu()
+    set_straight_places_to_go_back();
   }
 
   function open_main_menu(){
@@ -94,7 +95,6 @@ function stat_update(){
     new_game_button.addEventListener("click",function(){
       start_character_creation()
       main_menue_div.style.display="none"
-      set_straight_places_to_go_back()
     },{ once: true });
 
     let load_game_button = document.createElement("button")
@@ -104,7 +104,6 @@ function stat_update(){
       main_menue_div.style.display="none"
       main_game_div.style.display="flex"
       load_game()
-      set_straight_places_to_go_back()
     },{ once: true });
 
     //push to html page
