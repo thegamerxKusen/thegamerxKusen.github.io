@@ -44,10 +44,26 @@ function doAction(action){
             
             where_can_you_go()
             break 
-        case "Look for usefull book":
+        case "Learn to read":
             
-            break
-        case "Depart for the demonic academy":
+            if(energy_down(70)){
+                switch(action.current_uses){
+                    case 0:
+                        sendMessage("You started to learn how to read.")
+                        break
+                    case 1:
+                        sendMessage("You continued to learn how to read.")
+                        break
+                    case 2:
+                        sendMessage("You learned how to read.")
+                        sendMessage("You can now read book in the library.")
+                        gameData.can_read = true
+                        break
+                }
+                incrementAction(actions.learn_to_read)
+            }else{
+                sendMessage("You are too tired to study.")
+            }
             
             break
         default:

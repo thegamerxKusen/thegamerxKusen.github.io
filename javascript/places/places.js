@@ -5,52 +5,60 @@ var places={
     action_:"action_"
 }
 
-
+const going_in_places_div = document.getElementsByClassName("going_in_places")
+const action_div = document.getElementsByClassName("actions")
 
 function where_can_you_go(){
     //place part
     if(places.place_you_in==null){
-
+        console.log("You are nowhere, wtf?")
     }else{
         document.getElementById("place_you_in_id").innerHTML = places.place_you_in.name
         document.getElementById("place_desc_id").innerHTML = places.place_you_in.description
     }
-    for (let i = 1; i <= places.place_you_in.number_of_going_in_options; i++) {
-        places.go_to+=i
-        document.getElementById(places.go_to).style.display="block"
-        document.getElementById(places.go_to).innerHTML="Enter the "+places.place_you_in.places_in[i].name
-        places.go_to = "go_to_"
+    going_in_places_div[0].innerHTML=""
+    if(Array.isArray(places.place_you_in.places_in)){
+        places.place_you_in.places_in.forEach((item, index) => {
+
+            const go_in_button = document.createElement("button");
+            go_in_button.className="go_to"
+            go_in_button.style.display="block"
+            go_in_button.innerHTML="Enter the "+item.name
+            go_in_button.addEventListener("click", function(){
+                places_go_to(item)
+                
+            })
+            going_in_places_div[0].appendChild(go_in_button);
+        });
     }
-    if(places.place_you_in.places_in==null){
-        for (let i = 1; i <= 8; i++) {
-            places.go_to_reset+=i
-            document.getElementById(places.go_to_reset).style.display="none"
-            places.go_to_reset = "go_to_"
-            }
-        }
+    //go back button
+    const go_back_button = document.createElement("button");
+    go_back_button.className="go_back_to"
+    go_back_button.id="go_back"
+    go_back_button.textContent="Go back"
+    go_back_button.setAttribute("onclick","to_go_back()")
+    going_in_places_div[0].appendChild(go_back_button);
 
     //action part
-    for (let i = 1; i <= 8; i++) {
-        places.action_+=i
-        document.getElementById(places.action_).style.display="none"
-        places.action_ = "action_"
-        }
+    
+    if(Array.isArray(places.place_you_in.actions)){
+        action_div[0].innerHTML=""
+        places.place_you_in.actions.forEach((item, index) => {
 
-        
-    places.action_ = "action_"
-    if(places.place_you_in.actions!=null){
-        for (let i = 1; i <= places.place_you_in.numb_actions; i++) {
-        places.action_+=i
-        if(canPerformAction(places.place_you_in.actions[i])){
-            document.getElementById(places.action_).style.display="block"
-            document.getElementById(places.action_).innerHTML=places.place_you_in.actions[i].name
-        }
-        
-        places.go_to = "action_"
-        }
-       }
-       places.action_ = "action_"
-
+            const action_button = document.createElement("button");
+            action_button.className="go_to"
+            if(canPerformAction(item)){
+                action_button.style.display="block"
+                action_button.innerHTML=item.name
+                action_button.addEventListener("click", function(){
+                    doAction(item)
+                })
+                action_div[0].appendChild(action_button);
+            }
+        });
+    }else{
+        console.log("not an array bastard")
+    }
 }
 
 function to_go_back(){
@@ -67,5 +75,6 @@ function places_go_to(place){
     }else{
         places.place_you_in=place
     }
+    places.go_to = "go_to_"; // Reset the go_to variable
     where_can_you_go()
 }

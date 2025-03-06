@@ -32,4 +32,15 @@ var actions ={
     limit: 1,
     current_uses: 0,
 },
+read : {
+    name:"Read",
+    limit: -1,
+    current_uses: 0,
+},
+learn_to_read : {
+    name:"Learn to read",
+    limit: 3,
+    current_uses: 0,
+},
+
 }

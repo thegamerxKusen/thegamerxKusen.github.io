@@ -13,8 +13,10 @@ function energy_down(down_num){
         gameData.energy-=down_num
         document.getElementById("stam").innerHTML = gameData.energy
         document.getElementById("max_stam").innerHTML = gameData.max_energy
+        return true;
     }
     else{
         console.log("Not enough energy")
+        return false;
     }
 }

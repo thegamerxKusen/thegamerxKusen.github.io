@@ -27,7 +27,7 @@ var gameData = {
     shoes_gear:null,
     weapons_gear:null,
 
-    know_how_to_read:false,
+    can_read:false,
   }
   var constante = {
     week:7,

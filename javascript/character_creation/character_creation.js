@@ -45,6 +45,7 @@ function end_character_creation(){
             console.log("Unitended faction")
             break
     }
+    where_can_you_go()
 }
 
 let currentQuestionIndex = 0;
