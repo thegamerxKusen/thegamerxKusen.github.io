@@ -60,8 +60,3 @@ var Demon_Palace_main = {
     numb_actions:null,
     go_back_place: null,
 }
-
-Demon_Palace_Bathroom.go_back_place=Demon_Palace_main
-Demon_Palace_My_Room.go_back_place=Demon_Palace_main
-Demon_Palace_PrivateTrainingRoom.go_back_place=Demon_Palace_main
-Demon_Palace_library.go_back_place=Demon_Palace_main

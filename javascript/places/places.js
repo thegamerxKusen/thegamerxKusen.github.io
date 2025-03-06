@@ -75,3 +75,41 @@ function places_go_to(place){
     places.go_to = "go_to_"; // Reset the go_to variable
     where_can_you_go()
 }
+
+
+function reset_places_to_go_back(){
+    let value = null
+    //hang familly house
+    Hang_Familly_House_Bathroom.go_back_place=value
+    Hang_Familly_House_My_Room.go_back_place=value
+    Hang_Familly_House_PrivateTrainingRoom.go_back_place=value
+    Hang_Familly_House_library.go_back_place=value
+    //Namgung Clan Main Residence
+    Namgung_Clan_Main_Residence_Bathroom.go_back_place=value
+    Namgung_Clan_Main_Residence_My_Room.go_back_place=value
+    Namgung_Clan_Main_Residence_PrivateTrainingRoom.go_back_place=value
+    Namgung_Clan_Main_Residence_library.go_back_place=value
+    //Demon Palace
+    Demon_Palace_Bathroom.go_back_place=value
+    Demon_Palace_My_Room.go_back_place=value
+    Demon_Palace_PrivateTrainingRoom.go_back_place=value
+    Demon_Palace_library.go_back_place=value 
+}
+function set_straight_places_to_go_back(){
+    //hang familly house
+    Hang_Familly_House_Bathroom.go_back_place=Hang_Familly_House_main
+    Hang_Familly_House_My_Room.go_back_place=Hang_Familly_House_main
+    Hang_Familly_House_PrivateTrainingRoom.go_back_place=Hang_Familly_House_main
+    Hang_Familly_House_library.go_back_place=Hang_Familly_House_main
+    //Namgung Clan Main Residence
+    Namgung_Clan_Main_Residence_Bathroom.go_back_place=Namgung_Clan_Main_Residence
+    Namgung_Clan_Main_Residence_My_Room.go_back_place=Namgung_Clan_Main_Residence
+    Namgung_Clan_Main_Residence_PrivateTrainingRoom.go_back_place=Namgung_Clan_Main_Residence
+    Namgung_Clan_Main_Residence_library.go_back_place=Namgung_Clan_Main_Residence
+    //Demon Palace
+    Demon_Palace_Bathroom.go_back_place=Demon_Palace_main
+    Demon_Palace_My_Room.go_back_place=Demon_Palace_main
+    Demon_Palace_PrivateTrainingRoom.go_back_place=Demon_Palace_main
+    Demon_Palace_library.go_back_place=Demon_Palace_main
+
+}

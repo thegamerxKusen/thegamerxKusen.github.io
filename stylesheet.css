@@ -186,6 +186,7 @@ input{
 }
 
 #character_creation{
+    display: none;
     border: 4px solid darkgray;
     border-radius: 2px;
 }
@@ -201,4 +202,21 @@ input{
 .option:hover{
     background-color: aliceblue;
     color:black;
+}
+
+.main_menu{
+    place-items: center;
+    height: 100vh;
+    padding-top: 30vh;
+    margin: 0;
+    user-select: none;
+}
+.main_menu_title{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.main_menu_load_game_button, .main_menu_new_game_button{
+    margin: 5px;
+
 }

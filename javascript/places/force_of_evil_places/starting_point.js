@@ -60,8 +60,3 @@ var Hang_Familly_House_main = {
     numb_actions:0,
     go_back_place: null,
 }
-
-Hang_Familly_House_Bathroom.go_back_place=Hang_Familly_House_main
-Hang_Familly_House_My_Room.go_back_place=Hang_Familly_House_main
-Hang_Familly_House_PrivateTrainingRoom.go_back_place=Hang_Familly_House_main
-Hang_Familly_House_library.go_back_place=Hang_Familly_House_main

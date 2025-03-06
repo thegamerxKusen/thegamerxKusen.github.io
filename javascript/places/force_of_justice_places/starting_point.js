@@ -60,8 +60,3 @@ var Namgung_Clan_Main_Residence = {
     numb_actions:null,
     go_back_place: null,
 }
-
-Namgung_Clan_Main_Residence_Bathroom.go_back_place=Namgung_Clan_Main_Residence
-Namgung_Clan_Main_Residence_My_Room.go_back_place=Namgung_Clan_Main_Residence
-Namgung_Clan_Main_Residence_PrivateTrainingRoom.go_back_place=Namgung_Clan_Main_Residence
-Namgung_Clan_Main_Residence_library.go_back_place=Namgung_Clan_Main_Residence

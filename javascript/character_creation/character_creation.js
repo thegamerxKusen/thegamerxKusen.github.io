@@ -114,10 +114,9 @@ function show_name_choice(){
     character_creation_div.appendChild(name_input)
 
 } 
-
-start_character_creation()
 //char creation phase 1 : the question
 function showQuestion() {
+
     if (currentQuestionIndex >= questions.length) {
         document.getElementById("question-container").style.display="none"
         // instead put Go to phase 2 
