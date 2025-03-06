@@ -1,8 +1,5 @@
 var places={
     place_you_in:Demon_Palace_main,
-    go_to:"go_to_",
-    go_to_reset:"go_to_",
-    action_:"action_"
 }
 
 const going_in_places_div = document.getElementsByClassName("going_in_places")

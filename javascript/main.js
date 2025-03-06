@@ -35,7 +35,14 @@ var gameData = {
     year:336,
   }
 
-  function stat_update(){
+function start_character_creation(){
+  if(gameData.faction==null){
+    showQuestion()
+  }else{
+    console.log("You already created your character")
+  }
+}
+function stat_update(){
     document.getElementById("breathing_manual").innerHTML = gameData.breathing_manual_equiped.name
     document.getElementById("money").innerHTML = gameData.silver_nyang
     document.getElementById("realm").innerHTML = realms[gameData.realm]["realm_name"]

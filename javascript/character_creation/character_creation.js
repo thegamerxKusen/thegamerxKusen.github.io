@@ -115,7 +115,7 @@ function show_name_choice(){
 
 } 
 
-showQuestion()
+start_character_creation()
 //char creation phase 1 : the question
 function showQuestion() {
     if (currentQuestionIndex >= questions.length) {
