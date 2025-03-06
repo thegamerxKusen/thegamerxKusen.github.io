@@ -6,20 +6,22 @@ var base_combat_stats={
     raw_durability:2,//defense resistance to damage
     //all this multiplied and modified my the breathing manual equiped by the player
     //and also the weapon and armor equiped by the player
+
+    //add energy and make it proportional to the player qi days
 }
 var player = {
     name: gameData.name,
     //make it so that if name ="Player" then its gameData.name
+    max_health: 100,
     health: 100,
     base_combat_stats: base_combat_stats,
     turn:0,//when fight end reset to 0, when you do an action +1
-
 };
 
 function playerTurn(action) {
     switch (action) {
         case "attack":
-            attack(player, enemy);
+            attack(player);
             break;
         case "block":
             block(player);
@@ -58,14 +60,21 @@ function enemyTurn() {
     }
 }
 
-function attack(attacker, defender) {
-    var damage = attacker.base_combat_stats.raw_strength * 10; // Example damage calculation
+function attack(attacker, defender,technique_used) {
+    var damage = (attacker.base_combat_stats.raw_strength -defender.base_combat_stats.raw_durability) // Example damage calculation
+    if (damage < 1) {
+        damage = 1;
+    }
+    damage=damage*technique_used.damage_multiplier
     defender.health -= damage;
-    console.log(attacker.name + " attacks " + defender.name + " for " + damage + " damage.");
+    console.log(attacker.name + " attacks " + defender.name +" with "+ technique_used.name+ " and dealt " + damage + " damage.");
+
+    update_health(example_enemy)
 }
 
 function block(character) {
     console.log(character.name + " is blocking.");
+    character.base_combat_stats.raw_durability *= 2; // Example block logic
     // Implement block logic here
 }
 
@@ -77,8 +86,26 @@ function useItem(character) {
 function surrender(character) {
     console.log(character.name + " surrenders.");
     // Implement surrender logic here
+    sendMessage("You surrendered!")
+    hide_fight_menue()
 }
 
+let nb_of_msg_2=0
+function send_combat_log(text) {
+    let consoleElement = document.getElementById("fight_console");
+    const message = document.createElement("div");
+    message.classList.add("combat_message");
+    //show a max of 15 message cause scroll doesnt work
+    nb_of_msg_2+=1
+    if(nb_of_msg_2===3){
+        consoleElement.innerHTML=""
+        nb_of_msg_2=1
+    }
+
+    message.classList.add("message");
+    message.textContent = text;
+    consoleElement.appendChild(message);
+}
 
 function show_fight_menue(opponent){
     //hide everything
@@ -96,7 +123,7 @@ function show_fight_menue(opponent){
     let o_h2_part=document.createElement("div")
     o_h2_part.className="h2_part"
     let opponent_health=document.createElement("h2")
-    opponent_health.textContent=opponent.health
+    opponent_health.textContent=opponent.health+" / "+opponent.max_health
     opponent_health.id="opponent_health"
     let opponent_realm=document.createElement("h2")
     opponent_realm.textContent=opponent.realm
@@ -107,6 +134,9 @@ function show_fight_menue(opponent){
 
     //console in the middle to write the fight
 
+    let fight_console=document.createElement("div")
+    fight_console.id="fight_console"
+    
 
     //player tag:
     let player_div=document.createElement("div")
@@ -116,7 +146,7 @@ function show_fight_menue(opponent){
     let p_h2_part=document.createElement("div")
     p_h2_part.className="h2_part"
     let player_health=document.createElement("h2")
-    player_health.textContent=player.health
+    player_health.textContent=player.health+" / "+player.max_health
     player_health.id="player_health"
     let player_realm=document.createElement("h2")
     player_realm.textContent=realms[gameData.realm].realm_name
@@ -158,6 +188,7 @@ function show_fight_menue(opponent){
 
     //push to html
     fight_menue.appendChild(opponent_div)
+    fight_menue.appendChild(fight_console)
     fight_menue.appendChild(player_div)
     fight_menue.appendChild(action_div)
     body.appendChild(fight_menue)
@@ -170,3 +201,9 @@ function show_fight_menue(opponent){
     //if you click use item call playerTurn("use_item")
     //if you click surrender call playerTurn("surrender")
 }
+
+function hide_fight_menue(){
+    document.getElementById("fight_menue").remove()
+    document.getElementById("main").style.display="flex"
+}
+
