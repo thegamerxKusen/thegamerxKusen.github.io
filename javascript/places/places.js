@@ -118,7 +118,7 @@ function reset_places_to_go_back(){
     Demon_Palace_My_Room.go_back_place=value
     Demon_Palace_PrivateTrainingRoom.go_back_place=value
     Demon_Palace_library.go_back_place=value 
-    
+    //put you in the new version of the place
     switch(gameData.faction){
         case "Forces of Justice":
             places.place_you_in=Namgung_Clan_Main_Residence
