@@ -27,7 +27,9 @@ var Hang_Familly_House_PrivateTrainingRoom={
     description:"A room dedicated to your training",
     number_of_going_in_options:0,
     places_in :null,
-    actions:[],
+    actions:[
+        actions.dummy_training,
+    ],
     numb_actions:0,
     go_back_place: null,
 }

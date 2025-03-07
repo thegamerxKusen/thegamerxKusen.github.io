@@ -42,5 +42,11 @@ learn_to_read : {
     limit: 3,
     current_uses: 0,
 },
+dummy_training : {
+    name:"Dummy Training",
+    limit: -1,
+    current_uses: 0,
+},
+
 
 }

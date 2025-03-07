@@ -27,7 +27,9 @@ var Namgung_Clan_Main_Residence_PrivateTrainingRoom={
     description:"A room dedicated to your training",
     number_of_going_in_options:0,
     places_in :null,
-    actions:[],
+    actions:[
+        actions.dummy_training,
+    ],
     numb_actions:null,
     go_back_place: null,
 }
