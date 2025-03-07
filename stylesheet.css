@@ -266,3 +266,13 @@ input{
 .combat_message{
     font-size: 30px;
 }
+
+#switch_technique{
+    display: none;
+}
+
+#switch_technique_button{
+    width: 50%;
+    height: 20%;
+    font-size: 50px;
+}

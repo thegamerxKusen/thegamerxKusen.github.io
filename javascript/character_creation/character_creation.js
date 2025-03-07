@@ -64,6 +64,7 @@ function show_name_choice(){
                 putChoiceInGameData()
                 let tempName = name_input.value.trim()
                 gameData.name=tempName
+                player_stats.name=tempName
                 character_creation_div.innerHTML = ""
                 //next text for the story
                 var story_intro=document.createElement("p");

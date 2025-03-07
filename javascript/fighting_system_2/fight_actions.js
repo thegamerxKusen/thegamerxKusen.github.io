@@ -26,5 +26,5 @@ function breath(){
     }
 }
 function full_power(){
-    player_stats.fight_qi=0
+    
 }
