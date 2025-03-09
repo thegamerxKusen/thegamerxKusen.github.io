@@ -87,6 +87,7 @@ function menue_open_main(){
     technique_button.textContent="Technique"
     technique_button.addEventListener("click",function(){
         //technique
+        menue_open_technique()
     })
     let actions_button=document.createElement("button")
     actions_button.textContent="Actions"
@@ -111,10 +112,7 @@ function menue_open_main(){
     fight_choices.appendChild(surrender_button)
 }
 
-function menue_open_technique(){
-    let fight_choices = document.getElementById("fight_choices_div")
-    fight_choices.innerHTML=""
-}
+
 
 function menue_open_action(){
     let fight_choices = document.getElementById("fight_choices_div")
@@ -124,22 +122,26 @@ function menue_open_action(){
     avoid_button.textContent="Avoid"
     
     avoid_button.addEventListener("click",function(){
-        
+        player_stats.chosen_actions=fight_actions[0]
+        menue_open_main()
     });
     let block_button = document.createElement("button")
     block_button.textContent="Block"
     block_button.addEventListener("click",function(){
-        
+        player_stats.chosen_actions=fight_actions[1]
+        menue_open_main()
     });
     let breath_button = document.createElement("button")
     breath_button.textContent="Breath"
     breath_button.addEventListener("click",function(){
-        
+        player_stats.chosen_actions=fight_actions[2]
+        menue_open_main()
     });
     let fullpower_button = document.createElement("button")
     fullpower_button.textContent="Fullpower"
     fullpower_button.addEventListener("click",function(){
-
+        player_stats.chosen_actions=fight_actions[3]
+        menue_open_main()
     });
     fight_choices.appendChild(avoid_button)
     fight_choices.appendChild(block_button)
@@ -148,8 +150,44 @@ function menue_open_action(){
 }
 
 function menue_finish_turn(){
+    if(player_stats.chosen_actions && player_stats.chosen_technique){
+        return;
+    }
+    clashing()
     //clashing, only after actions and technique is choosen
 }
 function menue_surrender(){
     hide_fight_menue()
+}
+
+function menue_open_technique(){
+    let fight_choices = document.getElementById("fight_choices_div")
+    fight_choices.innerHTML=""
+
+    player_stats.technique_slots.forEach((item, index) => {
+        if(item){
+        let technique_slots_button=document.createElement("button")
+        console.log(item)
+        technique_slots_button.textContent=item.name
+        technique_slots_button.id="tech_button"
+        technique_slots_button.addEventListener("click",function(){
+            player_stats.chosen_technique=item
+            menue_open_main()
+        })
+        fight_choices.appendChild(technique_slots_button)
+        }
+    });
+//should work wtf
+    let basic_skill=player_stats.weapon_type.basic_skills
+    
+    basic_skill.forEach((item, index) => {
+        let technique_slots_button=document.createElement("button")
+        technique_slots_button.textContent=item.name
+        technique_slots_button.id="tech_button"
+        technique_slots_button.addEventListener("click",function(){
+            player_stats.chosen_technique=item
+            menue_open_main()
+        })
+        fight_choices.appendChild(technique_slots_button)
+    });
 }

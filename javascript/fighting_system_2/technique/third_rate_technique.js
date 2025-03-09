@@ -1,4 +1,4 @@
-var elemental_weapon_skills = {
+var third_rate_weapon_skills = {
     // Slash Variants
     water_slash: {
         name: "Tidal Slash",

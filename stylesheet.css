@@ -276,3 +276,10 @@ input{
     height: 20%;
     font-size: 50px;
 }
+
+
+#tech_button{
+    width: 49%;
+    margin: 2px;
+    font-size: 200%;
+}
