@@ -67,7 +67,7 @@ function doAction(action){
             
             break
         case "Dummy Training":
-            show_fight_menue(training_dummy)
+            start_fight(training_dummy)
             break
         default:
         console.log("wtf?");

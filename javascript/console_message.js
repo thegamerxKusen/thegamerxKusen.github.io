@@ -1,4 +1,4 @@
-let nb_of_msg=0
+let nb_of_msg=1
 function sendMessage(text) {
     let consoleElement = document.getElementById("console");
     const message = document.createElement("div");

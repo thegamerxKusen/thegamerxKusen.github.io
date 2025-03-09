@@ -3,33 +3,19 @@
 //-Breath: check qi regen value
 //-Full power 
 var fight_actions=["avoid","block","breath","full_power"]
-function avoid(user){
 
-    if(user.base_speed>enemy.base_speed){
-        //player avoid
-    }
-    else{
-        //enemy avoid
-    }
-}
-function block(user){
-    if(user.base_defence>user.base_defence){
-        //player block
-    }
-    else{
-        //enemy block
-    }
-}
-function breath(user){
-    if(user.fight_qi+=gameData.breathing_manual_equiped.breath_effect/user.max_fight_qi>user.max_fight_qi){
-        user.fight_qi=user.max_fight_qi
+
+function inflict_damage(recipient,damage){
+    if(recipient.health-damage<=0){
+        //die
+        recipient.health=0
     }else{
-        user.fight_qi+=gameData.breathing_manual_equiped.breath_effect/user.max_fight_qi
+        recipient.health-=damage
     }
+    refresh_qi_hp()
 }
-function full_power(user,per_cent){
-    
-}
+
+
 
 function clashing(){
     //if the player didnt choose his action and tech doesnt cash
@@ -43,7 +29,7 @@ function clashing(){
     if( current_opponent.chosen_technique && current_opponent.fight_qi-current_opponent.chosen_technique.qi_cost>=0){
         //use skill
     }else{
-        current_opponent.chosen_technique = current_opponent.weapon_type.basic_skill[0]
+        current_opponent.chosen_technique = current_opponent.weapon_type.basic_skills[0]
     }
     
 
@@ -52,5 +38,24 @@ function clashing(){
     var opponent_actions = Math.floor(Math.random() * 4);
     current_opponent.chosen_actions=fight_actions[opponent_actions]
     
+    let opponent_damage = (current_opponent.base_strength+current_opponent.chosen_technique.damage)-player_stats.base_defence;
+    let player_damage = (player_stats.base_strength+player_stats.chosen_technique.damage)-current_opponent.base_defence;
+    if(opponent_damage>player_damage){
+        opponent_damage-=player_damage
+        inflict_damage(player_stats,opponent_damage)
+        send_fight_message(current_opponent.name+"inflicted "+opponent_damage+" on to you with "+player_stats.chosen_technique.name+".")
+        //put qi cost
+    }
+    if(opponent_damage===player_damage){
+        send_fight_message("You are both equal in strenght, no damage dealt.")
+    }
+    if(opponent_damage<player_damage){
+        //put qi cost
+        player_damage-=opponent_damage
+        inflict_damage(current_opponent,player_damage)
+        send_fight_message("You inflicted "+player_damage+" on to "+current_opponent.name+" with "+player_stats.chosen_technique.name+".")
+    }
 
+    figth_stat.turn+=1
+    figth_stat.opponent = current_opponent
 }

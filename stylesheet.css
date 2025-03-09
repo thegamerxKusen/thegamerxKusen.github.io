@@ -254,6 +254,9 @@ input{
     justify-self: center;
     padding: 5px;
 }
+.fight_message{
+    font-size: 20px;
+}
 
 #player_tag{
     justify-self: left;

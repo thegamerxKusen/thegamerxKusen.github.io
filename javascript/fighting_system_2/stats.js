@@ -17,9 +17,7 @@ var player_stats={
     chosen_technique:null,
     chosen_actions:null
 }
-setInterval(() => {
-    console.log("DEBUG: weapon_type dans fight_menue.js", player_stats.weapon_type);
-}, 2000);
+
 var opponent_example={
     name:"jacque",
     max_health:100,
