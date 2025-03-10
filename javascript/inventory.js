@@ -22,6 +22,15 @@ function select_item(item){
         consume.setAttribute('onclick',"use_item("+item.const_name+")")
         show_item_div.appendChild(consume)
     }
+    if(item.can_equip){
+        const equip=document.createElement("button")
+        equip.textContent="Equip"
+        equip.setAttribute("class","consume_button")
+        equip.addEventListener("click",function(){
+            equi(item)
+        });
+        show_item_div.appendChild(equip)
+    }
 }
 function updateInventory() {
     const inventoryDiv = document.getElementById("inventory");

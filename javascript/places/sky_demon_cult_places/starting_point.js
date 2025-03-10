@@ -28,9 +28,10 @@ var Demon_Palace_PrivateTrainingRoom={
     number_of_going_in_options:0,
     places_in :null,
     actions:[
-        actions.dummy_training
+        actions.dummy_training,
+        actions.talk_to_guard,
     ],
-    numb_actions:1,
+    numb_actions:2,
     go_back_place: null,
 }
 

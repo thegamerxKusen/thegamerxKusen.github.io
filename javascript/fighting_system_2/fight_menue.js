@@ -2,7 +2,7 @@ function refresh_qi_hp(){
     let opponent_health=document.getElementById("opponent_health")
     opponent_health.textContent=figth_stat.opponent.health+" / "+figth_stat.opponent.max_health
     let player_health= document.getElementById("player_health")
-    player_health.textContent=player_stats.health+" / "+player_stats.max_health
+    player_health.textContent=player_stats.health+" / "+base_stats.max_health
 
 }
 
@@ -50,7 +50,7 @@ function show_fight_menue(opponent){
     let p_h2_part=document.createElement("div")
     p_h2_part.className="h2_part"
     let player_health=document.createElement("h2")
-    player_health.textContent=player_stats.health+" / "+player_stats.max_health
+    player_health.textContent=player_stats.health+" / "+base_stats.max_health
     player_health.id="player_health"
     let player_realm=document.createElement("h2")
     player_realm.textContent=realms[gameData.realm].realm_name
@@ -178,7 +178,7 @@ function menue_finish_turn(){
     console.log("Turn finished")
     clashing()
     //clashing, only after actions and technique is choosen
-    menue_open_action()
+   
 }
 
 function menue_surrender(){

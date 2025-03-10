@@ -51,6 +51,8 @@ function where_can_you_go(){
                     doAction(item)
                 })
                 action_div[0].appendChild(action_button);
+            }else{
+                action_button.style.display="none"
             }
         });
     }else{

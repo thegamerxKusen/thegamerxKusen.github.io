@@ -38,8 +38,8 @@ function clashing(){
     var opponent_actions = Math.floor(Math.random() * 4);
     current_opponent.chosen_actions=fight_actions[opponent_actions]
     
-    let opponent_damage = (current_opponent.base_strength+current_opponent.chosen_technique.damage)-player_stats.base_defence;
-    let player_damage = (player_stats.base_strength+player_stats.chosen_technique.damage)-current_opponent.base_defence;
+    let opponent_damage = (current_opponent.base_strength+current_opponent.chosen_technique.damage)-base_stats.base_defence;
+    let player_damage = (base_stats.base_strength+player_stats.chosen_technique.damage)-current_opponent.base_defence;
     if(opponent_damage>player_damage){
         opponent_damage-=player_damage
         inflict_damage(player_stats,opponent_damage)
@@ -55,7 +55,7 @@ function clashing(){
         inflict_damage(current_opponent,player_damage)
         send_fight_message("You inflicted "+player_damage+" on to "+current_opponent.name+" with "+player_stats.chosen_technique.name+".")
     }
-
+    menue_open_main()
     figth_stat.turn+=1
     figth_stat.opponent = current_opponent
 }

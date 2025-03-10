@@ -1,11 +1,11 @@
 function canPerformAction(actionName) {
     let action = actionName;
-    console.log("can Perform Action : ")
-    console.log(actionName)
+    //console.log("can Perform Action : ")
+    //console.log(actionName)
     if(action.limit==-1){
         return true
     }
-    if (action.limit && action.current_uses >= action.limit) {
+    if (action.current_uses === action.limit) {
         return false;
     }
     return true;
@@ -20,20 +20,20 @@ function doAction(action){
             energy_up(gameData.max_energy)
             aging(1)
             sendMessage("You had a good sleep.")
-            incrementAction(actions.sleep)
+            incrementAction(action)
             break 
         case "Eat":
             energy_up(25)
             sendMessage("You ate a humble but filling meal.")
-            incrementAction(actions.eat)
+            incrementAction(action)
             break 
         case "Bath":
             energy_up(25)
             sendMessage("You took a refreshing bath.")
-            incrementAction(actions.bath)
+            incrementAction(actions)
             break 
         case "Talk to guard Jang":
-            incrementAction(actions.talk_to_guard)
+            incrementAction(action)
             sendMessage("You : Hi Guard Jang, you called for me?")
             sendMessage("Guard Jang : Hello Young Master, in a year or so you will join the cut-throat demonic academy. So i will teach you my daggers technique. Here take this training weapon.")
             addItem(wood_dagger)
@@ -41,8 +41,6 @@ function doAction(action){
             //testing
             addItem(black_dragon_ball)
             acquire_manual(cultivation_manual.blazing_sun_fist)
-            
-            where_can_you_go()
             break 
         case "Learn to read":
             
@@ -60,7 +58,7 @@ function doAction(action){
                         gameData.can_read = true
                         break
                 }
-                incrementAction(actions.learn_to_read)
+                incrementAction(action)
             }else{
                 sendMessage("You are too tired to study.")
             }

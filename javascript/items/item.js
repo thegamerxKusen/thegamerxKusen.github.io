@@ -7,9 +7,12 @@ const wood_dagger = {
     desc: "A simple wooden dagger used for training.",
  
     can_consume: false,
-    type: type_Weapon,
+    can_equip: true,
     damage: 3,
     icon: "assets/item/weapon/iron_dagger.png",
+
+    type: martial_technique_types.dagger,
+    equipment_type:"weapon",
 };
 
 const iron_dagger = {
@@ -18,9 +21,12 @@ const iron_dagger = {
     desc:"Dagger of poor quality given by Guard Jang",
     crafting_recipe:null,
     can_consume:false,
+    can_equip: true,
     type:type_Weapon,
     damage:6,
     icon:"assets/item/weapon/iron_dagger.png",
+    type: martial_technique_types.dagger,
+    equipment_type:"weapon",
 };
 
 const frost_iron_dagger = {
@@ -29,9 +35,12 @@ const frost_iron_dagger = {
     desc: "A dagger forged with frost iron, giving it a chilling aura.",
  
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 9,
     icon: "assets/item/weapon/frost_iron_dagger.webp",
+    type: martial_technique_types.dagger,
+    equipment_type:"weapon",
 };
 
 const meteorite_dagger = {
@@ -40,9 +49,12 @@ const meteorite_dagger = {
     desc: "A dagger made from a fallen star, possessing unparalleled sharpness.",
  
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 12,
     icon: "assets/item/weapon/meteorite_dagger.webp",
+    type: martial_technique_types.dagger,
+    equipment_type:"weapon",
 };
 
 const wood_sword = {
@@ -51,9 +63,12 @@ const wood_sword = {
     desc: "A basic wooden sword for training purposes.",
  
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 5,
     icon: "assets/item/weapon/wood_sword.webp",
+    type: martial_technique_types.sword,
+    equipment_type:"weapon",
 };
 
 const iron_sword = {
@@ -62,9 +77,12 @@ const iron_sword = {
     desc: "A standard iron sword used by guards.",
  
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 8,
     icon: "assets/item/weapon/iron_sword.png",
+    type: martial_technique_types.sword,
+    equipment_type:"weapon",
 };
 
 const frost_iron_sword = {
@@ -73,9 +91,12 @@ const frost_iron_sword = {
     desc: "A sword infused with frost iron, freezing enemies on impact.",
  
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 11,
     icon: "assets/item/weapon/frost_iron_sword.webp",
+    type: martial_technique_types.sword,
+    equipment_type:"weapon",
 };
 
 const meteorite_sword = {
@@ -84,9 +105,12 @@ const meteorite_sword = {
     desc: "A sword forged from meteorite ore, cutting through steel with ease.",
 
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 14,
     icon: "assets/item/weapon/meteorite_sword.webp",
+    type: martial_technique_types.sword,
+    equipment_type:"weapon",
 };
 
 const wood_spear = {
@@ -95,9 +119,12 @@ const wood_spear = {
     desc: "A simple wooden spear, often used for training.",
 
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 4,
     icon: "assets/item/weapon/wood_spear.webp",
+    type: martial_technique_types.spear,
+    equipment_type:"weapon",
 };
 
 const iron_spear = {
@@ -106,9 +133,12 @@ const iron_spear = {
     desc: "A spear crafted from iron, reliable in battle.",
 
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 7,
     icon: "assets/item/weapon/iron_spear.png",
+    type: martial_technique_types.spear,
+    equipment_type:"weapon",
 };
 
 const frost_iron_spear = {
@@ -117,9 +147,12 @@ const frost_iron_spear = {
     desc: "A spear infused with frost iron, slowing enemies with each strike.",
 
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 10,
     icon: "assets/item/weapon/frost_iron_spear.webp",
+    type: martial_technique_types.spear,
+    equipment_type:"weapon",
 };
 
 const meteorite_spear = {
@@ -128,96 +161,117 @@ const meteorite_spear = {
     desc: "A spear made from meteorite metal, piercing through armor effortlessly.",
 
     can_consume: false,
+    can_equip: true,
     type: type_Weapon,
     damage: 13,
     icon: "assets/item/weapon/meteorite_spear.webp",
+    type: martial_technique_types.spear,
+    equipment_type:"weapon",
 };
+
 
 const wood_hidden_weapon = {
     const_name: "wood_hidden_weapon",
     name: "Wooden Hidden Weapon",
     desc: "A training hidden weapon with little lethality.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 2,
     icon: "assets/item/weapon/wood_hidden_weapon.webp",
+    type: martial_technique_types.hidden_weapons,
+    equipment_type:"weapon",
 };
 
 const iron_hidden_weapon = {
     const_name: "iron_hidden_weapon",
     name: "Iron Hidden Weapon",
     desc: "Sharp iron throwing weapons used by assassins.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 5,
     icon: "assets/item/weapon/iron_hidden_weapon.png",
+    type: martial_technique_types.hidden_weapons,
+    equipment_type:"weapon",
 };
 
 const frost_iron_hidden_weapon = {
     const_name: "frost_iron_hidden_weapon",
     name: "Frost Iron Hidden Weapon",
     desc: "A hidden weapon with a freezing effect, slowing enemies.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 8,
     icon: "assets/item/weapon/frost_iron_hidden_weapon.webp",
+    type: martial_technique_types.hidden_weapons,
+    equipment_type:"weapon",
 };
 
 const meteorite_hidden_weapon = {
     const_name: "meteorite_hidden_weapon",
     name: "Meteorite Hidden Weapon",
     desc: "A concealed weapon made from meteorite, striking with deadly precision.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 11,
     icon: "assets/item/weapon/meteorite_hidden_weapon.webp",
+    type: martial_technique_types.hidden_weapons,
+    equipment_type:"weapon",
 };
 
 const wood_saber = {
     const_name: "wood_saber",
     name: "Wooden Saber",
     desc: "A wooden training saber, lightweight but weak.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 4,
     icon: "assets/item/weapon/wood_saber.webp",
+    type: martial_technique_types.saber,
+    equipment_type:"weapon",
 };
 
 const iron_saber = {
     const_name: "iron_saber",
     name: "Iron Saber",
     desc: "A well-balanced iron saber used by martial artists.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 7,
     icon: "assets/item/weapon/iron_saber.webp",
+    type: martial_technique_types.saber,
+    equipment_type:"weapon",
 };
 
 const frost_iron_saber = {
     const_name: "frost_iron_saber",
     name: "Frost Iron Saber",
     desc: "A saber infused with frost iron, delivering chilling strikes.",
-
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 10,
     icon: "assets/item/weapon/frost_iron_saber.webp",
+    type: martial_technique_types.saber,
+    equipment_type:"weapon",
 };
 
 const meteorite_saber = {
     const_name: "meteorite_saber",
     name: "Meteorite Saber",
     desc: "A saber forged from meteorite ore, sharp enough to cut through steel.",
+    can_equip: true,
     can_consume: false,
     type: type_Weapon,
     damage: 13,
     icon: "assets/item/weapon/meteorite_saber.webp",
+    type: martial_technique_types.saber,
+    equipment_type:"weapon",
 };
 
 //elixir

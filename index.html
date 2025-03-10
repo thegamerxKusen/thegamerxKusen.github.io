@@ -5,7 +5,6 @@
     <title>Murim Simulator</title> 
     
     <script src="javascript/console_message.js" charset="utf-8" type="text/javascript"></script>
-    <script src="javascript/items/item.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/cultivation_manual/cultivation_manuals.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/cultivation_manual/cultivation_manual_base.js" charset="utf-8" type="text/javascript"></script>
     
@@ -27,18 +26,23 @@
     
     <script src="javascript/main.js" charset="utf-8" type="text/javascript"></script>
 
+    <script src="javascript/equipment.js" charset="utf-8" type="text/javascript"></script>
 
+    
     
     <script src="javascript/fighting_system_2/qi_type.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/fighting_system_2/technique/basic_weapon_skill.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/fighting_system_2/technique/third_rate_technique.js" charset="utf-8" type="text/javascript"></script>
 
     <script src="javascript/fighting_system_2/weapon_types.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/items/item.js" charset="utf-8" type="text/javascript"></script>
+
+
     <script src="javascript/fighting_system_2/stats.js" charset="utf-8" type="text/javascript"></script>
     
     <script src="javascript/fighting_system_2/fight_actions.js" charset="utf-8" type="text/javascript"></script>
     
-    
+    <script src="javascript/fighting_system_2/technique/player_technique_inventory.js" charset="utf-8" type="text/javascript"></script>
 
     <script src="javascript/fighting_system_2/fight_menue.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/fighting_system_2/start_fight.js" charset="utf-8" type="text/javascript"></script>
@@ -110,14 +114,13 @@
 
         </div>
         <div class="tabs" id="fight_preparation_tab">
-          <button onclick="open_switch_technique()" id="switch_technique_button">Switch Technique</button>
+          <button onclick="open_technique_inventory()" id="switch_technique_button">Switch Technique</button>
           <div id="switch_technique">
-            <button onclick="" id="switch_technique_slot_1"></button>
-            <button onclick="" id="switch_technique_slot_2"></button>
-            <button onclick="" id="switch_technique_slot_3"></button>
-            <button onclick="" id="switch_technique_slot_4"></button>
+            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_0">Slot One</button>
+            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_1">Slot Two</button>
+            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_2">Slot Three</button>
+            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_3">Slot Four</button>
           </div>
-          <p>Preparation Tab</p>
         </div>
         <div class="tabs" id="options_tab">
           <p>This is the options tab</p>
