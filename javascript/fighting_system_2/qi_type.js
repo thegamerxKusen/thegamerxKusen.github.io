@@ -46,6 +46,9 @@ qi_types.wood.strenght=qi_types.earth
 qi_types.earth.strenght=qi_types.electric
 
 function who_get_boosted(qi_type_1,qi_type_2){
+    if(!qi_type_1 || !qi_type_2){
+        return false;
+    }
     if(qi_type_1.weakness==qi_type_2){
         //boost qi_type_2 damage
         return qi_type_2

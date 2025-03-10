@@ -9,6 +9,16 @@ function inflict_damage(recipient,damage){
     if(recipient.health-damage<=0){
         //die
         recipient.health=0
+        if(recipient==player_stats){
+            //player die
+            sendMessage("You lost.")
+        }else{
+            //opponent die
+            sendMessage("You defeated "+recipient.name+".")
+        }
+        recipient.defeat_effect()
+        end_fight()
+        return
     }else{
         recipient.health-=damage
     }
@@ -40,10 +50,21 @@ function clashing(){
     
     let opponent_damage = (current_opponent.base_strength+current_opponent.chosen_technique.damage)-base_stats.base_defence;
     let player_damage = (base_stats.base_strength+player_stats.chosen_technique.damage)-current_opponent.base_defence;
+    if(who_get_boosted(current_opponent.chosen_technique.element,player_stats.chosen_technique.element)==current_opponent.chosen_technique.element){
+        //opponent a l'avantage type
+        opponent_damage*=1,5
+    }
+    if(who_get_boosted(current_opponent.chosen_technique.element,player_stats.chosen_technique.element)==player_stats.chosen_technique.element){
+        //player a l'avantage type
+        player_damage*=1,5
+    }
+    send_fight_message(current_opponent.name+" used "+current_opponent.chosen_technique.name+".")
+
+
     if(opponent_damage>player_damage){
         opponent_damage-=player_damage
         inflict_damage(player_stats,opponent_damage)
-        send_fight_message(current_opponent.name+"inflicted "+opponent_damage+" on to you with "+player_stats.chosen_technique.name+".")
+        send_fight_message(current_opponent.name+"inflicted "+opponent_damage+" on to you with "+current_opponent.chosen_technique.name+".")
         //put qi cost
     }
     if(opponent_damage===player_damage){

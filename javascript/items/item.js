@@ -1,5 +1,3 @@
-const type_Weapon = {
-}
 //weapon
 const wood_dagger = {
     const_name: "wood_dagger",
@@ -22,7 +20,7 @@ const iron_dagger = {
     crafting_recipe:null,
     can_consume:false,
     can_equip: true,
-    type:type_Weapon,
+    
     damage:6,
     icon:"assets/item/weapon/iron_dagger.png",
     type: martial_technique_types.dagger,
@@ -36,7 +34,7 @@ const frost_iron_dagger = {
  
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 9,
     icon: "assets/item/weapon/frost_iron_dagger.webp",
     type: martial_technique_types.dagger,
@@ -50,7 +48,7 @@ const meteorite_dagger = {
  
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 12,
     icon: "assets/item/weapon/meteorite_dagger.webp",
     type: martial_technique_types.dagger,
@@ -64,7 +62,7 @@ const wood_sword = {
  
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 5,
     icon: "assets/item/weapon/wood_sword.webp",
     type: martial_technique_types.sword,
@@ -78,7 +76,7 @@ const iron_sword = {
  
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 8,
     icon: "assets/item/weapon/iron_sword.png",
     type: martial_technique_types.sword,
@@ -92,7 +90,7 @@ const frost_iron_sword = {
  
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 11,
     icon: "assets/item/weapon/frost_iron_sword.webp",
     type: martial_technique_types.sword,
@@ -106,7 +104,7 @@ const meteorite_sword = {
 
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 14,
     icon: "assets/item/weapon/meteorite_sword.webp",
     type: martial_technique_types.sword,
@@ -120,7 +118,7 @@ const wood_spear = {
 
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 4,
     icon: "assets/item/weapon/wood_spear.webp",
     type: martial_technique_types.spear,
@@ -134,7 +132,7 @@ const iron_spear = {
 
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 7,
     icon: "assets/item/weapon/iron_spear.png",
     type: martial_technique_types.spear,
@@ -148,7 +146,7 @@ const frost_iron_spear = {
 
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 10,
     icon: "assets/item/weapon/frost_iron_spear.webp",
     type: martial_technique_types.spear,
@@ -162,7 +160,7 @@ const meteorite_spear = {
 
     can_consume: false,
     can_equip: true,
-    type: type_Weapon,
+    
     damage: 13,
     icon: "assets/item/weapon/meteorite_spear.webp",
     type: martial_technique_types.spear,
@@ -176,7 +174,7 @@ const wood_hidden_weapon = {
     desc: "A training hidden weapon with little lethality.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 2,
     icon: "assets/item/weapon/wood_hidden_weapon.webp",
     type: martial_technique_types.hidden_weapons,
@@ -189,7 +187,7 @@ const iron_hidden_weapon = {
     desc: "Sharp iron throwing weapons used by assassins.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 5,
     icon: "assets/item/weapon/iron_hidden_weapon.png",
     type: martial_technique_types.hidden_weapons,
@@ -202,7 +200,7 @@ const frost_iron_hidden_weapon = {
     desc: "A hidden weapon with a freezing effect, slowing enemies.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 8,
     icon: "assets/item/weapon/frost_iron_hidden_weapon.webp",
     type: martial_technique_types.hidden_weapons,
@@ -215,7 +213,7 @@ const meteorite_hidden_weapon = {
     desc: "A concealed weapon made from meteorite, striking with deadly precision.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 11,
     icon: "assets/item/weapon/meteorite_hidden_weapon.webp",
     type: martial_technique_types.hidden_weapons,
@@ -228,7 +226,7 @@ const wood_saber = {
     desc: "A wooden training saber, lightweight but weak.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 4,
     icon: "assets/item/weapon/wood_saber.webp",
     type: martial_technique_types.saber,
@@ -241,7 +239,7 @@ const iron_saber = {
     desc: "A well-balanced iron saber used by martial artists.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 7,
     icon: "assets/item/weapon/iron_saber.webp",
     type: martial_technique_types.saber,
@@ -254,7 +252,7 @@ const frost_iron_saber = {
     desc: "A saber infused with frost iron, delivering chilling strikes.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 10,
     icon: "assets/item/weapon/frost_iron_saber.webp",
     type: martial_technique_types.saber,
@@ -267,12 +265,194 @@ const meteorite_saber = {
     desc: "A saber forged from meteorite ore, sharp enough to cut through steel.",
     can_equip: true,
     can_consume: false,
-    type: type_Weapon,
+    
     damage: 13,
     icon: "assets/item/weapon/meteorite_saber.webp",
     type: martial_technique_types.saber,
     equipment_type:"weapon",
 };
+//equipment
+//ring
+const iron_ring = {
+    const_name: "iron_ring",
+    name: "Iron Ring",
+    desc: "A simple iron ring that slightly enhances strength.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "ring",
+
+    icon: "assets/item/accessory/iron_ring.png",
+};
+
+const frost_iron_ring = {
+    const_name: "frost_iron_ring",
+    name: "Frost Iron Ring",
+    desc: "A ring infused with frost iron, increasing agility.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "ring",
+
+    icon: "assets/item/accessory/frost_iron_ring.png",
+};
+
+const meteorite_ring = {
+    const_name: "meteorite_ring",
+    name: "Meteorite Ring",
+    desc: "A ring crafted from meteorite, boosting attack power.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "ring",
+
+    icon: "assets/item/accessory/meteorite_ring.png",
+};
+
+//helmet
+const iron_helmet = {
+    const_name: "iron_helmet",
+    name: "Iron Helmet",
+    desc: "A sturdy iron helmet offering decent protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "head",
+    icon: "assets/item/armor/iron_helmet.png",
+};
+
+const frost_iron_helmet = {
+    const_name: "frost_iron_helmet",
+    name: "Frost Iron Helmet",
+    desc: "A helmet reinforced with frost iron, offering superior protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "head",
+    
+    icon: "assets/item/armor/frost_iron_helmet.png",
+};
+
+const meteorite_helmet = {
+    const_name: "meteorite_helmet",
+    name: "Meteorite Helmet",
+    desc: "A helmet forged from meteorite, offering unmatched protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "head",
+    
+    icon: "assets/item/armor/meteorite_helmet.png",
+};
+//chest armor
+const iron_chestplate = {
+    const_name: "iron_chestplate",
+    name: "Iron Chestplate",
+    desc: "A durable iron chestplate providing solid protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "chest",
+    icon: "assets/item/armor/iron_chestplate.png",
+};
+
+const frost_iron_chestplate = {
+    const_name: "frost_iron_chestplate",
+    name: "Frost Iron Chestplate",
+    desc: "A chestplate reinforced with frost iron, offering better defense.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "chest",
+    
+    icon: "assets/item/armor/frost_iron_chestplate.png",
+};
+
+const meteorite_chestplate = {
+    const_name: "meteorite_chestplate",
+    name: "Meteorite Chestplate",
+    desc: "A chestplate made from meteorite, highly resistant to damage.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "chest",
+    
+    icon: "assets/item/armor/meteorite_chestplate.png",
+};
+//leg
+const iron_leggings = {
+    const_name: "iron_leggings",
+    name: "Iron Leggings",
+    desc: "Iron leggings offering basic leg protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "legs",
+    
+    icon: "assets/item/armor/iron_leggings.png",
+};
+
+const frost_iron_leggings = {
+    const_name: "frost_iron_leggings",
+    name: "Frost Iron Leggings",
+    desc: "Leggings reinforced with frost iron for extra protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "legs",
+    
+    icon: "assets/item/armor/frost_iron_leggings.png",
+};
+
+const meteorite_leggings = {
+    const_name: "meteorite_leggings",
+    name: "Meteorite Leggings",
+    desc: "Leggings made from meteorite metal, offering excellent protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "legs",
+    
+    icon: "assets/item/armor/meteorite_leggings.png",
+};
+//shoes
+const iron_boots = {
+    const_name: "iron_boots",
+    name: "Iron Boots",
+    desc: "Sturdy iron boots that provide moderate protection.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "shoes",
+    
+    icon: "assets/item/armor/iron_boots.png",
+};
+
+const frost_iron_boots = {
+    const_name: "frost_iron_boots",
+    name: "Frost Iron Boots",
+    desc: "Boots reinforced with frost iron, increasing movement speed in snow.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "shoes",
+    defense: 5,
+    
+    icon: "assets/item/armor/frost_iron_boots.png",
+};
+
+const meteorite_boots = {
+    const_name: "meteorite_boots",
+    name: "Meteorite Boots",
+    desc: "Boots made from meteorite metal, boosting speed and defense.",
+    
+    can_consume: false,
+    can_equip: true,
+    type: "shoes",
+    
+    icon: "assets/item/armor/meteorite_boots.png",
+};
+
 
 //elixir
 const type_elixir = {
