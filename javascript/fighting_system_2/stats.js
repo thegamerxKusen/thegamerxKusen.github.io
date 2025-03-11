@@ -7,6 +7,7 @@ var base_stats={
     max_health:100,
     max_fight_qi:100,
 }
+
 var player_stats={
     name:gameData.name,
     
@@ -49,7 +50,9 @@ var training_dummy={
     chosen_technique:null,
     chosen_actions:null,
 
-    defeat_effect:add_random_stat(1)
+    defeat_effect:function(){
+        add_random_stat(1)
+    },
 }
 
 //to move up but now it will mess with load order
@@ -58,8 +61,53 @@ var figth_stat={
     turn:0,
 }
 
+//stat boost = speed,defence,inteligence,strenght
 function set_true_stats(){
     //apply affect of items, manual, and other maybe even realm boost?
+    player_stats.true_speed=base_stats.base_speed
+    player_stats.true_strength=base_stats.base_strength
+    player_stats.true_defence=base_stats.base_defence
+    player_stats.true_intelligence=base_stats.base_intelligence
+
+    if(player_equipment.ring_1){
+        player_stats.true_speed+=player_equipment.ring_1.stat_boost[0]
+        player_stats.true_defence+=player_equipment.ring_1.stat_boost[1]
+        player_stats.true_intelligence+=player_equipment.ring_1.stat_boost[2]
+        player_stats.true_strength+=player_equipment.ring_1.stat_boost[3]
+    }
+    if(player_equipment.ring_2){
+        player_stats.true_speed+=player_equipment.ring_2.stat_boost[0]
+        player_stats.true_defence+=player_equipment.ring_2.stat_boost[1]
+        player_stats.true_intelligence+=player_equipment.ring_2.stat_boost[2]
+        player_stats.true_strength+=player_equipment.ring_2.stat_boost[3]
+    }
+    if(player_equipment.head){
+        player_stats.true_speed+=player_equipment.head.stat_boost[0]
+        player_stats.true_defence+=player_equipment.head.stat_boost[1]
+        player_stats.true_intelligence+=player_equipment.head.stat_boost[2]
+        player_stats.true_strength+=player_equipment.head.stat_boost[3]
+    }
+    if(player_equipment.chest){
+        player_stats.true_speed+=player_equipment.chest.stat_boost[0]
+        player_stats.true_defence+=player_equipment.chest.stat_boost[1]
+        player_stats.true_intelligence+=player_equipment.chest.stat_boost[2]
+        player_stats.true_strength+=player_equipment.chest.stat_boost[3]
+    }
+    if(player_equipment.legs){
+        player_stats.true_speed+=player_equipment.legs.stat_boost[0]
+        player_stats.true_defence+=player_equipment.legs.stat_boost[1]
+        player_stats.true_intelligence+=player_equipment.legs.stat_boost[2]
+        player_stats.true_strength+=player_equipment.legs.stat_boost[3]
+    }
+    if(player_equipment.shoes){
+        player_stats.true_speed+=player_equipment.shoes.stat_boost[0]
+        player_stats.true_defence+=player_equipment.shoes.stat_boost[1]
+        player_stats.true_intelligence+=player_equipment.shoes.stat_boost[2]
+        player_stats.true_strength+=player_equipment.shoes.stat_boost[3]
+    }
+    if(player_equipment.weapon){
+        player_stats.true_strength+=player_equipment.weapon.damage
+    }
     
 }
 
@@ -83,6 +131,9 @@ function add_random_stat(stat_number){
         case 3:
             stat_name = " strenght "
             base_stats.base_strength+=stat_number
+            break
+        default:
+            console.log("Whats this stat?")
             break
     }
     sendMessage("You gained "+stat_number+stat_name+"stat.")

@@ -273,6 +273,7 @@ const meteorite_saber = {
 };
 //equipment
 //ring
+//stat boost = speed,defence,inteligence,strenght
 const iron_ring = {
     const_name: "iron_ring",
     name: "Iron Ring",
@@ -283,6 +284,8 @@ const iron_ring = {
     type: "ring",
 
     icon: "assets/item/accessory/iron_ring.png",
+    
+    stat_boost:[1,1,1,1]
 };
 
 const frost_iron_ring = {
@@ -295,6 +298,7 @@ const frost_iron_ring = {
     type: "ring",
 
     icon: "assets/item/accessory/frost_iron_ring.png",
+    stat_boost:[2,2,2,2]
 };
 
 const meteorite_ring = {
@@ -307,6 +311,7 @@ const meteorite_ring = {
     type: "ring",
 
     icon: "assets/item/accessory/meteorite_ring.png",
+    stat_boost:[4,4,4,4]
 };
 
 //helmet
@@ -319,6 +324,7 @@ const iron_helmet = {
     can_equip: true,
     type: "head",
     icon: "assets/item/armor/iron_helmet.png",
+    stat_boost:[0,2,1,0]
 };
 
 const frost_iron_helmet = {
@@ -331,6 +337,7 @@ const frost_iron_helmet = {
     type: "head",
     
     icon: "assets/item/armor/frost_iron_helmet.png",
+    stat_boost:[0,4,2,0]
 };
 
 const meteorite_helmet = {
@@ -343,6 +350,7 @@ const meteorite_helmet = {
     type: "head",
     
     icon: "assets/item/armor/meteorite_helmet.png",
+    stat_boost:[0,10,4,0]
 };
 //chest armor
 const iron_chestplate = {
@@ -354,6 +362,7 @@ const iron_chestplate = {
     can_equip: true,
     type: "chest",
     icon: "assets/item/armor/iron_chestplate.png",
+    stat_boost:[0,2,0,1]
 };
 
 const frost_iron_chestplate = {
@@ -366,6 +375,7 @@ const frost_iron_chestplate = {
     type: "chest",
     
     icon: "assets/item/armor/frost_iron_chestplate.png",
+    stat_boost:[0,4,0,2]
 };
 
 const meteorite_chestplate = {
@@ -378,6 +388,7 @@ const meteorite_chestplate = {
     type: "chest",
     
     icon: "assets/item/armor/meteorite_chestplate.png",
+    stat_boost:[0,10,0,4]
 };
 //leg
 const iron_leggings = {
@@ -390,6 +401,7 @@ const iron_leggings = {
     type: "legs",
     
     icon: "assets/item/armor/iron_leggings.png",
+    stat_boost:[2,1,0,0]
 };
 
 const frost_iron_leggings = {
@@ -402,6 +414,7 @@ const frost_iron_leggings = {
     type: "legs",
     
     icon: "assets/item/armor/frost_iron_leggings.png",
+    stat_boost:[4,2,0,0]
 };
 
 const meteorite_leggings = {
@@ -414,6 +427,7 @@ const meteorite_leggings = {
     type: "legs",
     
     icon: "assets/item/armor/meteorite_leggings.png",
+    stat_boost:[10,4,0,0]
 };
 //shoes
 const iron_boots = {
@@ -426,6 +440,7 @@ const iron_boots = {
     type: "shoes",
     
     icon: "assets/item/armor/iron_boots.png",
+    stat_boost:[4,0,0,0]
 };
 
 const frost_iron_boots = {
@@ -439,6 +454,7 @@ const frost_iron_boots = {
     defense: 5,
     
     icon: "assets/item/armor/frost_iron_boots.png",
+    stat_boost:[8,0,0,0]
 };
 
 const meteorite_boots = {
@@ -451,6 +467,7 @@ const meteorite_boots = {
     type: "shoes",
     
     icon: "assets/item/armor/meteorite_boots.png",
+    stat_boost:[15,0,0,0]
 };
 
 
