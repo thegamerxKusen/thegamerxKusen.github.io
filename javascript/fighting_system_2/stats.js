@@ -69,6 +69,11 @@ function set_true_stats(){
     player_stats.true_defence=base_stats.base_defence
     player_stats.true_intelligence=base_stats.base_intelligence
 
+    player_stats.true_max_fight_qi=base_stats.max_fight_qi
+    player_stats.true_max_health=base_stats.max_health
+
+    //max gi base on realm wth *2 each time
+
     if(player_equipment.ring_1){
         player_stats.true_speed+=player_equipment.ring_1.stat_boost[0]
         player_stats.true_defence+=player_equipment.ring_1.stat_boost[1]
@@ -111,6 +116,25 @@ function set_true_stats(){
     
 }
 
+function add_defence(number){
+    base_stats.base_defence+=number
+    sendMessage("You gained "+number+" defence stat.")
+}
+function add_speed(number){
+    base_stats.base_speed+=number
+
+    sendMessage("You gained "+number+" speed stat.")
+}
+function add_strenght(number){
+    base_stats.base_strength+=number
+
+    sendMessage("You gained "+number+" strenght stat.")
+}
+function add_intelligence(number){
+    base_stats.base_intelligence+=number
+
+    sendMessage("You gained "+number+" intelligence stat.")
+}
 //doesnt work yet
 function add_random_stat(stat_number){
     let stat_name = null
@@ -118,23 +142,22 @@ function add_random_stat(stat_number){
     switch(random_stats){
         case 0:
             stat_name = " speed "
-            base_stats.base_speed+=stat_number
+            add_speed(stat_number)
             break
         case 1:
-            stat_name = " defence "
-            base_stats.base_defence+=stat_number
+            stat_name = " defense "
+            add_defence(stat_number)
             break
         case 2:
             stat_name = " intelligence "
-            base_stats.base_intelligence+=stat_number
+            add_intelligence(stat_number)
             break
         case 3:
             stat_name = " strenght "
-            base_stats.base_strength+=stat_number
+            add_strenght(stat_number)
             break
         default:
             console.log("Whats this stat?")
             break
     }
-    sendMessage("You gained "+stat_number+stat_name+"stat.")
 }

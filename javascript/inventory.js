@@ -32,6 +32,8 @@ function select_item(item){
         show_item_div.appendChild(equip)
     }
 }
+
+
 function updateInventory() {
     const inventoryDiv = document.getElementById("inventory");
     
@@ -40,12 +42,19 @@ function updateInventory() {
 
     // Display each item in inventory
     inventory.forEach((item, index) => {
+        
         const itemDiv = document.createElement("div");
         itemDiv.classList.add("item");
+        
         itemDiv.setAttribute('onclick',"select_item("+item.const_name+")")
         const icon = document.createElement("img")
         icon.setAttribute('src', item.icon);
         icon.setAttribute('alt',item.name)
+
+        //add tooltip
+        add_tooltip(itemDiv,item.name)
+        
+
         inventoryDiv.appendChild(itemDiv);
         itemDiv.appendChild(icon)
     });

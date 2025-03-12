@@ -20,6 +20,8 @@ function doAction(action){
             energy_up(gameData.max_energy)
             aging(1)
             sendMessage("You had a good sleep.")
+            player_stats.health = player_stats.true_max_health
+            player_stats.fight_qi = player_stats.true_max_fight_qi
             incrementAction(action)
             break 
         case "Eat":

@@ -41,15 +41,20 @@ function where_can_you_go(){
     if(Array.isArray(places.place_you_in.actions)){
         action_div[0].innerHTML=""
         places.place_you_in.actions.forEach((item, index) => {
-
             const action_button = document.createElement("button");
-            action_button.className="go_to"
+            action_button.classList.add("go_to")
+            
+            
             if(canPerformAction(item)){
                 action_button.style.display="block"
                 action_button.innerHTML=item.name
                 action_button.addEventListener("click", function(){
                     doAction(item)
                 })
+                if(item.description){
+                    console.log("Got a description")
+                    add_tooltip(action_button,item.description)
+                }
                 action_div[0].appendChild(action_button);
             }else{
                 action_button.style.display="none"

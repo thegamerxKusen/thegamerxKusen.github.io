@@ -127,6 +127,7 @@ function stat_update(){
   function breakthrough(){
     if(gameData.qi_days==realms[gameData.realm]["max_qi_days"] && gameData.realm<19){
       gameData.realm+=1
+      base_stats.max_fight_qi*=2
     }
     document.getElementById("realm").innerHTML = realms[gameData.realm]["realm_name"]
     document.getElementById("qi_reserve").innerHTML = days_to_year_month_week_day(gameData.qi_days)

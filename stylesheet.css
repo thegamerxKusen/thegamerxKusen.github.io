@@ -314,3 +314,40 @@ input{
     width: 25%;
     margin: 5px;
 }
+
+
+button.tooltip {
+    position: relative; /* Ensure tooltip_text is positioned correctly */
+    display: inline-block;
+    cursor: pointer;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+.tooltip .tooltip_text {
+    border: 2px solid white;
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip:hover .tooltip_text {
+    visibility: visible;
+    opacity: 1;
+  }
