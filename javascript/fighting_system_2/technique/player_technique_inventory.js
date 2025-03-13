@@ -25,6 +25,7 @@ function open_slot_menue(){
 function open_technique_inventory(){
     let fight_prep_tab = document.getElementById("fight_preparation_tab")
     fight_prep_tab.style.display="flex"
+    document.getElementById("preparation_my_status").style.display="none"
     document.getElementById("switch_technique").style.display="none"
     document.getElementById("switch_technique_button").style.display="none"
     technique_inventory.forEach((item, index) => {
@@ -52,4 +53,29 @@ function open_technique_inventory(){
 
         fight_prep_tab.appendChild(techique_div)
     })
+}
+
+function open_status(){
+    document.getElementById("preparation_my_status").style.display="none"
+    document.getElementById("switch_technique").style.display="none"
+    document.getElementById("switch_technique_button").style.display="none"
+    let my_status = document.getElementById("my_status")
+    my_status.style.display="block"
+    my_status.innerHTML=""
+    set_true_stats()
+    let stats = document.createElement("div")
+    let inteligence= document.createElement("h2")
+    inteligence.textContent="Intelligence : "+player_stats.true_intelligence
+    let strenght = document.createElement("h2")
+    strenght.textContent="Strenght : "+player_stats.true_strength
+    let speed = document.createElement("h2")
+    speed.textContent="Speed : "+player_stats.true_speed
+    let defence = document.createElement("h2")
+    defence.textContent="Defence : "+player_stats.true_defence
+    stats.appendChild(inteligence)
+    stats.appendChild(strenght)
+    stats.appendChild(speed)
+    stats.appendChild(defence)
+
+    my_status.appendChild(stats)
 }
