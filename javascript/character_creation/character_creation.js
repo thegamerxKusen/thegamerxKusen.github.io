@@ -19,7 +19,7 @@ const questions = [
 
 //end char creation
 function end_character_creation(){
-    character_creation_div.style.display="none"
+    hide_element(character_creation_div)
     character_creation_div.innerHTML = ""
     main_game_div.style.display="flex"
     document.getElementById("player_name").innerHTML = gameData.name
@@ -119,7 +119,7 @@ function show_name_choice(){
 function showQuestion() {
 
     if (currentQuestionIndex >= questions.length) {
-        document.getElementById("question-container").style.display="none"
+        hide_element(document.getElementById("question-container"))
         // instead put Go to phase 2 
         show_name_choice()
         return;

@@ -36,17 +36,19 @@ var gameData = {
   }
 
 function start_character_creation(){
-  document.getElementById("character_creation").style.display="none"
-  document.getElementById("main").style.display="flex"
+  let char_creation = document.getElementById("character_creation")
+  let main =document.getElementById("main")
+  hide_element(char_creation)
+  main.style.display="flex"
 
   if(gameData.faction==null){
     showQuestion()
-    document.getElementById("character_creation").style.display="block"
-    document.getElementById("main").style.display="none"
+    char_creation.style.display="block"
+    hide_element(main)
   }else{
     console.log("You already created your character")
-    document.getElementById("character_creation").style.display="none"
-    document.getElementById("main").style.display="flex"
+    hide_element(char_creation)
+    main.style.display="flex"
   }
 }
 function stat_update(){
@@ -63,7 +65,7 @@ function stat_update(){
       document.getElementById("Breakthrough").style.display="block"
     }
     else{
-      document.getElementById("Breakthrough").style.display="none"
+      hide_element(document.getElementById("Breakthrough"))
     }
 
     document.getElementById("max_qi").innerHTML = days_to_year_month_week_day(realms[gameData.realm]["max_qi_days"])
@@ -94,14 +96,14 @@ function stat_update(){
     new_game_button.className="main_menu_new_game_button"
     new_game_button.addEventListener("click",function(){
       start_character_creation()
-      main_menue_div.style.display="none"
+      hide_element(main_menue_div)
     },{ once: true });
 
     let load_game_button = document.createElement("button")
     load_game_button.innerHTML="Load Game"
     load_game_button.className="main_menu_load_game_button"
     load_game_button.addEventListener("click",function(){
-      main_menue_div.style.display="none"
+      hide_element(main_menue_div)
       main_game_div.style.display="flex"
       load_game()
     },{ once: true });
@@ -116,8 +118,10 @@ function stat_update(){
 
   //var mainGameLoop = window.setInterval(function() {})
 
+function can_read(){
+  return gameData.can_read
+}
 
-  
 
   function aging(day){
     gameData.age+=day
@@ -137,7 +141,8 @@ function stat_update(){
       document.getElementById("Breakthrough").style.display="block"
     }
     else{
-      document.getElementById("Breakthrough").style.display="none"
+      hide_element(document.getElementById("Breakthrough"))
+
     }
   }
 

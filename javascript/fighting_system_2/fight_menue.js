@@ -9,7 +9,7 @@ function refresh_qi_hp(){
 
 function show_fight_menue(opponent){
     //hide everything
-    document.getElementById("main").style.display="none"
+    hide_element(document.getElementById("main"))
     //show the fight menue
     //oponent tag:
     if(document.getElementById("fight_menu")){

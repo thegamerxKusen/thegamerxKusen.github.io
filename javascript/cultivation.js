@@ -19,7 +19,7 @@ function breathing_start(){
     document.getElementById("Breakthrough").style.display="block"
   }
   else{
-    document.getElementById("Breakthrough").style.display="none"
+    hide_element(document.getElementById("Breakthrough"))
   }
 }
 
@@ -28,8 +28,9 @@ function breathing_start(){
 
 function open_cultivation_tab(){
   document.getElementById("go_back_cult_button").style.display="block"
-  document.getElementById("ma_tab_button").style.display="none"
-  document.getElementById("cult_tab_button").style.display="none"
+  hide_element(document.getElementById("ma_tab_button"))
+  hide_element(document.getElementById("cult_tab_button"))
+
   document.getElementById("cult_tab").style.display="flex"
   
   document.getElementById("manual_effect").innerHTML=gameData.breathing_manual_equiped.effect
@@ -48,8 +49,8 @@ function open_cultivation_tab(){
 }
 function open_train_martial_art_tab(){
   document.getElementById("go_back_cult_button").style.display="block"
-  document.getElementById("ma_tab_button").style.display="none"
-  document.getElementById("cult_tab_button").style.display="none"
+  hide_element(document.getElementById("ma_tab_button"))
+  hide_element(document.getElementById("cult_tab_button"))
   document.getElementById("ma_tab").style.display="block"
 
   
@@ -57,11 +58,12 @@ function open_train_martial_art_tab(){
 
 }
 function close_culti_ma_tab(){
-  document.getElementById("ma_tab").style.display="none"
-  document.getElementById("cult_tab").style.display="none"
+  hide_element(document.getElementById("ma_tab"))
+  hide_element(document.getElementById("cult_tab"))
+  
   document.getElementById("ma_tab_button").style.display="block"
   document.getElementById("cult_tab_button").style.display="block"
-  document.getElementById("go_back_cult_button").style.display="none"
+  hide_element(document.getElementById("go_back_cult_button"))
   var cult_tab_loop = null
 }
 

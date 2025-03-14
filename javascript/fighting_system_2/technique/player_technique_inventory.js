@@ -3,6 +3,7 @@ var switch_technique=null
 function open_switch_technique(){
     document.getElementById("switch_technique").style.display="flex"
     document.getElementById("switch_technique_button").style.display="none"
+    document.getElementById("prep_go_back").style.display="block"
 }
 
 function open_slot_menue(){
@@ -18,13 +19,14 @@ function open_slot_menue(){
     });
 
     
-
+    document.getElementById("prep_go_back").style.display="block"
     //choosen technique
 }
 
 function open_technique_inventory(){
-    let fight_prep_tab = document.getElementById("fight_preparation_tab")
+    let fight_prep_tab = document.getElementById("techniques")
     fight_prep_tab.style.display="flex"
+    fight_prep_tab.innerHTML=""
     document.getElementById("preparation_my_status").style.display="none"
     document.getElementById("switch_technique").style.display="none"
     document.getElementById("switch_technique_button").style.display="none"
@@ -53,6 +55,7 @@ function open_technique_inventory(){
 
         fight_prep_tab.appendChild(techique_div)
     })
+    document.getElementById("prep_go_back").style.display="block"
 }
 
 function open_status(){
@@ -78,4 +81,17 @@ function open_status(){
     stats.appendChild(defence)
 
     my_status.appendChild(stats)
+
+    document.getElementById("prep_go_back").style.display="block"
+}
+
+function prep_go_back(){
+    document.getElementById("preparation_my_status").style.display="block"
+    document.getElementById("switch_technique").style.display="none"
+    document.getElementById("switch_technique_button").style.display="block"
+    document.getElementById("prep_go_back").style.display="none"
+
+    document.getElementById("techniques").style.display="none"
+    
+    document.getElementById("my_status").style.display="none"
 }

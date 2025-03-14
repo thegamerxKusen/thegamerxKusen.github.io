@@ -14,7 +14,8 @@ function swith_manual(manual){
     const show_manual_div= document.getElementById("selected_manual");
 
     const cultivation_manual_inv = document.getElementById("cultivation_manual_inventory");
-    cultivation_manual_inv.style.display="none"
+
+    hide_element(cultivation_manual_inv)
 
     show_manual_div.innerHTML = "";
     document.getElementById("manual_effect").innerHTML=gameData.breathing_manual_equiped.effect
@@ -80,10 +81,9 @@ function show_cultivation_manuals() {
 }
 
 function switch_breathing_manual_func(){
-    document.getElementById("ma_tab").style.display="none"
-    
-    document.getElementById("ma_tab_button").style.display="none"
-    document.getElementById("cult_tab_button").style.display="none"
+    hide_element(document.getElementById("ma_tab"))
+    hide_element(document.getElementById("ma_tab_button"))
+    hide_element(document.getElementById("cult_tab_button"))
     document.getElementById("go_back_cult_button").style.display="block"
     show_cultivation_manuals()
 

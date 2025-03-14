@@ -6,10 +6,10 @@ var tab ={
     4:"options_tab",
 }
 function switch_tab(text){
-    document.getElementById("world_tab").style.display="none"
-    document.getElementById("cultivation_tab").style.display="none"
-    document.getElementById("options_tab").style.display="none"
-    document.getElementById("fight_preparation_tab").style.display="none"
+    hide_element(document.getElementById("world_tab"))
+    hide_element(document.getElementById("cultivation_tab"))
+    hide_element(document.getElementById("options_tab"))
+    hide_element(document.getElementById("fight_preparation_tab"))
     document.getElementById(text).style.display="block"
     
 }

@@ -57,7 +57,7 @@ function where_can_you_go(){
                 }
                 action_div[0].appendChild(action_button);
             }else{
-                action_button.style.display="none"
+                hide_element(action_button)
             }
         });
     }else{

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Murim Simulator</title> 
+    <script src="javascript/usefull.js" charset="utf-8" type="text/javascript"></script>
     <script src="javascript/tooltip.js" charset="utf-8" type="text/javascript"></script>
 
     <script src="javascript/console_message.js" charset="utf-8" type="text/javascript"></script>
@@ -116,6 +117,7 @@
         </div>
         <div class="tabs" id="fight_preparation_tab">
           <button onclick="open_technique_inventory()" id="switch_technique_button">Switch Technique</button>
+          <div id="techniques"></div>
           <div id="switch_technique">
             <button onclick="" class="switch_technique_slots" id="switch_technique_slot_0">Slot One</button>
             <button onclick="" class="switch_technique_slots" id="switch_technique_slot_1">Slot Two</button>
@@ -125,6 +127,7 @@
           </div>
           <button onclick="open_status()" id="preparation_my_status">My Status</button>
           <div id="my_status" ></div>
+          <button onclick="prep_go_back()" id="prep_go_back">Back</button>
         </div>
         <div class="tabs" id="options_tab">
           <p>This is the options tab</p>

@@ -143,7 +143,7 @@ button:active{
 }
 
 #cult_tab_button, #ma_tab_button,#go_back_cult_button{
-    width: 700px;
+    width: 600px;
     height: 200px;
     font-size: 80px;
 }
@@ -274,12 +274,15 @@ input{
     display: none;
 }
 
-#switch_technique_button{
-    width: 50%;
-    height: 20%;
+#switch_technique_button, #prep_go_back{
+    width: 75%;
+    height: 140px;
     font-size: 50px;
+    justify-items: center;
 }
-
+#preparation_my_status{
+    width: 75%;
+}
 
 #tech_button{
     width: 49%;
@@ -351,3 +354,7 @@ button.tooltip {
     visibility: visible;
     opacity: 1;
   }
+
+#prep_go_back{
+    display: none;
+}
