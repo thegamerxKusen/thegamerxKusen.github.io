@@ -8,6 +8,8 @@ var Hang_Familly_House_My_Room={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 var Hang_Familly_House_Bathroom={
@@ -20,6 +22,8 @@ var Hang_Familly_House_Bathroom={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 var Hang_Familly_House_PrivateTrainingRoom={
@@ -29,9 +33,12 @@ var Hang_Familly_House_PrivateTrainingRoom={
     places_in :null,
     actions:[
         actions.dummy_training,
+        actions.daily_training,
     ],
-    numb_actions:0,
+    numb_actions:2,
     go_back_place: null,
+    hide:false
+
 }
 
 var Hang_Familly_House_library={
@@ -45,6 +52,8 @@ var Hang_Familly_House_library={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 
@@ -61,4 +70,6 @@ var Hang_Familly_House_main = {
     actions:[],
     numb_actions:0,
     go_back_place: null,
+    hide:false
+
 }

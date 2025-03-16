@@ -28,7 +28,6 @@ function breathing_start(){
 
 function open_cultivation_tab(){
   document.getElementById("go_back_cult_button").style.display="block"
-  hide_element(document.getElementById("ma_tab_button"))
   hide_element(document.getElementById("cult_tab_button"))
 
   document.getElementById("cult_tab").style.display="flex"
@@ -45,23 +44,12 @@ function open_cultivation_tab(){
     document.getElementById("future_cult_effect").innerHTML=gameData.breathing_manual_equiped.effect*day_of_cultivation
   })
   
-
-}
-function open_train_martial_art_tab(){
-  document.getElementById("go_back_cult_button").style.display="block"
-  hide_element(document.getElementById("ma_tab_button"))
-  hide_element(document.getElementById("cult_tab_button"))
-  document.getElementById("ma_tab").style.display="block"
-
-  
-
-
 }
 function close_culti_ma_tab(){
-  hide_element(document.getElementById("ma_tab"))
+  
   hide_element(document.getElementById("cult_tab"))
   
-  document.getElementById("ma_tab_button").style.display="block"
+  
   document.getElementById("cult_tab_button").style.display="block"
   hide_element(document.getElementById("go_back_cult_button"))
   var cult_tab_loop = null

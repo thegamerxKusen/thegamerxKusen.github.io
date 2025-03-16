@@ -1,4 +1,4 @@
-var cultivation_manual_inventory = []
+var cultivation_manual_inventory = [cultivation_manual.three_power]
 
 var template_cultivation_manual = {
     name:"",
@@ -51,7 +51,6 @@ function select_cult_manual(manual){
     show_manual_div.appendChild(desc)
     show_manual_div.appendChild(effect)
     show_manual_div.appendChild(swith_manual_button)
-
 }
 
 function show_cultivation_manuals() {
@@ -81,8 +80,6 @@ function show_cultivation_manuals() {
 }
 
 function switch_breathing_manual_func(){
-    hide_element(document.getElementById("ma_tab"))
-    hide_element(document.getElementById("ma_tab_button"))
     hide_element(document.getElementById("cult_tab_button"))
     document.getElementById("go_back_cult_button").style.display="block"
     show_cultivation_manuals()

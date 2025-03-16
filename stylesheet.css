@@ -358,3 +358,41 @@ button.tooltip {
 #prep_go_back{
     display: none;
 }
+.scrollable-box {
+
+    overflow-y: auto; /* Enables vertical scrollbar */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding: 10px;
+}
+
+/* Custom scrollbar (optional, for modern browsers) */
+.scrollable-box::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+    background: #0b0d0c; /* Track color */
+    border-radius: 5px;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+    background: #cecdcd; /* Scrollbar color */
+    border-radius: 5px;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb:hover {
+    background: #313131; /* Darker scrollbar on hover */
+}
+#clear_console_btn{
+    
+    position: fixed;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+
+    bottom: 10px; /* Distance from bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the button */
+    padding: 10px 20px;
+    
+}

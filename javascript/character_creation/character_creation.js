@@ -27,18 +27,12 @@ function end_character_creation(){
 
     switch(gameData.faction){
         case "Forces of Justice":
-            acquire_manual(cultivation_manual.holy_light_breathing)
-            swith_manual(cultivation_manual.holy_light_breathing)
             places.place_you_in=Namgung_Clan_Main_Residence
             break
         case "Forces of Evil": 
-            acquire_manual(cultivation_manual.dark_shadow_breathing)
-            swith_manual(cultivation_manual.dark_shadow_breathing)
             places.place_you_in=Hang_Familly_House_main
             break
         case "Sky Demon Cult":
-            acquire_manual(cultivation_manual.sword_force_of_the_heavenly_demon)
-            swith_manual(cultivation_manual.sword_force_of_the_heavenly_demon)
             places.place_you_in=Demon_Palace_main
             break
         default:

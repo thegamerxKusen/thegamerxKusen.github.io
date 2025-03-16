@@ -8,6 +8,8 @@ var Demon_Palace_My_Room={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 var Demon_Palace_Bathroom={
@@ -20,6 +22,8 @@ var Demon_Palace_Bathroom={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 var Demon_Palace_PrivateTrainingRoom={
@@ -29,10 +33,11 @@ var Demon_Palace_PrivateTrainingRoom={
     places_in :null,
     actions:[
         actions.dummy_training,
-        actions.talk_to_guard,
+        actions.daily_training,
     ],
     numb_actions:2,
     go_back_place: null,
+    hide:false
 }
 
 var Demon_Palace_library={
@@ -46,6 +51,8 @@ var Demon_Palace_library={
     ],
     numb_actions:null,
     go_back_place: null,
+    hide:false
+
 }
 
 
@@ -62,4 +69,6 @@ var Demon_Palace_main = {
     actions:[],
     numb_actions:null,
     go_back_place: null,
+    hide:false
+
 }

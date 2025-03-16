@@ -39,6 +39,7 @@ function show_fight_menue(opponent){
 
     let fight_console=document.createElement("div")
     fight_console.id="fight_console"
+    fight_console.classList="scrollable-box"
     
 
     //player_stats tag:

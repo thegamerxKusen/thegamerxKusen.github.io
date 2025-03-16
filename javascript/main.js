@@ -7,14 +7,13 @@ var gameData = {
     qi_days: 0,
     
     realm:0,
-    
-    story_progress:0,
+    title:"Young Master",
 
     age:1008,
     lifespan:0,
 
     max_energy:100,
-    energy:10,
+    energy:100,
 
     silver_nyang:0,
 
@@ -52,6 +51,7 @@ function start_character_creation(){
   }
 }
 function stat_update(){
+    document.getElementById("title").innerHTML= gameData.title
     document.getElementById("player_name").innerHTML = gameData.name
     document.getElementById("player_faction").innerHTML = gameData.faction
 
@@ -132,6 +132,11 @@ function can_read(){
     if(gameData.qi_days==realms[gameData.realm]["max_qi_days"] && gameData.realm<19){
       gameData.realm+=1
       base_stats.max_fight_qi*=2
+      
+      base_stats.base_defence*=1.2
+      base_stats.base_intelligence*=1.2
+      base_stats.base_speed*=1.2
+      base_stats.base_strength*=1.2
     }
     document.getElementById("realm").innerHTML = realms[gameData.realm]["realm_name"]
     document.getElementById("qi_reserve").innerHTML = days_to_year_month_week_day(gameData.qi_days)

@@ -16,8 +16,8 @@ function where_can_you_go(){
     going_in_places_div[0].innerHTML=""
     if(Array.isArray(places.place_you_in.places_in)){
         places.place_you_in.places_in.forEach((item, index) => {
-
-            const go_in_button = document.createElement("button");
+            if(item.hide){}else{
+                const go_in_button = document.createElement("button");
             go_in_button.className="go_to"
             go_in_button.style.display="block"
             go_in_button.innerHTML="Enter the "+item.name
@@ -26,6 +26,8 @@ function where_can_you_go(){
                 
             })
             going_in_places_div[0].appendChild(go_in_button);
+            }
+            
         });
     }
     //go back button

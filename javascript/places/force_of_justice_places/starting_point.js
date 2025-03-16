@@ -8,6 +8,8 @@ var Namgung_Clan_Main_Residence_My_Room={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 var Namgung_Clan_Main_Residence_Bathroom={
@@ -20,6 +22,8 @@ var Namgung_Clan_Main_Residence_Bathroom={
     ],
     numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 var Namgung_Clan_Main_Residence_PrivateTrainingRoom={
@@ -29,9 +33,12 @@ var Namgung_Clan_Main_Residence_PrivateTrainingRoom={
     places_in :null,
     actions:[
         actions.dummy_training,
+        actions.daily_training,
     ],
-    numb_actions:null,
+    numb_actions:2,
     go_back_place: null,
+    hide:false
+
 }
 
 var Namgung_Clan_Main_Residence_library={
@@ -43,8 +50,10 @@ var Namgung_Clan_Main_Residence_library={
         actions.learn_to_read,
         //action, to take class to learn how to read then you gain access to the library
     ],
-    numb_actions:null,
+    numb_actions:1,
     go_back_place: null,
+    hide:false
+
 }
 
 
@@ -61,4 +70,6 @@ var Namgung_Clan_Main_Residence = {
     actions:[],
     numb_actions:null,
     go_back_place: null,
+    hide:false
+
 }
