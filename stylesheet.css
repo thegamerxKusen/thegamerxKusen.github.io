@@ -384,7 +384,7 @@ button.tooltip {
     background: #313131; /* Darker scrollbar on hover */
 }
 #clear_console_btn{
-    
+    display: none;
     position: fixed;
     width: 150px;
     height: 40px;
@@ -395,4 +395,15 @@ button.tooltip {
     transform: translateX(-50%); /* Centers the button */
     padding: 10px 20px;
     
+}
+
+.switch_technique_slots{
+    width: 48%;
+    height: 100px;
+    font-size: 30px;
+    margin: 5px;
+}
+#switch_technique{
+    flex-wrap: wrap;
+    flex-direction: row;
 }

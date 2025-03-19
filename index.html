@@ -116,10 +116,10 @@
           <button onclick="open_technique_inventory()" id="switch_technique_button">Switch Technique</button>
           <div id="techniques"></div>
           <div id="switch_technique">
-            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_0">Slot One</button>
-            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_1">Slot Two</button>
-            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_2">Slot Three</button>
-            <button onclick="" class="switch_technique_slots" id="switch_technique_slot_3">Slot Four</button>
+            <button onclick="def_switch_tech(0)" class="switch_technique_slots" id="switch_technique_slot_0">Slot One</button>
+            <button onclick="def_switch_tech(1)" class="switch_technique_slots" id="switch_technique_slot_1">Slot Two</button>
+            <button onclick="def_switch_tech(2)" class="switch_technique_slots" id="switch_technique_slot_2">Slot Three</button>
+            <button onclick="def_switch_tech(3)" class="switch_technique_slots" id="switch_technique_slot_3">Slot Four</button>
 
           </div>
           <button onclick="open_status()" id="preparation_my_status">My Status</button>
@@ -135,7 +135,7 @@
         </div>
 
         <div id="console" class="scrollable-box"></div>
-        <button onclick="document.getElementById('console').innerHTML=''" id="clear_console_btn">Clear Console</button>
+        <button onclick="clear_console()" id="clear_console_btn">Clear Console</button>
       </div>
       <div class="right">
         <h1 class="title">Inventory</h1>

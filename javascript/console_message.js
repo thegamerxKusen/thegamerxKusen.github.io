@@ -9,4 +9,9 @@ function sendMessage(text) {
     
     consoleElement.appendChild(message);
     scrollToBottom(consoleElement)
+    document.getElementById("clear_console_btn").style.display="block"
+}
+function clear_console(){
+    document.getElementById('console').innerHTML=''
+    document.getElementById("clear_console_btn").style.display="none"
 }

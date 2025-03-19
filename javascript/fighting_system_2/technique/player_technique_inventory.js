@@ -1,24 +1,26 @@
 var technique_inventory = [third_rate_weapon_skills.earth_palm_strike,third_rate_weapon_skills.earth_dagger_throw,third_rate_weapon_skills.earth_arrow_shot]
 var switch_technique=null
-function open_switch_technique(){
-    document.getElementById("switch_technique").style.display="flex"
-    document.getElementById("switch_technique_button").style.display="none"
-    document.getElementById("prep_go_back").style.display="block"
+
+function def_switch_tech(slots){
+    player_stats.technique_slots[slots]=switch_technique
+    sendMessage(switch_technique.name +" is now in the slot number "+(slots+1)+".")
+    prep_go_back()
 }
 
 function open_slot_menue(){
-    let fight_prep_tab = document.getElementById("technique_div")
+    let fight_prep_tab = document.getElementById("techniques")
     fight_prep_tab.style.display="none"
+
     let slots = document.getElementById("switch_technique")
-    slots.style.display="block"
+    slots.style.display="flex"
 
     player_stats.technique_slots.forEach((item, index) => {
         if(item){
             document.getElementById("switch_technique_slot_"+index).textContent="Replace " + item.name
         }
     });
-
     
+
     document.getElementById("prep_go_back").style.display="block"
     //choosen technique
 }
