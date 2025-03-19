@@ -7,7 +7,7 @@ const wood_dagger = {
     can_consume: false,
     can_equip: true,
     damage: 3,
-    icon: "assets/item/weapon/iron_dagger.png",
+    icon: "assets/item/weapon/wooden_dagger.png",
 
     type: martial_technique_types.dagger,
     equipment_type:"weapon",
