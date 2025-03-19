@@ -1,4 +1,4 @@
-var player_equipment= {
+let player_equipment= {
     ring_1:null,
     ring_2:null,
 

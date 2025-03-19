@@ -1,4 +1,4 @@
-var Demon_Palace_My_Room={
+let Demon_Palace_My_Room={
     name:"Room",
     description:"Your grand and royal bedroom",
     number_of_going_in_options:0,
@@ -12,7 +12,7 @@ var Demon_Palace_My_Room={
 
 }
 
-var Demon_Palace_Bathroom={
+let Demon_Palace_Bathroom={
     name:"Bathroom",
     description:"Luxurious bathroom",
     number_of_going_in_options:0,
@@ -26,7 +26,7 @@ var Demon_Palace_Bathroom={
 
 }
 
-var Demon_Palace_PrivateTrainingRoom={
+let Demon_Palace_PrivateTrainingRoom={
     name:"Private Training Room",
     description:"A room dedicated to your training",
     number_of_going_in_options:0,
@@ -41,7 +41,7 @@ var Demon_Palace_PrivateTrainingRoom={
     hide:false
 }
 
-var Demon_Palace_library={
+let Demon_Palace_library={
     name:"Library",
     description:"A room filled with books of martial arts, breathing techniques and others.",
     number_of_going_in_options:0,
@@ -57,7 +57,7 @@ var Demon_Palace_library={
 }
 
 
-var Demon_Palace_main = {
+let Demon_Palace_main = {
     name:"Demon Palace",
     description:"Grand and magnificient palace, the center piece of the Sky Demon Cult, where the Demon Lord and his familly reside.",
     number_of_going_in_options:4,

@@ -1,5 +1,5 @@
 
-var martial_technique_types = {
+let martial_technique_types = {
     sword:{
         name:"Sword",
         desc:"A sword is a weapon that is used to cut and thrust.",

@@ -2,7 +2,7 @@
 //-Block: Check def value
 //-Breath: check qi regen value
 //-Full power 
-var fight_actions=["avoid","block","breath","full_power"]
+let fight_actions=["avoid","block","breath","full_power"]
 
 
 function inflict_damage(recipient,damage){
@@ -33,7 +33,7 @@ function clashing(){
     let current_opponent = figth_stat.opponent
     //opponent tech
     // random from 0 to 3
-    var opponent_tech = Math.floor(Math.random() * 4);
+    let opponent_tech = Math.floor(Math.random() * 4);
     current_opponent.chosen_technique=figth_stat.opponent.technique_slots[opponent_tech];
 
     if( current_opponent.chosen_technique && current_opponent.fight_qi-current_opponent.chosen_technique.qi_cost>=0){
@@ -45,7 +45,7 @@ function clashing(){
 
     //opponent actions
     //rand btw 0 - 3
-    var opponent_actions = Math.floor(Math.random() * 4);
+    let opponent_actions = Math.floor(Math.random() * 4);
     current_opponent.chosen_actions=fight_actions[opponent_actions]
     
     let opponent_damage = (current_opponent.base_strength+current_opponent.chosen_technique.damage)-base_stats.base_defence;

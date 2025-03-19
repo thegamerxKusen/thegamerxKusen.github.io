@@ -1,5 +1,5 @@
 
-var tab ={
+let tab ={
     1:"world_tab",
     2:"cultivation_tab",
     3:"fight_preparation_tab",

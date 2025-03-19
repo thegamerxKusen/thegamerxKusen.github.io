@@ -1,4 +1,4 @@
-var Hang_Familly_House_My_Room={
+let Hang_Familly_House_My_Room={
     name:"Room",
     description:"Your grand and royal bedroom",
     number_of_going_in_options:0,
@@ -12,7 +12,7 @@ var Hang_Familly_House_My_Room={
 
 }
 
-var Hang_Familly_House_Bathroom={
+let Hang_Familly_House_Bathroom={
     name:"Bathroom",
     description:"Luxurious bathroom",
     number_of_going_in_options:0,
@@ -26,7 +26,7 @@ var Hang_Familly_House_Bathroom={
 
 }
 
-var Hang_Familly_House_PrivateTrainingRoom={
+let Hang_Familly_House_PrivateTrainingRoom={
     name:"Private Training Room",
     description:"A room dedicated to your training",
     number_of_going_in_options:0,
@@ -41,7 +41,7 @@ var Hang_Familly_House_PrivateTrainingRoom={
 
 }
 
-var Hang_Familly_House_library={
+let Hang_Familly_House_library={
     name:"Library",
     description:"A room filled with books of martial arts, breathing techniques and others.",
     number_of_going_in_options:0,
@@ -57,7 +57,7 @@ var Hang_Familly_House_library={
 }
 
 
-var Hang_Familly_House_main = {
+let Hang_Familly_House_main = {
     name:"Hang Familly House",
     description:"The Hang Familly House, where the leader keep his hundreds of concubine and their children, a place of power and influence in the Forces of Evil.",
     number_of_going_in_options:4,

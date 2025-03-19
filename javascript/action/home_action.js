@@ -1,5 +1,5 @@
 
-var actions ={
+let actions ={
     sleep : {
     name:"Sleep",
     limit: -1,

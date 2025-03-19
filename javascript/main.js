@@ -1,4 +1,4 @@
-var gameData = {
+let gameData = {
     //char creation var
     sex:null,
     faction:null,
@@ -28,7 +28,7 @@ var gameData = {
 
     can_read:false,
   }
-  var constante = {
+  let constante = {
     week:7,
     month:28,
     year:336,
@@ -116,7 +116,6 @@ function stat_update(){
   }
   
 
-  //var mainGameLoop = window.setInterval(function() {})
 
 function can_read(){
   return gameData.can_read

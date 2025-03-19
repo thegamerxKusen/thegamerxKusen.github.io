@@ -1,4 +1,4 @@
-var places={
+let places={
     place_you_in:Demon_Palace_main,
 }
 
@@ -121,7 +121,7 @@ function set_straight_places_to_go_back(){
 function reset_places_to_go_back(){
     
     console.log("reseting places to go back")
-    var value = null
+    let value = null
     //hang familly house
     Hang_Familly_House_Bathroom.go_back_place=value
     Hang_Familly_House_My_Room.go_back_place=value

@@ -1,4 +1,4 @@
-var third_rate_weapon_skills = {
+let third_rate_weapon_skills = {
     // Slash Variants
     water_slash: {
         name: "Tidal Slash",

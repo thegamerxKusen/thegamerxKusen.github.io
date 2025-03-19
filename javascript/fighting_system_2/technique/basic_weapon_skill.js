@@ -1,5 +1,5 @@
 //sword
-var basic_weapon_skills={
+let basic_weapon_skills={
     slash:{
         name:"Slash",
         desc:"A slash is a sabber technique that is used to cut.",

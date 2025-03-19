@@ -1,4 +1,4 @@
-var base_stats={
+let base_stats={
     base_speed:10,
     base_strength:10,
     base_defence:10,
@@ -8,7 +8,7 @@ var base_stats={
     max_fight_qi:100,
 }
 
-var player_stats={
+let player_stats={
     name:gameData.name,
     
     health:100,
@@ -32,7 +32,7 @@ var player_stats={
 
 
 //to move to a opponent file
-var training_dummy={
+let training_dummy={
     name:"Training Dummy",
     max_health:100,
     health:100,
@@ -56,7 +56,7 @@ var training_dummy={
 }
 
 //to move up but now it will mess with load order
-var figth_stat={
+let figth_stat={
     opponent:training_dummy,
     turn:0,
 }
@@ -138,7 +138,7 @@ function add_intelligence(number){
 //doesnt work yet
 function add_random_stat(stat_number){
     let stat_name = null
-    var random_stats = Math.floor(Math.random() * 4);
+    let random_stats = Math.floor(Math.random() * 4);
     switch(random_stats){
         case 0:
             stat_name = " speed "

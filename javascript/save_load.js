@@ -20,12 +20,12 @@ function save_game(){
     sendMessage("Game saved!")
 }
 function load_game(){
-    var save_game_data = JSON.parse(localStorage.getItem("nano_murim_game_data"))
-    var save_inventory = JSON.parse(localStorage.getItem("nano_murim_inventory"))
-    var save_action = JSON.parse(localStorage.getItem("nano_murim_actions"))
-    var save_places = JSON.parse(localStorage.getItem("nano_murim_places"))
-    var save_player_stats = JSON.parse(localStorage.getItem("nano_murim_player_base_stats"))
-    var save_breathing_manual_inventory = JSON.parse(localStorage.getItem("nano_murim_breathing_manual_inventory"))
+    let save_game_data = JSON.parse(localStorage.getItem("nano_murim_game_data"))
+    let save_inventory = JSON.parse(localStorage.getItem("nano_murim_inventory"))
+    let save_action = JSON.parse(localStorage.getItem("nano_murim_actions"))
+    let save_places = JSON.parse(localStorage.getItem("nano_murim_places"))
+    let save_player_stats = JSON.parse(localStorage.getItem("nano_murim_player_base_stats"))
+    let save_breathing_manual_inventory = JSON.parse(localStorage.getItem("nano_murim_breathing_manual_inventory"))
     if (save_game_data != null) {
         gameData = save_game_data
         inventory = save_inventory

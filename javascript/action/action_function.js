@@ -74,8 +74,8 @@ function doAction(action){
             break
         case "Physical Training":
             
-            var messages =["You holded the horse stance all morning without flinching","Today's training was really hard, you are really tired and can't move a finger.","You didnt do well today in training, you couldn't concentrate and didn't achieve anything","You did toughening training and was hit all day.","You ran lap endlessly.","You spared with the instructor."]
-            var message_numb = Math.floor(Math.random()*messages.length)
+            let messages =["You holded the horse stance all morning without flinching","Today's training was really hard, you are really tired and can't move a finger.","You didnt do well today in training, you couldn't concentrate and didn't achieve anything","You did toughening training and was hit all day.","You ran lap endlessly.","You spared with the instructor."]
+            let message_numb = Math.floor(Math.random()*messages.length)
             sendMessage(messages[message_numb])
             switch (message_numb) {
                 case 0:

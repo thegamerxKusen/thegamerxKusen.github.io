@@ -1,7 +1,7 @@
 const main_game_div=document.getElementById("main")
 const character_creation_div = document.getElementById("character_creation")
 const body = document.getElementById("body")
-var character_creation_var= {
+let character_creation_var= {
 }
 
 const questions = [
@@ -46,9 +46,9 @@ let currentQuestionIndex = 0;
 
 //char creation phase 2 : name 
 function show_name_choice(){
-    var name_title=document.createElement("h1");
+    let name_title=document.createElement("h1");
     name_title.textContent="Name:";
-    var name_input=document.createElement("input");
+    let name_input=document.createElement("input");
     name_input.setAttribute("type","text")
     name_input.setAttribute("id",name_input)
 
@@ -61,8 +61,8 @@ function show_name_choice(){
                 player_stats.name=tempName
                 character_creation_div.innerHTML = ""
                 //next text for the story
-                var story_intro=document.createElement("p");
-                var general_intro=document.createElement("p");
+                let story_intro=document.createElement("p");
+                let general_intro=document.createElement("p");
                 general_intro.textContent=("In this word exist an unknow energy, martial artist call it ki and use it to strengthen their body. These martial artist gathered in faction to protect their interest and fight for their idea.")
                 //Faction presentation?
                 character_creation_div.appendChild(general_intro)

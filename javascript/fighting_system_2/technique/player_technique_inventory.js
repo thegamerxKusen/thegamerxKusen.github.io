@@ -1,5 +1,5 @@
-var technique_inventory = [third_rate_weapon_skills.earth_palm_strike,third_rate_weapon_skills.earth_dagger_throw,third_rate_weapon_skills.earth_arrow_shot]
-var switch_technique=null
+let technique_inventory = [third_rate_weapon_skills.earth_palm_strike,third_rate_weapon_skills.earth_dagger_throw,third_rate_weapon_skills.earth_arrow_shot]
+let switch_technique=null
 
 function def_switch_tech(slots){
     player_stats.technique_slots[slots]=switch_technique

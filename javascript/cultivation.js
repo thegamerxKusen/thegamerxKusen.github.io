@@ -35,7 +35,7 @@ function open_cultivation_tab(){
   document.getElementById("manual_effect").innerHTML=gameData.breathing_manual_equiped.effect
   document.getElementById("cult_room_bonus").innerHTML=0
   //need to find a way to make it refresh when day change
-  var cult_tab_loop = window.setInterval(function() {
+  let cult_tab_loop = window.setInterval(function() {
     let day_of_cultivation = parseInt(document.getElementById("days_to_cult").value, 10);
     if(!day_of_cultivation){
       day_of_cultivation=1
@@ -52,7 +52,6 @@ function close_culti_ma_tab(){
   
   document.getElementById("cult_tab_button").style.display="block"
   hide_element(document.getElementById("go_back_cult_button"))
-  var cult_tab_loop = null
 }
 
 

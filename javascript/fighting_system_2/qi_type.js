@@ -1,4 +1,4 @@
-var qi_types={
+let qi_types={
     electric:{
         name:"Electric",
         desc:"Electric Qi is a type of Qi that is used to manipulate electricity.",

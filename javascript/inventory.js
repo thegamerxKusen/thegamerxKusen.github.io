@@ -1,4 +1,4 @@
-var inventory = []
+let inventory = []
 
 function select_item(item){
     const show_item_div= document.getElementById("selected_item");
@@ -65,7 +65,7 @@ function addItem(item){
     updateInventory();
 }
 function removeItem(item){
-    var index = inventory.indexOf(item);
+    let index = inventory.indexOf(item);
     if (index > -1) {
         inventory.splice(index, 1);
     }

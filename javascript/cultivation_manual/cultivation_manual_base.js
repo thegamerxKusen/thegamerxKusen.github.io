@@ -1,6 +1,6 @@
-var cultivation_manual_inventory = [cultivation_manual.three_power]
+let cultivation_manual_inventory = [cultivation_manual.three_power]
 
-var template_cultivation_manual = {
+let template_cultivation_manual = {
     name:"",
     rank:"3rd rate/2nd rate/1st rate/human grade/master grade/grand master grade/earth grade/sky grade/heaven grade",
     effect:0,

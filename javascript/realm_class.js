@@ -1,4 +1,4 @@
-var realms = {
+const realms = {
     0:{realm_name:"Civilian",max_qi_days:168},
 
     1:{realm_name:"Third rate",max_qi_days:5040},
