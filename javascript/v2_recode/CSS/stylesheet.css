@@ -1,0 +1,320 @@
+body{
+background-color: #0b0d0c;
+color: white;
+place-items: center;
+height: 100%;
+padding: 0;
+margin: 0;
+overflow: hidden;
+user-select: none;
+
+}
+button{
+border: 4px solid white;
+border-radius: 5px;
+background-color: #0b0d0c;
+color: white;
+font-size: 60px;
+margin-bottom: 5px;
+}
+button:hover{
+background-color: aliceblue;
+color:black;
+}
+
+button:active{
+background-color: darkgray;
+border: 4px solid darkgray;
+
+}
+
+input{
+background-color: #0b0d0c;
+color: white;
+width: 90px;
+}
+
+.main_menu{
+place-items: center;
+height: 100vh;
+padding-top: 30vh;
+margin: 0;
+user-select: none;
+}
+.main_menu_title{
+font-size: 60px;
+margin-bottom: 20px;
+}
+
+.main_menu_load_game_button, .main_menu_new_game_button{
+margin: 5px;
+
+}
+
+
+.character-creation-menue{
+margin-top: 20vh;
+border: 0.2vh solid white;
+border-radius: 5px;
+width: 500px;
+height: 500px;
+}
+.character-creation-title,#inventory-menue h1{
+border-bottom: 4px solid white;;
+border-radius: 5px;
+margin: 0px;
+
+}
+#inventory-menue{
+    margin-top: 20vh;
+    border: 0.2vh solid white;
+    border-radius: 5px 5px;
+    height: 90vh;
+    margin:2vh;
+    overflow: visible;
+}
+li::marker{
+content: "";
+}
+li{
+border: 4px solid white;
+
+border-radius: 5px;
+font-size:30px;
+
+width: max-content;
+box-sizing:content-box;
+}
+li:hover{
+background-color: aliceblue;
+color:black;
+}
+.dual-choice{
+margin-left: -40px;
+height: auto;
+width: 100%;
+margin-right: 40px;
+align-content: center;
+text-align: center;
+background-color: #0b0d0c;
+
+
+}
+.dual-choices{
+display: flex;
+flex-direction: row;
+height: 380px;
+width: 500px;
+
+}
+
+p{
+font-size: 20px;
+}
+
+.name-menue{
+padding-top: 100px;
+display: flex;
+flex-direction: row;
+
+
+}
+.name-content{
+align-content: center;
+text-align: center;
+font-size: 50px;
+}
+#name_input{
+align-content: center;
+text-align: center;
+width: 300px;
+}
+
+
+
+.main-game {
+width: 100%;
+user-select: none;
+display: grid;
+background-color: #0b0d0c;
+color: white;
+grid-template-columns: 25% 50% 25%; /* Ajuste les % si tu veux */
+height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+.body-content {
+border: 0.3vh solid white;
+border-radius: 0.5vh;
+box-sizing: border-box;
+overflow: visible; /* temp  */
+}
+
+
+#left, #center, #right {
+z-index: 2;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap; 
+}
+
+#left li{
+border: 0.5vh  white;
+margin: 5px;
+font-size:32px;
+
+width: max-content;
+box-sizing:content-box;
+}
+#left li:hover{
+background-color: #0b0d0c;
+color: white;
+}
+
+button.tooltip {
+position: relative; /* Ensure tooltip_text is positioned correctly */
+display: inline-block;
+cursor: pointer;
+}
+.tooltip {
+position: relative;
+display: inline-block;
+cursor: pointer;
+}
+
+.tooltip .tooltip_text {
+font-size: 15px;
+border: 2px solid white;
+visibility: hidden;
+width: 200px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px;
+border-radius: 5px;
+
+position: absolute;
+z-index: 9999;
+bottom: 100%;
+left: 50%;
+transform: translateX(-50%);
+
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip_text {
+visibility: visible;
+opacity: 1;
+pointer-events: auto;
+}
+.tooltip .tooltip_text.below {
+    top: 100%;         /* Position below the button */
+    bottom: auto;      /* Cancel bottom positioning */
+    transform: translateX(-50%);
+}
+
+.item-div{
+    width: 60px;
+    height: 60px;
+    font-size: 15px;
+    margin: 5px;
+    
+    padding: 0;
+    border: 0.5vh solid white;
+    border-radius: 5px;
+    background-color: #0b0d0c;
+    color: white;
+}
+.item-div img{
+    object-fit: fill;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+.item-div:hover{
+    background-color: white;
+    color: #0b0d0c;
+    border: 0.5vh solid black;
+}
+
+.boy_cultivating{
+    width: 80%;
+    align-self: center;
+}
+
+.inv-button{
+    font-size:30px;
+    margin-left: 10px;
+}
+
+.tab-selection{
+    display: flex;
+    width: 100%;
+    
+}
+.tab-button{
+    border: 4px solid white;
+    border-radius: 5px;
+    background-color: #0b0d0c;
+    color: white;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+
+#text-btn {
+    position: fixed;  /* Stays fixed on the screen */
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    z-index: 10;      /* Stay above the canvas */
+  }
+  
+
+
+  .scrollable-box {
+
+    overflow-y: auto; /* Enables vertical scrollbar */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+    padding: 10px;
+}
+
+/* Custom scrollbar (optional, for modern browsers) */
+.scrollable-box::-webkit-scrollbar {
+    width: 8px; /* Scrollbar width */
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+    background: #0b0d0c; /* Track color */
+    border-radius: 5px;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+    background: #cecdcd; /* Scrollbar color */
+    border-radius: 5px;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb:hover {
+    background: #313131; /* Darker scrollbar on hover */
+}
+
+
+#place-title, #place-description{
+    border-bottom: 4px solid white;;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+#place-to-go,#actions{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.place{
+    font-size: 40px;
+}
+#actions{
+
+}

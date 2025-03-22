@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Murim Simulator</title> 
+
+
+
+    <script src="javascript/usefull.js" charset="utf-8" type="text/javascript"></script>
+
+    
+    <script src="javascript/tooltip.js" charset="utf-8" type="text/javascript"></script>
+
+    <script src="javascript/console_message.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/cultivation_manual/cultivation_manuals.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/cultivation_manual/cultivation_manual_base.js" charset="utf-8" type="text/javascript"></script>
+    
+
+    <script src="javascript/cultivation.js" charset="utf-8" type="text/javascript"></script>
+
+    <script src="javascript/energy.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/realm_class.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/tab.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/action/home_action.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/action/action_function.js" charset="utf-8" type="text/javascript"></script>
+    
+    <script src="javascript/fighting_system_2/technique/player_technique_inventory.js" charset="utf-8" type="text/javascript"></script>
+
+    <script src="javascript/places/sky_demon_cult_places/starting_point.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/places/force_of_evil_places/starting_point.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/places/force_of_justice_places/starting_point.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/places/places.js" charset="utf-8" type="text/javascript"></script>
+    
+    <script src="javascript/main.js" charset="utf-8" type="text/javascript"></script>
+
+    <script src="javascript/equipment.js" charset="utf-8" type="text/javascript"></script>
+
+    
+    
+    <script src="javascript/fighting_system_2/qi_type.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/fighting_system_2/technique/basic_weapon_skill.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/fighting_system_2/technique/third_rate_technique.js" charset="utf-8" type="text/javascript"></script>
+
+    <script src="javascript/fighting_system_2/weapon_types.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/items/item.js" charset="utf-8" type="text/javascript"></script>
+
+
+    <script src="javascript/fighting_system_2/stats.js" charset="utf-8" type="text/javascript"></script>
+    
+    <script src="javascript/fighting_system_2/fight_actions.js" charset="utf-8" type="text/javascript"></script>
+    
+    <script src="javascript/fighting_system_2/technique/player_technique_inventory.js" charset="utf-8" type="text/javascript"></script>
+
+    <script src="javascript/fighting_system_2/fight_menue.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/fighting_system_2/start_fight.js" charset="utf-8" type="text/javascript"></script>
+    
+
+    <script src="javascript/fighting_system_2/fight_console.js" charset="utf-8" type="text/javascript"></script>
+    <script src="javascript/save_load.js" charset="utf-8" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body onload="loadingFunc()" id="body">
+    <div id="character_creation">
+      <div id="question-container">
+        <h1 id="question-text"></h1>
+        <div id="options-container"></div>
+      </div>
+    </div>
+    <div class="main" id="main">
+      <div class="left">
+        <p>Name : <span id="player_name"></span></p>
+        <p>Title : <span id="title"></span></p>
+        <p>Age : <span id="age"></span></p>
+        <p>Faction : <span id="player_faction"></span></p>
+        <p>Stamina : <span id="stam"></span> / <span id="max_stam"></span></p>
+        <p>Silver Nyang : <span id="money"></span></p>
+
+        <p>Realm : <span id="realm">Civi</span></p>
+        <p>Internal Energy : <span id="qi_reserve"></span></p>
+        <p>Max Internal Energy : <span id="max_qi"></span></p> 
+        <p>Breathing Manual : <span id="breathing_manual"></span></p> 
+        <img src="assets/Capture d’écran 2025-01-25 144241.png" alt="" class="cultivationImage" draggable="false" >
+      </div>
+      <div class="midle">
+      <div class="tab">
+        <button class="tab_button" onclick="switch_tab(tab[1])">World</button>
+        <button class="tab_button" onclick="switch_tab(tab[2])">Cultivation</button>
+        <button class="tab_button" onclick="switch_tab(tab[3])">Preparation</button>
+        <button class="tab_button" onclick="switch_tab(tab[4])">Option</button>
+
+      </div>
+      <div class="tabs" id="world_tab">
+        <h1>Place :</h1>
+        <h2 id="place_you_in_id">place_you_in</h1>
+        <h3 id="place_desc_id">place_desc</h2>
+        <div class="going_in_places"></div>
+        <h1>Action :</h1>
+        <div class="actions"></div>
+      </div>
+        <div class="tabs" id="cultivation_tab">
+          <button onclick="open_cultivation_tab()" id="cult_tab_button">Cultivate</button>
+          <button onclick="close_culti_ma_tab()" id="go_back_cult_button">Go Back</button>
+          <button id="Breakthrough" onclick="breakthrough()">Breakthrough</button>
+          <div id="cult_tab">
+            <div class="right_part">
+              <p>Manual Effect: <span id="manual_effect"></span> days worth of qi by day.</p>
+              <button id="switch_breathing_manual" onclick="switch_breathing_manual_func()">Change manual</button>
+              <div id="cultivation_manual_inventory"></div>
+              <p>Room Bonus: <span id="cult_room_bonus"></span></p>
+              <p>Days: <input type="number" id="days_to_cult" min="0" max="365"></span></p>
+              <div id="selected_manual"></div>
+            </div>
+            <div class="left_part">
+              <button onclick="breathing_start()" id="cultivate_button">START</button>
+              <p>Qi days gained after <span id="days_to_cult_show"></span> Days: <span id="future_cult_effect"></span></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="tabs" id="fight_preparation_tab">
+          <button onclick="open_technique_inventory()" id="switch_technique_button">Switch Technique</button>
+          <div id="techniques"></div>
+          <div id="switch_technique">
+            <button onclick="def_switch_tech(0)" class="switch_technique_slots" id="switch_technique_slot_0">Slot One</button>
+            <button onclick="def_switch_tech(1)" class="switch_technique_slots" id="switch_technique_slot_1">Slot Two</button>
+            <button onclick="def_switch_tech(2)" class="switch_technique_slots" id="switch_technique_slot_2">Slot Three</button>
+            <button onclick="def_switch_tech(3)" class="switch_technique_slots" id="switch_technique_slot_3">Slot Four</button>
+
+          </div>
+          <button onclick="open_status()" id="preparation_my_status">My Status</button>
+          <div id="my_status" ></div>
+          <button onclick="prep_go_back()" id="prep_go_back">Back</button>
+        </div>
+        <div class="tabs" id="options_tab">
+          <h1>Options</h1>
+          <div class="save-load">
+            <button class="save_load_button" onclick="save_game()">Save</button>
+            <button class="save_load_button" onclick="load_game(),loadingFunc()">Load</button>
+          </div>
+        </div>
+
+        <div id="console" class="scrollable-box"></div>
+        <button onclick="clear_console()" id="clear_console_btn">Clear Console</button>
+      </div>
+      <div class="right">
+        <h1 class="title">Inventory</h1>
+        <div id="inventory"><script src="javascript/inventory.js"></script></div>
+        <div id="selected_item"></div>
+      </div>
+    </div>
+    <script src="javascript/character_creation/character_creation.js" charset="utf-8" type="text/javascript"></script>
+  </body>
+</html>
