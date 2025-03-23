@@ -27,7 +27,11 @@ function open_main_menu(){
     load_game_button.addEventListener("click",function(){
         //if there is no save : new game
         //temp : 
-        open_main_game()
+        if(!load_game()){
+            create_character()
+        }
+    
+        
 
        main_menue_div.remove()
     },{ once: true });
@@ -53,11 +57,37 @@ function open_main_game(){
         <div class="tabs" id="world_tab">World Tab</div>
         <div class="tabs" id="cultivation_tab">Cultivation Tab</div>
         <div class="tabs" id="fight_preparation_tab">Fight Preparation Tab </div>
-        <div class="tabs" id="options_tab">Option Tab</div>
+        <div class="tabs" id="options_tab">
+        <h1 id="console-title">Options:</h1>
+        <div id="load-save-new">
+            <button onclick="load_game()">Load Game</button>
+            <button onclick="save_game()">Save Game</button>
+            <button onclick="create_character()">New Game</button>
+        </div>
+        <div id="graphics">
+        <button id="change-mode" onclick="">Light Mode</button>
+        
+        </div>
+        
+        </div>
     </div>
-    <div id="right" class="body-content"></div></div>
+    <div id="right" class="body-content">
+        <div id="inventory-menue" class="scrollable-box">
+    <h1>Inventory</h1>
+    <div id="inventory-container"></div>
+    <div id="selected-item"></div>
+    </div>
+
+    <div id="console-menue" class="scrollable-box">
+    <h1 id="console-title">Console</h1>
+    <div id="console-container"></div>
+    <button id="clear-console-btn" onclick="clear_console()">Clear Console</button>
+    </div>
+
+    </div></div>
     
     `
+    //<button id="clear-console-btn">Clear Console</button>
     refresh_stat()
     refresh_inventory()
     openTab(1)
@@ -66,20 +96,27 @@ function open_main_game(){
 
 function refresh_stat(){
     //<div></div>
-    document.getElementById("left").innerHTML=`<ul class="stats">
-    <li>Name : ${player.name}</li>
-    <li>Title : ${player.title}</li>
-    <li id="stam">Stamina : ${player.stamina} / ${player.max_stamina} </li>
-    <li>Silver Nyang : ${player.silver_nyang} </li>
-    <li>Martial Art : </li>
-    <li>Realm : ${player.realm.name} </li>
-    <li>Internal Energy : </li>
-    <li>Cultivation Technique : </li>
-    <li>${player.breathing_manual_equiped.name} </li>    
-    </ul>
-    <img src="assets/boy_cultivating.png" class="boy_cultivating" draggable="false"></img>
+    document.getElementById("left").innerHTML=`
+    <div class="stats">
+    <h2 class="underlined">${player.name}</h2>
+    <h2 class="stat">Title : ${player.title}</h2>
+    <h2 class="stat" id="h"><progress id="health" class="stat" value="${player.health}" max="${player.max_health}">health</progress>${player.health} / ${player.max_health}</h2>
+    <h2 class="stat" id="stam"><progress id="stamina" class="stat" value="${player.stamina}" max="${player.max_stamina}">Stamina</progress>${player.stamina} / ${player.max_stamina}</h2>
+    <h2 class="stat">Silver Nyang : ${player.silver_nyang} </h2>
+    <h2 class="underlined">Martial Art : </h2>
+    <h2 class="stat" id="KI"><progress id="internal" class="stat" value="${player.qi}" max="${player.max_qi}">Stamina</progress>${player.qi} / ${player.max_qi}</h2>
+    <h2 class="stat">Realm : ${player.realm.name} </h2>
+    <h2 class="stat underlined">Cultivation Technique</h2>
+    <h2 class="underlined stat">${player.breathing_manual_equiped.name} </h2>    
+    <img src="${player.icon_path}" class="self-image" draggable="false"></img>
+     </div>
     `
-    add_tooltip(document.getElementById("stam"),"Necessary to interact with the world, regenerate by sleeping, eating ...")
+    let hp_bar = document.getElementById("h")
+    add_tooltip(hp_bar,"Health, regenerate with or by going to the Medical Hall.")
+    let qi_bar = document.getElementById("KI")
+    add_tooltip(qi_bar,"Internal Energy, regenerate with pill or by circulating your energy. Increase by cultivating for a long period of time.")
+    let stam_bar =document.getElementById("stam")
+    add_tooltip(stam_bar,"Stamina, necessary to interact with the world, regenerate by sleeping, eating ...")
 }
 
 function refresh_place(){
@@ -89,35 +126,58 @@ function refresh_place(){
         <h1 id="place-title">${player.place_you_in.name}</h1>
         <p id="place-description">${player.place_you_in.description}</p>
         <div id="place-to-go" class="scrollable-box"></div>
-        <div id="actions"></div>
+        <div id="actions" class="scrollable-box"></div>
     </div>
     `
     
     let place_to_go = document.getElementById("place-to-go")
     for(let _place of player.place_you_in.places){
-        let place = document.createElement("button")
-        place.textContent=_place.name
-        place.className="place"
-        add_tooltip(place,_place.description)
-        place.addEventListener("click",()=>{
-            _place.go().bind(player.place_you_in)
-        })
-        place_to_go.appendChild(place)
+        if(_place.access){
+            let place = document.createElement("button")
+            place.textContent=_place.name
+            place.className="place"
+            add_tooltip(place,_place.description)
+            place.addEventListener("click",()=>{
+                _place.go()
+            })
+            place_to_go.appendChild(place)
+        }
+    }
+    let action_to_do = document.getElementById("actions")
+    for(let action of player.place_you_in.actions){
+        if(action.do_able){
+            let _action = document.createElement("button")
+            _action.textContent=action.name
+            _action.className="place"
+            add_tooltip(_action,action.tooltip)
+            _action.addEventListener("click",()=>{
+                action.do_action()
+            })
+            action_to_do.appendChild(_action)
+        }else{
+            //make it grey and when hover say on cooldown
+            let _action = document.createElement("button")
+            _action.textContent=action.name
+            _action.className="unusable"
+            add_tooltip(_action,"Cooldown : "+action.cooldown+" second")
+            _action.addEventListener("click",()=>{
+                sendMessage("On cooldown")
+            })
+            action_to_do.appendChild(_action)
+        }
     }
 
-    if(player.last_place[0]){
+    if(player.last_place.length > 0){
+        //create go back btn
         let back = document.createElement("button")
         back.textContent="Go back"
         back.className="place"
         //add_tooltip(place,_place.description)
         back.addEventListener("click",()=>{
-        go_back()
+            go_back()
         })
         place_to_go.appendChild(back)
     }
 }
 
 
-function go_back(){
-    
-}

@@ -21,6 +21,9 @@ class QUESTIONS {
             if(this.next_question){
                 this.next_question.ask()
             }else{
+                if(player.sex=="girl"){
+                    player.icon_path="assets/girl_teen_cultivating.png"
+                }
                 chose_name()
             }
         },{once:true})
@@ -49,6 +52,9 @@ const first_question = new QUESTIONS(
 )
 
 function create_character(){
+    if(document.getElementsByClassName("main-game")[0]){
+        document.getElementsByClassName("main-game")[0].remove()
+    }
     create_character_creation_menue()
     
     first_question.ask()
@@ -86,13 +92,13 @@ function introduction_tale(){
         
                 break
                 case "Sky Demon Cult":
-                    addTextLBL(`\n You were given the name ${player.name}, as a prince of the Sky Demon Cult`,text)
+                    addTextLBL(`\n You were given the name ${player.name}, as a prince of the Sky Demon Cult.`,text)
                 break
             }
             document.getElementById("body").addEventListener("click",()=>{
                 menu.remove()
                 open_main_game()
-            })
+            }, {once:true})
             //here set even listener to finish char creation
         }, 28*`\nYou were born as a little ${player.sex} in the ${player.faction}.`.length+2);
     

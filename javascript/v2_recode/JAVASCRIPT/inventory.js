@@ -1,12 +1,6 @@
 let inventory= [training_dagger]
 
 function refresh_inventory() {
-    const right_element = document.getElementById("right");
-    right_element.innerHTML= `<div id="inventory-menue">
-    <h1>Inventory</h1>
-    <div id="inventory-container"></div>
-    <div id="selected-item"></div>
-    </div>`
     const inventoryDiv = document.getElementById("inventory-container")
     // Clear previous display
     inventoryDiv.innerHTML = "";
@@ -15,7 +9,7 @@ function refresh_inventory() {
     for(let item of inventory){
         const itemDiv = document.createElement("div");
         itemDiv.classList.add("item-div");
-        itemDiv.innerHTML=`<img src="${item.icon}" alt="${item.name}"></img>`
+        itemDiv.innerHTML=`<img src="${item.icon}" alt="${item.name}" draggable="false"></img>`
         itemDiv.addEventListener("click",()=>{
             //itemDiv.setAttribute('onclick',"select_item("+item.const_name+")")
             item.selectItem()
