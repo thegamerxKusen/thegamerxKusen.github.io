@@ -1,49 +1,34 @@
 function save_something(json_path,item){
     localStorage.setItem(json_path, JSON.stringify(item))
 }
-
 function save_game(){
-
-    save_something("nano_murim_game_data",gameData)
-    save_something("nano_murim_inventory",inventory)
-    save_something("nano_murim_actions",actions)
-    save_something("nano_murim_breathing_manual_inventory",cultivation_manual_inventory)
-    save_something("nano_murim_player_base_stats",base_stats)
-//places
-    reset_places_to_go_back()
-    save_something("nano_murim_places",places)
-    console.log(Hang_Familly_House_My_Room.go_back_place)
-    set_straight_places_to_go_back()
-    console.log(Hang_Familly_House_My_Room.go_back_place)
-
-    console.log(JSON.stringify(gameData))
+    save_something("murim_simulator_player",player)
+    save_something("murim_simulator_player_stats",player_stats)
+    save_something("murim_simulator_player_base_stats",player_base_stats)
+    const invData = inventory.map(item=> item.name);
+    save_something("murim_simulator_inventory",invData)
     sendMessage("Game saved!")
 }
 function load_game(){
-    let save_game_data = JSON.parse(localStorage.getItem("nano_murim_game_data"))
-    let save_inventory = JSON.parse(localStorage.getItem("nano_murim_inventory"))
-    let save_action = JSON.parse(localStorage.getItem("nano_murim_actions"))
-    let save_places = JSON.parse(localStorage.getItem("nano_murim_places"))
-    let save_player_stats = JSON.parse(localStorage.getItem("nano_murim_player_base_stats"))
-    let save_breathing_manual_inventory = JSON.parse(localStorage.getItem("nano_murim_breathing_manual_inventory"))
-    if (save_game_data != null) {
-        gameData = save_game_data
-        inventory = save_inventory
-        actions = save_action
-        places = save_places
-        cultivation_manual_inventory = save_breathing_manual_inventory
-        base_stats = save_player_stats
+    let p =JSON.parse(localStorage.getItem("murim_simulator_player"))
+    let p_s =JSON.parse(localStorage.getItem("murim_simulator_player_stats"))
+    let p_b_s = JSON.parse(localStorage.getItem("murim_simulator_player_base_stats"))
+    let i = JSON.parse(localStorage.getItem("murim_simulator_inventory"))
+    
+    if(p){
+        player =p
+        player_stats = p_s
+        player_base_stats = p_b_s
+        inventory = i.map(name => item_master_list[name]) 
+
+        if(document.getElementsByClassName("main-game")[0]){
+            document.getElementsByClassName("main-game")[0].remove()
+        }
+        open_main_game()
         sendMessage("Game loaded!")
-        set_straight_places_to_go_back() // Ensure go_back_place properties are correctly set
-        stat_update()
-        where_can_you_go()
-        updateInventory()   
+        sky_demon_order.go()
         return true
     }
-    set_straight_places_to_go_back() // Ensure go_back_place properties are correctly set
-    stat_update()
-    where_can_you_go()
-    updateInventory()
-    start_character_creation()
     return false
+
 }

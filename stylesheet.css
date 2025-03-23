@@ -1,368 +1,290 @@
+:root{
+    --text_color:white;
+    --greyish_color:#0b0d0c;
+    --on_hover_color:aliceblue;
+    --on_click_color:darkgray;
+}
+.light-mode {
+    --text_color: #0b0d0c;
+    --greyish_color: #f5f5f5;
+    --on_hover_color: #333333;
+    --on_click_color: #555555;
+  }
+
 body{
-    display: grid;
-    background-color: #0b0d0c;
-    color: white;
-    place-items: center;
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    user-select: none;
-    
+background-color: var(--greyish_color);
+color: var(--text_color);
+place-items: center;
+height: 100%;
+padding: 0;
+margin: 0;
+overflow: hidden;
+user-select: none;
+
 }
-.title{
-    font-size: 40px;
-    text-align: center;
+button{
+border: 4px solid var(--text_color);
+border-radius: 5px;
+background-color: var(--greyish_color);
+color: var(--text_color);
+font-size: 60px;
+margin-bottom: 5px;
 }
-#inventory,#cultivation_manual_inventory{
-    display: flex;
-    flex-wrap: wrap;
+button:hover{
+background-color: var(--on_hover_color);
+color:black;
 }
-.item,.manual{   
+
+button:active{
+background-color: var(--on_click_color);
+border: 4px solid var(--on_click_color);
+
+}
+
+input{
+background-color: var(--greyish_color);
+color: var(--text_color);
+width: 90px;
+}
+
+.main_menu{
+place-items: center;
+height: 100vh;
+padding-top: 30vh;
+margin: 0;
+user-select: none;
+}
+.main_menu_title{
+font-size: 60px;
+margin-bottom: 20px;
+}
+
+.main_menu_load_game_button, .main_menu_new_game_button{
+margin: 5px;
+
+}
+
+
+.character-creation-menue{
+margin-top: 20vh;
+border: 0.2vh solid var(--text_color);
+border-radius: 5px;
+width: 500px;
+height: 500px;
+}
+.character-creation-title,#inventory-menue h1{
+border-bottom: 4px solid var(--text_color);
+border-radius: 5px;
+margin: 0px;
+
+}
+
+li::marker{
+content: "";
+}
+li{
+border: 4px solid var(--text_color);
+
+border-radius: 5px;
+font-size:30px;
+
+width: max-content;
+box-sizing:content-box;
+}
+li:hover{
+background-color: var(--on_hover_color);
+color:black;
+}
+.dual-choice{
+margin-left: -40px;
+height: auto;
+width: 100%;
+margin-right: 40px;
+align-content: center;
+text-align: center;
+background-color: var(--greyish_color);
+
+
+}
+.dual-choices{
+display: flex;
+flex-direction: row;
+height: 380px;
+width: 500px;
+
+}
+
+p{
+font-size: 20px;
+}
+
+.name-menue{
+padding-top: 100px;
+display: flex;
+flex-direction: row;
+
+
+}
+.name-content{
+align-content: center;
+text-align: center;
+font-size: 50px;
+}
+#name_input{
+align-content: center;
+text-align: center;
+width: 300px;
+}
+
+
+
+.main-game {
+width: 100%;
+user-select: none;
+display: grid;
+background-color: var(--greyish_color);
+color: var(--text_color);
+grid-template-columns: 25% 50% 25%; /* Ajuste les % si tu veux */
+height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+.body-content {
+border: 0.3vh solid var(--text_color);
+border-radius: 0.5vh;
+box-sizing: border-box;
+overflow: visible; /* temp  */
+}
+
+
+#left, #center, #right {
+z-index: 2;
+display: flex;
+flex-direction: column;
+flex-wrap: wrap; 
+}
+
+#left li{
+border: 0.5vh  var(--text_color);
+margin: 5px;
+font-size:32px;
+
+width: max-content;
+box-sizing:content-box;
+}
+#left li:hover{
+background-color: var(--greyish_color);
+color: var(--text_color);
+}
+
+button.tooltip {
+position: relative; /* Ensure tooltip_text is positioned correctly */
+display: inline-block;
+cursor: pointer;
+}
+.tooltip {
+position: relative;
+display: inline-block;
+cursor: pointer;
+}
+
+.tooltip .tooltip_text {
+font-size: 15px;
+border: 2px solid var(--text_color);
+visibility: hidden;
+width: 200px;
+background-color: black;
+color: #fff;
+text-align: center;
+padding: 5px;
+border-radius: 5px;
+
+position: absolute;
+z-index: 9999;
+bottom: 100%;
+left: 50%;
+transform: translateX(-50%);
+
+opacity: 0;
+transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip_text {
+visibility: visible;
+opacity: 1;
+pointer-events: auto;
+}
+
+#actions .tooltip .tooltip_text,#place-to-go .tooltip .tooltip_text{
+    transform: translateY(90%);
+}
+
+.item-div{
     width: 60px;
     height: 60px;
     font-size: 15px;
     margin: 5px;
     
     padding: 0;
-    border: 4px solid white;
+    border: 0.5vh solid var(--text_color);
     border-radius: 5px;
-    background-color: #0b0d0c;
-    color: white;
+    background-color: var(--greyish_color);
+    color: var(--text_color);
 }
-.item img,.manual img{
+.item-div img{
     object-fit: fill;
     padding: 0;
     width: 60px;
     height: 60px;
 }
-.item:hover,.manual:hover{
-    background-color: white;
-    color: #0b0d0c;
-    border: 4px solid black;
+.item-div:hover{
+    background-color: var(--text_color);
+    color: var(--greyish_color);
+    border: 0.5vh solid black;
 }
-.tabs{
-    display: none;
-}
-.go_to{
-    display: none;
-    width: 130px;
-    height: 60px;
-    font-size: 15px;
-    margin: 5px;
+
+.self-image{
+    margin-top: -20px;
     padding: 0;
-}
-
-
-.go_back_to{
-    width: 130px;
-    height: 60px;
-    font-size: 15px;
-    margin: 5px;
-    padding: 0;
-}
-.going_in_places{
-    display: flex;
-    flex-wrap: wrap; 
-}
-
-
-.main{
-    display: none;
-    flex-direction: row;
-    height: 100vh;
-}
-
-.left,.right,.midle {
-    flex: 1; /* Each row takes equal space */
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
-    border: 1px solid white; /* Just for visualization */
-  }
-
-
-.tab{
-    display: flex;
-    
-}
-.tab_button{
-    border: 4px solid white;
-    border-radius: 5px;
-    background-color: #0b0d0c;
-    color: white;
-    width: 130px;
-    height: 40px;
-    font-size: 20px;
-    margin-bottom: 5px;
-}
-
-.left p{
-    text-align: center;
-    font-size: 30;
-}
-
-.cultivationImage{
-    width: 300px;
-    
-}
-
-
-
-.save_load_button{
-    width: 130px;
-    height: 60px;
-    font-size: 15px;
-    margin: 5px;
-    padding: 0;
-}
-
-button{
-    border: 4px solid white;
-    border-radius: 5px;
-    background-color: #0b0d0c;
-    color: white;
-    width: 400px;
-    height: 100px;
-    font-size: 60px;
-    margin-bottom: 5px;
-}
-button:hover{
-    background-color: aliceblue;
-    color:black;
-}
-
-button:active{
-    background-color: darkgray;
-    border: 4px solid darkgray;
-
-    
-}
-
-
-#go_back_cult_button{
-    display: none;
-}
-
-#cult_tab_button, #ma_tab_button,#go_back_cult_button{
-    width: 600px;
-    height: 200px;
-    font-size: 80px;
-}
-
-#cult_tab,#ma_tab{
-    display: none;
-}
-
-input{
-    background-color: #0b0d0c;
-    color: white;
-    width: 90px;
-}
-
-#cultivation_manual_inventory{
-    display: none;
-}
-
-#switch_breathing_manual{
-    width: 100px;
-    height: 60px;
-    font-size: 20px;
-}
-
-#selected_manual h1{
-    font-size: 35px;
-}
-#selected_manual h2{
-    font-size: 30px;
-}
-#selected_manual h3{
-    font-size: 24px;
-}
-
-.switch_cult_manual_button{
-    width: 100px;
-    height: 40px;
-    font-size: 20px;
-    margin-left: 2px;
-}
-
-#character_creation{
-    display: none;
-    border: 4px solid darkgray;
-    border-radius: 2px;
-}
-#options-container{
-    border: 4px solid darkgray;
-    border-radius: 2px;
-}
-
-#console{
-    height: 328px;
-}
-
-.option:hover{
-    background-color: aliceblue;
-    color:black;
-}
-
-.main_menu{
-    place-items: center;
-    height: 100vh;
-    padding-top: 30vh;
-    margin: 0;
-    user-select: none;
-}
-.main_menu_title{
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.main_menu_load_game_button, .main_menu_new_game_button{
-    margin: 5px;
-
-}
-
-
-#player_tag, #opponent_tag{
-    padding: 10px;
-    margin:50px;
-    border: 4px solid white;
-    border-radius: 5px;
-    background-color: #0b0d0c;
-    color: white;
-    width: 30%;
-}
-
-#fight_menue{
-    padding: 5px;
-    border: 4px solid white;
-    border-radius: 5px;
-    background-color: #0b0d0c;
-    color: white;
-    
-}
-.h2_part{
-    display: flex;
-    padding-left: 5px;
-}
-#player_health, #opponent_health{
-    padding-right: 50px;
-}
-#fight_console{
-    border: 4px solid blue;
-    height: 150px;
     width: 80%;
-    justify-self: center;
-    padding: 5px;
+    align-self: center;
 }
-.fight_message{
+
+.inv-button{
+    font-size:30px;
+    margin-left: 10px;
+}
+
+.tab-selection{
+    display: flex;
+    width: 100%;
+    
+}
+.tab-button{
+    border: 4px solid var(--text_color);
+    border-radius: 5px;
+    background-color: var(--greyish_color);
+    color: var(--text_color);
+    width: 100%;
+    height: 40px;
     font-size: 20px;
-}
-
-#player_tag{
-    justify-self: left;
-}
-
-#opponent_tag{
-    justify-self: right;
-}
-
-.combat_message{
-    font-size: 30px;
-}
-
-#switch_technique{
-    display: none;
-}
-
-#switch_technique_button, #prep_go_back{
-    width: 75%;
-    height: 140px;
-    font-size: 50px;
-    justify-items: center;
-}
-#preparation_my_status{
-    width: 75%;
-}
-
-#tech_button{
-    width: 49%;
-    margin: 2px;
-    font-size: 200%;
-}
-
-.technique_div{
-    border: 4px solid white;
-    border-radius: 5px;
-    width: 25%;
-   margin: 5px;
-}
-
-.technique_div h1{
-    font-size: 30px;
-    margin: 5px;
-}
-.technique_div h2{
-    margin: 3px;
-    font-size: 25px;
-}
-.technique_div h3{
-    margin: 1px;
-    font-size: 14px;
-}
-.technique_div:hover{
-    background-color: white;
-    color: black;
-    border: 4px solid white;
-    border-radius: 5px;
-    width: 25%;
-    margin: 5px;
+    margin-bottom: 5px;
 }
 
 
-button.tooltip {
-    position: relative; /* Ensure tooltip_text is positioned correctly */
-    display: inline-block;
-    cursor: pointer;
-}
-.tooltip {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-.tooltip .tooltip_text {
-    border: 2px solid white;
-    visibility: hidden;
-    width: 200px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    opacity: 0;
-    transition: opacity 0.3s;
+#text-btn {
+    position: fixed;  /* Stays fixed on the screen */
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    z-index: 10;      /* Stay above the canvas */
   }
   
-  .tooltip:hover .tooltip_text {
-    visibility: visible;
-    opacity: 1;
-  }
 
-#prep_go_back{
-    display: none;
-}
+
 .scrollable-box {
-
     overflow-y: auto; /* Enables vertical scrollbar */
     overflow-x: hidden; /* Prevents horizontal scrolling */
-    padding: 10px;
 }
 
 /* Custom scrollbar (optional, for modern browsers) */
@@ -371,7 +293,7 @@ button.tooltip {
 }
 
 .scrollable-box::-webkit-scrollbar-track {
-    background: #0b0d0c; /* Track color */
+    background: var(--greyish_color); /* Track color */
     border-radius: 5px;
 }
 
@@ -383,27 +305,111 @@ button.tooltip {
 .scrollable-box::-webkit-scrollbar-thumb:hover {
     background: #313131; /* Darker scrollbar on hover */
 }
-#clear_console_btn{
+
+
+#place-title, #place-description{
+    border-bottom: 4px solid var(--text_color);;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+#place-to-go,#actions{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.place{
+    font-size: 40px;
+}
+
+#right{
+    display: flex;
+    flex-direction: row;
+}
+#console-title{
+    border-bottom: 4px solid var(--text_color);
+    border-radius: 5px;
+    margin: 0px;
+}
+
+#inventory-menue, #console-menue{
+    margin-top: 20vh;
+    border: 0.2vh solid var(--text_color);
+    border-radius: 5px 5px;
+    height: 45%;
+    width: 100%;
+    margin:2vh;
+
+    
+}
+.message{
+
+}
+
+#clear-console-btn{
     display: none;
     position: fixed;
     width: 150px;
     height: 40px;
     font-size: 16px;
 
-    bottom: 10px; /* Distance from bottom */
-    left: 50%;
-    transform: translateX(-50%); /* Centers the button */
-    padding: 10px 20px;
-    
+    bottom: 30px; /* Distance from bottom */
+    justify-self: center;
+    margin-left: 140px;
 }
 
-.switch_technique_slots{
-    width: 48%;
-    height: 100px;
-    font-size: 30px;
-    margin: 5px;
+.unusable, .unusable:hover,.unusable:active {
+    font-size: 40px;
+    background-color: #000000;
+    color: #555555;
 }
-#switch_technique{
-    flex-wrap: wrap;
-    flex-direction: row;
+
+
+
+.stats{
+    display: flex;
+    flex-direction: column;
+}
+.stat{
+    margin-top: 2px;
+    padding: 0;
+    margin-left: 50px;
+}
+
+progress{
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    width: 60%;
+    height: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    transform: translateX(-20%);
+}
+
+progress::-webkit-progress-bar {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+#stamina::-webkit-progress-value {
+    background-color: orangered; /* Change to blue or another color for Qi */
+    border-radius: 10px;
+}
+
+
+
+.underlined{
+    border-bottom: 4px solid var(--text_color);
+    border-radius: 5px;
+    margin-left: 0px;
+}
+
+#health::-webkit-progress-value{
+    background-color: darkred; /* Change to blue or another color for Qi */
+    border-radius: 10px;
+}
+
+#internal::-webkit-progress-value{
+    background-color: darkcyan; /* Change to blue or another color for Qi */
+    border-radius: 10px;
 }
