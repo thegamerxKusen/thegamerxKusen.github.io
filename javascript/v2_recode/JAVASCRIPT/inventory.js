@@ -1,4 +1,4 @@
-let inventory= [training_dagger]
+let inventory= [training_dagger,black_dragon_ball,lowest_healing_pill]
 
 function refresh_inventory() {
     const inventoryDiv = document.getElementById("inventory-container")
@@ -20,3 +20,4 @@ function refresh_inventory() {
         inventoryDiv.appendChild(itemDiv);
     }
 }
+

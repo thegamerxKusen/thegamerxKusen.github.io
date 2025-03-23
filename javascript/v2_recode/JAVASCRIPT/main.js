@@ -30,10 +30,7 @@ function open_main_menu(){
         if(!load_game()){
             create_character()
         }
-    
-        
-
-       main_menue_div.remove()
+    main_menue_div.remove()
     },{ once: true });
 
     //push to html page

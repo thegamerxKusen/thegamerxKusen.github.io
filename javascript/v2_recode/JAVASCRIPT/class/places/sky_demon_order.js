@@ -412,7 +412,7 @@ const clanDistrict = new PLACE(
 
 const sky_demon_order = new PLACE(
     "Sky Demon Order",
-    "Heavenly Demon Divin Cult Main Base - Ten Thousand Mountains",
+    "Heavenly Demon Divine Cult Main Base - Ten Thousand Mountains",
     [demonicPalace,guardianHall,grandElderPavilion,demonicAcademy,clanDistrict,marketplace,medicalHall],
     []
 );
