@@ -433,3 +433,51 @@ progress::-webkit-progress-bar {
 .cult-tab-btn{
     font-size: 50px;
 }
+
+
+#fight-menue{
+    background-color: var(--greyish_color);
+    color: var(--text_color);
+    border: 2px solid var(--text_color);
+    border-radius: 5px;  /* Optional: remove border-radius for perfect edge */
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box; /* Include border in width/height */
+    position: fixed; /* Sticks it to the viewport */
+    top: 0;
+    left: 0;
+}
+
+#enemy-label{
+    padding: 10px;
+    width: 500px;
+    border: 2px solid var(--text_color);
+    border-radius: 5px; 
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+#player-label{
+    padding: 10px;
+    width: 500px;
+    border: 2px solid var(--text_color);
+    border-radius: 5px; 
+    position: fixed;
+    top: 30%;
+    left: 20px;
+}
+#enemy-health,#player-health,#player-ki{
+    width: 100%;
+    transform: translateX(17%);
+}
+
+#botom-part{
+    border: 2px solid var(--text_color);
+    border-radius: 5px; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 40%;
+    width: 97.5%;
+}
