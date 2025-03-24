@@ -23,6 +23,7 @@ class QUESTIONS {
             }else{
                 if(player.sex=="girl"){
                     player.icon_path="assets/girl_teen_cultivating.png"
+                    //set the place you go depending of faction 
                 }
                 chose_name()
             }

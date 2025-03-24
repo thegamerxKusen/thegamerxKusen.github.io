@@ -5,7 +5,7 @@ let player = {
 
     qi_days: 0,
     
-    realm:civilian,
+    realm:0,
 
     title:"title",
 
@@ -21,8 +21,13 @@ let player = {
 
     max_health:50,
     max_qi:1,
+    pasive_qi_regeneration:1,
 
+    additional_cultivation_speed_effect:0,
 
+    isCultivating:false,
+    cultivation_progress:0,
+    cultivation_bottleneck:100,
 
     place_you_in:sky_demon_order,
     last_place:[],

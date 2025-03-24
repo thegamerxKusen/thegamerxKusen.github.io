@@ -59,7 +59,8 @@ const black_dragon_ball = new CONSUMABLE_ITEM("Black Dragon Ball",
     "A medicine ball within the Demonic Cult that was created by the founding clan leader of the Poison Clan named Baek Yu. It wasn't as good as the ones created in the Shaolin Temple in Sorim, but it was still good enough to allow the person who consumed it to gain at most 20 years' worth of internal energy.",
     "assets/item/elixir/Black_Dragon_Ball.webp")
     black_dragon_ball.consume=()=>{
-        sendMessage("You consume the black dragon ball and manage to get 15 year worht of Qi.")
+        sendMessage("You consume the black dragon ball and manage to get some Qi.")
+        player.max_qi+=50
         black_dragon_ball.removeItem()
         refresh_inventory()
         refresh_stat()

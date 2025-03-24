@@ -413,3 +413,14 @@ progress::-webkit-progress-bar {
     background-color: darkcyan; /* Change to blue or another color for Qi */
     border-radius: 10px;
 }
+#cultivation-progress::-webkit-progress-value{
+    background-color: deepskyblue; /* Change to blue or another color for Qi */
+    border-radius: 10px;
+}
+#center{
+    border-top: var(--text_color);
+}
+
+.cult-tab-btn{
+    width: 100%;
+}

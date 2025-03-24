@@ -5,7 +5,9 @@ function save_game(){
     save_something("murim_simulator_player",player)
     save_something("murim_simulator_player_stats",player_stats)
     save_something("murim_simulator_player_base_stats",player_base_stats)
-    const invData = inventory.map(item=> item.name);
+    const invData = inventory.map(item=> item.name)
+    const manualData = cultivation_manual_inventory.map(item => item.name)
+    save_something("murim_simulator_cultivation_manual_inventory",manualData)
     save_something("murim_simulator_inventory",invData)
     sendMessage("Game saved!")
 }
@@ -14,13 +16,15 @@ function load_game(){
     let p_s =JSON.parse(localStorage.getItem("murim_simulator_player_stats"))
     let p_b_s = JSON.parse(localStorage.getItem("murim_simulator_player_base_stats"))
     let i = JSON.parse(localStorage.getItem("murim_simulator_inventory"))
+    let c_m_i = JSON.parse(localStorage.getItem("murim_simulator_cultivation_manual_inventory"))
     
     if(p){
         player =p
+        player.breathing_manual_equiped=manual_registery[player.breathing_manual_equiped.name]
         player_stats = p_s
         player_base_stats = p_b_s
         inventory = i.map(name => item_master_list[name]) 
-
+        cultivation_manual_inventory = c_m_i.map(name=>manual_registery[name])
         if(document.getElementsByClassName("main-game")[0]){
             document.getElementsByClassName("main-game")[0].remove()
         }

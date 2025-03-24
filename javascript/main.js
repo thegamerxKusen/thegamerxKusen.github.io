@@ -52,7 +52,23 @@ function open_main_game(){
             <button class="tab-button" onclick="openTab(4)">Option</button>
         </div>
         <div class="tabs" id="world_tab">World Tab</div>
-        <div class="tabs" id="cultivation_tab">Cultivation Tab</div>
+        <div class="tabs" id="cultivation_tab">
+            <button class="cult-tab-btn" id="cultivate-btn">Cultivate</button>
+            <button class="cult-tab-btn" id="open-switch-manual-menue" onclick="open_switch_manual_menue()">Switch Cultivation Manual</button>
+                <div id="switch-manual-menue">
+                    
+                </div>
+            <h1 class="underlined">Cultivation Manual</h1>
+            <div id="current-manual">
+                <h2>${player.breathing_manual_equiped.name}</h2>
+                <p>${player.breathing_manual_equiped.description}</p>
+                <p>Cultivation Progress / seconde : ${player.breathing_manual_equiped.cult_effect+player.additional_cultivation_speed_effect}</p>
+            </div>
+            
+        
+        
+        
+        </div>
         <div class="tabs" id="fight_preparation_tab">Fight Preparation Tab </div>
         <div class="tabs" id="options_tab">
         <h1 id="console-title">Options:</h1>
@@ -84,11 +100,22 @@ function open_main_game(){
     </div></div>
     
     `
+    document.getElementById("cultivate-btn").addEventListener("click",()=>{
+        player.breathing_manual_equiped.cultivate()
+    })
     //<button id="clear-console-btn">Clear Console</button>
     refresh_stat()
     refresh_inventory()
     openTab(1)
     refresh_place()
+    // set passive regeneration of qi and health
+    setInterval(()=>{
+        if(player.qi<player.max_qi){
+            player.qi+=player.pasive_qi_regeneration
+            console.log(player.qi)
+            refresh_stat()
+        }
+    },1000)
 }
 
 function refresh_stat(){
@@ -102,12 +129,15 @@ function refresh_stat(){
     <h2 class="stat">Silver Nyang : ${player.silver_nyang} </h2>
     <h2 class="underlined">Martial Art : </h2>
     <h2 class="stat" id="KI"><progress id="internal" class="stat" value="${player.qi}" max="${player.max_qi}">Stamina</progress>${player.qi} / ${player.max_qi}</h2>
-    <h2 class="stat">Realm : ${player.realm.name} </h2>
-    <h2 class="stat underlined">Cultivation Technique</h2>
-    <h2 class="underlined stat">${player.breathing_manual_equiped.name} </h2>    
+
+    <h2 class="stat" id="cult"><progress id="cultivation-progress" class="stat" value="${player.cultivation_progress}" max="${getRealm(player.realm).bottleneck}">Cultivation</progress>${player.cultivation_progress} / ${getRealm(player.realm).bottleneck}</h2>
+    <h2 class="stat underlined">Realm : ${getRealm(player.realm).name} </h2>
     <img src="${player.icon_path}" class="self-image" draggable="false"></img>
      </div>
     `
+    let cultivation = document.getElementById("cult")
+    cultivation.addEventListener("click",()=> openTab(2))
+    add_tooltip(cultivation,"Qi accumulation, fill it up by meditating to attempt a breaktrought and go to the next realm.")
     let hp_bar = document.getElementById("h")
     add_tooltip(hp_bar,"Health, regenerate with or by going to the Medical Hall.")
     let qi_bar = document.getElementById("KI")
