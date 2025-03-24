@@ -424,3 +424,12 @@ progress::-webkit-progress-bar {
 .cult-tab-btn{
     width: 100%;
 }
+
+#options_tab button{
+    margin-top: 2px;
+    width: 100%;
+}
+
+.cult-tab-btn{
+    font-size: 50px;
+}

@@ -39,6 +39,8 @@ class CULTIVATION_MANUAL{
         }
         if(player.cultivation_progress+cult_effect>=player.cultivation_bottleneck){
           player.cultivation_progress=player.cultivation_bottleneck
+          //can breaktrhrough
+          
           
         }else{
           player.cultivation_progress+=cult_effect
@@ -65,11 +67,22 @@ function open_switch_manual_menue(){
       <h2>${manual.name}</h2>
       <p>${manual.description}</p>
       <p>Cultivation Progress / seconde : ${manual.cult_effect+player.additional_cultivation_speed_effect}</p>
+      <button id="switch-button">Switch</button>
       `
+      document.getElementById("switch-button").addEventListener("click",()=>{
+        player.breathing_manual_equiped=manual
+        
+      document.getElementById("current-manual").innerHTML=`
+      <h2>${player.breathing_manual_equiped.name}</h2>
+      <p>${player.breathing_manual_equiped.description}</p>
+      <p>Cultivation Progress / seconde : ${player.breathing_manual_equiped.cult_effect+player.additional_cultivation_speed_effect}</p>
+      `
+      },{once:true})
     })
   add_tooltip(manualDiv,manual.name)
   document.getElementById("manual-container").appendChild(manualDiv)
   }
+  
 }
 
 
