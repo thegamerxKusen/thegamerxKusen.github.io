@@ -37,10 +37,13 @@ class CULTIVATION_MANUAL{
           
           clearInterval(t)
         }
-        if(player.cultivation_progress+cult_effect>=player.cultivation_bottleneck){
-          player.cultivation_progress=player.cultivation_bottleneck
+        if(player.cultivation_progress>=getRealm(player.realm).bottleneck){
+          player.cultivation_progress=getRealm(player.realm).bottleneck
           //can breaktrhrough
-          
+          clearInterval(t)
+          sendMessage("You stopped cultivating, you can breaktrought.")
+          refresh_stat()
+          player.isCultivating=false
           
         }else{
           player.cultivation_progress+=cult_effect

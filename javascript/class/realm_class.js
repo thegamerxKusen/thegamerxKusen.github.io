@@ -4,13 +4,21 @@ class REALM{
         this.bottleneck=bottleneck
         this.id=id
     }
-    static breakthrough(){
-        
+    breakthrough(){
+        if(player.cultivation_progress>=this.bottleneck){
+            player.realm+=1
+        }else{
+            console.log("Not enough cultivation progress.")
+        }
     }
 }
 const civilian = new REALM("Civilian", 1000, 0);
 civilian.breakthrough = () => {
-   player.realm=1
+    player.cultivation_progress=0
+    player.max_qi+=10
+    player.realm+=1
+    refresh_stat()
+    
 };
 
 const third_rate = new REALM("Third rate", 5000, 1);           // x5

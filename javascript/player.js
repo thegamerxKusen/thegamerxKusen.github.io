@@ -27,7 +27,6 @@ let player = {
 
     isCultivating:false,
     cultivation_progress:0,
-    cultivation_bottleneck:100,
 
     place_you_in:sky_demon_order,
     last_place:[],
@@ -41,7 +40,7 @@ let player = {
     upperboddy_gear:null,
     lowerboddy_gear:null,
     shoes_gear:null,
-    
+
     weapons_gear:null,
 
     can_read:false,

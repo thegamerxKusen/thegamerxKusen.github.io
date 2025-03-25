@@ -137,13 +137,48 @@ function refresh_stat(){
     `
     let cultivation = document.getElementById("cult")
     cultivation.addEventListener("click",()=> openTab(2))
-    add_tooltip(cultivation,"Qi accumulation, fill it up by meditating to attempt a breaktrought and go to the next realm.")
+    add_tooltip(cultivation,"Qi accumulation, fill it up by meditating to attempt a breakthrough and go to the next realm.")
     let hp_bar = document.getElementById("h")
     add_tooltip(hp_bar,"Health, regenerate with or by going to the Medical Hall.")
     let qi_bar = document.getElementById("KI")
     add_tooltip(qi_bar,"Internal Energy, regenerate with pill or by circulating your energy. Increase by cultivating for a long period of time.")
     let stam_bar =document.getElementById("stam")
     add_tooltip(stam_bar,"Stamina, necessary to interact with the world, regenerate by sleeping, eating ...")
+
+    if(player.cultivation_progress >= getRealm(player.realm).bottleneck){
+        document.getElementById("cultivation_tab").innerHTML=`
+            <button class="cult-tab-btn" id="cultivate-btn">Cultivate</button>
+            <button class="cult-tab-btn" id="breaktrough-btn">breakthrough</button>
+            <button class="cult-tab-btn" id="open-switch-manual-menue" onclick="open_switch_manual_menue()">Switch Cultivation Manual</button>
+                <div id="switch-manual-menue">
+                </div>
+            <h1 class="underlined">Cultivation Manual</h1>
+            <div id="current-manual">
+                <h2>${player.breathing_manual_equiped.name}</h2>
+                <p>${player.breathing_manual_equiped.description}</p>
+                <p>Cultivation Progress / seconde : ${player.breathing_manual_equiped.cult_effect+player.additional_cultivation_speed_effect}</p>
+            </div>
+        `
+        document.getElementById("breaktrough-btn").addEventListener("click",()=>{
+            getRealm(player.realm).breakthrough()
+        })
+    }else{
+        document.getElementById("cultivation_tab").innerHTML=`
+            <button class="cult-tab-btn" id="cultivate-btn">Cultivate</button>
+            <button class="cult-tab-btn" id="open-switch-manual-menue" onclick="open_switch_manual_menue()">Switch Cultivation Manual</button>
+                <div id="switch-manual-menue">
+                    
+                </div>
+            <h1 class="underlined">Cultivation Manual</h1>
+            <div id="current-manual">
+                <h2>${player.breathing_manual_equiped.name}</h2>
+                <p>${player.breathing_manual_equiped.description}</p>
+                <p>Cultivation Progress / seconde : ${player.breathing_manual_equiped.cult_effect+player.additional_cultivation_speed_effect}</p>
+            </div>`
+            document.getElementById("cultivate-btn").addEventListener("click",()=>{
+                player.breathing_manual_equiped.cultivate()
+            })
+    }
 }
 
 function refresh_place(){

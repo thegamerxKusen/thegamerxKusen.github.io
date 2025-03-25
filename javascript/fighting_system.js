@@ -46,6 +46,7 @@ function open_fight_menue(enemy){
     open_fight_tab(0)
     add_tooltip(document.getElementById("enemy-health"),"Enemy Health")
     add_tooltip(document.getElementById("player-health"),"Player Health")
+    add_tooltip(document.getElementById("player-ki"),"Player Qi")
 }
 
 function close_fight_menue(){
