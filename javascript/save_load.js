@@ -21,6 +21,9 @@ function load_game(){
     if(p){
         player =p
         player.breathing_manual_equiped=manual_registery[player.breathing_manual_equiped.name]
+        if(player.weapons_gear){
+            player.weapons_gear=item_master_list[player.weapons_gear.name]
+        }
         player_stats = p_s
         player_base_stats = p_b_s
         inventory = i.map(name => item_master_list[name]) 

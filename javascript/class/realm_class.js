@@ -36,7 +36,7 @@ const peak_supreme_master = new REALM("Peak Supreme Master", 30517578125000, 15)
 const divine_master = new REALM("Divine Master", 152587890625000, 16);        // x5
 const heavenly_master = new REALM("Heavenly Master", 762939453125000, 17);    // x5
 const void_master = new REALM("Void Master", 3814697265625000, 18);           // x5
-const willful_master = new REALM("Willful Master", 9999999999999999, 19);     // Final
+const willful_master = new REALM("Willful Master", 999999999999999, 19);     // Final
 
 
 const realm_registry = {

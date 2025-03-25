@@ -41,6 +41,7 @@ let player = {
     upperboddy_gear:null,
     lowerboddy_gear:null,
     shoes_gear:null,
+    
     weapons_gear:null,
 
     can_read:false,

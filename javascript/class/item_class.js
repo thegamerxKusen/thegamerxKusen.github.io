@@ -22,7 +22,14 @@ class ITEM {
     }
 }
 class WEAPON_ITEM extends ITEM{
+    constructor(name,description,icon,weapon_type){
+        this.name = name
+        this.description=description
+        this.icon=icon
+        this.weapon_type=weapon_type
+    }
     equip(){
+        player.weapons_gear=this
         //equip weapon
     }
     selectItem(){
@@ -66,7 +73,7 @@ const black_dragon_ball = new CONSUMABLE_ITEM("Black Dragon Ball",
         refresh_stat()
     }
 
-const training_dagger = new WEAPON_ITEM("Training Dagger","A simple wooden dagger used for training.","assets/item/weapon/wooden_dagger.png")
+const training_dagger = new WEAPON_ITEM("Training Dagger","A simple wooden dagger used for training.","assets/item/weapon/wooden_dagger.png",dagger)
 
 const lowest_healing_pill = new CONSUMABLE_ITEM("Lowest Rank Healing Pill","Pill that regenerate 10 health point upon consumption.","assets/item/elixir/dark_green_pill.png")
 

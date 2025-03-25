@@ -1,5 +1,5 @@
 class ENEMY{
-    constructor(name,realm,qi,max_qi,strenght,speed,inteligence,defence,moveset,health,max_health){
+    constructor(name,realm,qi,max_qi,strenght,speed,inteligence,defence,moveset,health,max_health,weapon){
         this.name = name
         this.realm= getRealm(realm)
         this.qi=qi
@@ -11,6 +11,7 @@ class ENEMY{
         this.moveset=moveset
         this.health=health
         this.max_health=max_health
+        this.weapon=weapon
     }
 }
 
