@@ -70,3 +70,12 @@ let player_stats={
     chosen_technique:null,
     chosen_actions:null
 }
+
+function add_cult_progress(add){
+    if(add+player.cultivation_progress>=getRealm(player.realm).bottleneck){
+        player.cultivation_progress=getRealm(player.realm).bottleneck
+    }else{
+        player.cultivation_progress+=add
+    }
+    refresh_stat()
+}

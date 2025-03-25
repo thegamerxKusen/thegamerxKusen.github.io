@@ -148,7 +148,7 @@ function refresh_stat(){
     if(player.cultivation_progress >= getRealm(player.realm).bottleneck){
         document.getElementById("cultivation_tab").innerHTML=`
             <button class="cult-tab-btn" id="cultivate-btn">Cultivate</button>
-            <button class="cult-tab-btn" id="breaktrough-btn">breakthrough</button>
+            <button class="cult-tab-btn" id="breaktrough-btn">Breakthrough</button>
             <button class="cult-tab-btn" id="open-switch-manual-menue" onclick="open_switch_manual_menue()">Switch Cultivation Manual</button>
                 <div id="switch-manual-menue">
                 </div>

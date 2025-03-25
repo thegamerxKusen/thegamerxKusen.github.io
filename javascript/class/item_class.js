@@ -83,7 +83,8 @@ const black_dragon_ball = new CONSUMABLE_ITEM("Black Dragon Ball",
     "assets/item/elixir/Black_Dragon_Ball.webp")
     black_dragon_ball.consume=()=>{
         sendMessage("You consume the black dragon ball and manage to get some Qi.")
-        player.max_qi+=50
+        player.max_qi+=20
+        add_cult_progress(1000)
         black_dragon_ball.removeItem()
         refresh_inventory()
         refresh_stat()
