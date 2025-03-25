@@ -21,7 +21,7 @@ const demonicPalace = new PLACE(
             "Martial Hall",
             "A hall dedicated to martial training and demonstrations, often used for duels or showcases.",
             [],
-            []
+            [dummy_training]
         ),
         new PLACE(
             "Elder Council Chamber",

@@ -42,3 +42,8 @@ sleep.custom_action=()=>{
     sleep.add_cooldomwn(6)
     console.log(this.do_able)
 }
+
+const dummy_training = new ACTION("Dummy Training","Try your skill and train your proficiency on this wooden dummy.",true,10)
+dummy_training.custom_action=()=>{
+    start_fight(dummy)
+}

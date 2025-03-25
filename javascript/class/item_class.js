@@ -23,22 +23,38 @@ class ITEM {
 }
 class WEAPON_ITEM extends ITEM{
     constructor(name,description,icon,weapon_type){
-        this.name = name
-        this.description=description
-        this.icon=icon
+        super(name,description,icon)
         this.weapon_type=weapon_type
     }
     equip(){
+        sendMessage(this.name+" equiped!")
         player.weapons_gear=this
-        //equip weapon
     }
     selectItem(){
-        document.getElementById("selected-item").innerHTML=`
-        <h1>${this.name}</h1>
-        <h2>${this.description}</h2>
-        <button id="" class="inv-button">Equip</button>
-        `
-    
+        if(player.weapons_gear ===this){
+            document.getElementById("selected-item").innerHTML=`
+            <h1>${this.name}</h1>
+            <h2>${this.description}</h2>
+            <button id="equip" class="inv-button">Unequip</button>`
+            document.getElementById("equip").addEventListener("click",()=>{
+                document.getElementById("equip").textContent="Equip"
+                player.weapons_gear=null
+                sendMessage(this.name+" unequiped!")
+                this.selectItem()
+
+            })
+        }else{
+            document.getElementById("selected-item").innerHTML=`
+            <h1>${this.name}</h1>
+            <h2>${this.description}</h2>
+            <button id="equip" class="inv-button">Equip</button>
+            `
+            document.getElementById("equip").addEventListener("click",()=>{
+                document.getElementById("equip").textContent="Unequip"
+                this.equip()
+                this.selectItem()
+            })
+        }        
     }
 }
 class CONSUMABLE_ITEM extends ITEM{

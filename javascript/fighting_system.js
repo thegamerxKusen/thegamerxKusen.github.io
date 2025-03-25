@@ -1,6 +1,6 @@
 function start_fight(enemy){
     if(enemy instanceof ENEMY){
-
+        open_fight_menue(enemy)
     }else{
         console.log(enemy +"Is not An Enemy")
     }
@@ -36,7 +36,7 @@ function open_fight_menue(enemy){
             <div class="tab-selection">
                 <button class="tab-button" onclick="open_fight_tab(0)">Moves</button>
                 <button class="tab-button" onclick="open_fight_tab(1)">Actions</button>
-                <button class="tab-button" onclick="">Surender</button>
+                <button class="tab-button" onclick="close_fight_menue()">Surender</button>
             </div>
             <div id="moves-tab">Moves</div>
             <div id="actions-tab">Actions</div>
