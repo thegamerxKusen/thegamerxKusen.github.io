@@ -47,3 +47,8 @@ const dummy_training = new ACTION("Dummy Training","Try your skill and train you
 dummy_training.custom_action=()=>{
     start_fight(dummy)
 }
+
+const npc_test = new ACTION("NPC_TEST","Talk to the old man in the corner.",true,0)
+npc_test.custom_action=()=>{
+    marchant.open_npc_menue()
+}

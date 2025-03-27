@@ -481,3 +481,7 @@ progress::-webkit-progress-bar {
     height: 40%;
     width: 97.5%;
 }
+
+.width-100{
+    width: 100%;
+}

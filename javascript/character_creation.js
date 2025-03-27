@@ -80,20 +80,20 @@ function introduction_tale(){
     title.textContent="Introduction"
     let text = document.createElement("p")
     menu.appendChild(text)
-    addTextLBL("In this word exist an unknow energy, martial artist call it ki and use it to strengthen their body. These martial artist gathered in faction to protect their interest and fight for their idea.",text)
+    addTextLBL("In this word exist an unknow energy, martial artist call it ki and use it to strengthen their body. These martial artist gathered in faction to protect their interest and fight for their idea.",text,28)
     setTimeout(() => {
-        addTextLBL(`\nYou were born as a little ${player.sex} in the ${player.faction}.`,text)
+        addTextLBL(`\nYou were born as a little ${player.sex} in the ${player.faction}.`,text,28)
         setTimeout(() => {
             switch(player.faction){
                 case "Forces of Justice":
-                    addTextLBL(`\n You were named ${player.name}, you are part of the grand and noble sword user Namgun Clan part of the 5 great families of Murim.`,text)
+                    addTextLBL(`\n You were named ${player.name}, you are part of the grand and noble sword user Namgun Clan part of the 5 great families of Murim.`,text,28)
                 break
                 case "Forces of Evil":
-                    addTextLBL(`\n You were named ${player.name}, you are the son of the leader of a pirate group.`,text)
+                    addTextLBL(`\n You were named ${player.name}, you are the son of the leader of a pirate group.`,text,28)
         
                 break
                 case "Sky Demon Cult":
-                    addTextLBL(`\n You were given the name ${player.name}, as a prince of the Sky Demon Cult.`,text)
+                    addTextLBL(`\n You were given the name ${player.name}, as a prince of the Sky Demon Cult.`,text,28)
                 break
             }
             document.getElementById("body").addEventListener("click",()=>{

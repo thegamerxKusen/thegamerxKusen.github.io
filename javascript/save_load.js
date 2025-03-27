@@ -24,6 +24,8 @@ function load_game(){
         if(player.weapons_gear){
             player.weapons_gear=item_master_list[player.weapons_gear.name]
         }
+        player.place_you_in=sky_demon_order
+        player.last_place=[]
         player_stats = p_s
         player_base_stats = p_b_s
         inventory = i.map(name => item_master_list[name]) 
@@ -33,7 +35,6 @@ function load_game(){
         }
         open_main_game()
         sendMessage("Game loaded!")
-        sky_demon_order.go()
         return true
     }
     return false

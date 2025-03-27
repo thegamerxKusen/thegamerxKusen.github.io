@@ -414,5 +414,5 @@ const sky_demon_order = new PLACE(
     "Sky Demon Order",
     "Heavenly Demon Divine Cult Main Base - Ten Thousand Mountains",
     [demonicPalace,guardianHall,grandElderPavilion,demonicAcademy,clanDistrict,marketplace,medicalHall],
-    []
+    [npc_test]
 );

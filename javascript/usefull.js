@@ -5,16 +5,16 @@ function scrollToBottom(element) {
     const box = element
     box.scrollTop = box.scrollHeight; // Scrolls to the bottom
 }
-function addTextLBL(string,element){
+function addTextLBL(string,element,delay){
     if(string || element){
         let array = string.split("")
-        let delay = 28
+        let temp_delay = delay
         for(let i of array){
             setTimeout(() => {
 
                 element.innerHTML+=i
             }, delay);
-            delay+=28
+            temp_delay+=delay
         }
     }else{
         console.log("addTextLBL func : argument missing")
