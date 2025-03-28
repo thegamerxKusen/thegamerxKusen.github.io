@@ -73,6 +73,7 @@ function open_switch_manual_menue(){
       <button id="switch-button">Switch</button>
       `
       document.getElementById("switch-button").addEventListener("click",()=>{
+        player.breathing_manual_equiped.isCultivating=false
         player.breathing_manual_equiped=manual
         
       document.getElementById("current-manual").innerHTML=`
