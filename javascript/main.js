@@ -4,6 +4,8 @@ function loadingFunc(){
     
 }
 
+
+
 function open_main_menu(){
     let main_menue_div = document.createElement("div")
     main_menue_div.className="main_menu"
