@@ -1,6 +1,9 @@
 function hide_element(document){
     document.style.display="none"
 }
+function show_element(document,display_type){
+    document.style.display=display_type
+}
 function scrollToBottom(element) {
     const box = element
     box.scrollTop = box.scrollHeight; // Scrolls to the bottom
@@ -13,7 +16,7 @@ function addTextLBL(string,element,delay){
             setTimeout(() => {
 
                 element.innerHTML+=i
-            }, delay);
+            }, temp_delay);
             temp_delay+=delay
         }
     }else{

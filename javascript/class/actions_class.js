@@ -50,10 +50,5 @@ dummy_training.custom_action=()=>{
 
 const npc_test = new ACTION("NPC_TEST","Talk to the old man in the corner.",true,0)
 npc_test.custom_action=()=>{
-    marchant.open_npc_menue()
-}
-
-const menue_test= new ACTION("MENUE_TEST","Open Menue",true,0)
-menue_test.custom_action=()=>{
-    dialogue_menue.open_pop_up()
+    merchant.open_npc_menue()
 }

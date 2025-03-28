@@ -5,19 +5,20 @@ class POPUP_MENUE{
      * @param {HTMLElement} content 
      * @param {string} id 
      */
-    constructor(title,content,id){
+    constructor(title,id,content = document.createElement("div")){
         this.title=title
         this.content=content
         this.id=id
         
     }
     open_pop_up(){
-        document.querySelector("#body").innerHTML=`
+        console.log(this)
+        document.querySelector("#body").innerHTML+=`
         <div id="${this.id}-menu" class="popup">
             <div class="popup-content">
                 <div class="popup-header underlined">
                     <h1 id="${this.id}-title" class="popup-header-content">${this.title}</h1>
-                    <button onclick="this.close_pop_up()" class="popup-header-content">Close</button>
+                    <button id="popup-close" class="popup-header-content">Close</button>
                 </div>
                 
                 <div id="${this.id}-content" class="scrollable-box">
@@ -27,18 +28,36 @@ class POPUP_MENUE{
             </div>
         </div>
     `
-    document.querySelector("#"+this.id+"-content").innerHTML=this.content.innerHTML
+    document.querySelector("#popup-close").addEventListener("click",()=>{
+        this.close_pop_up()
+    })
+    const main_game = document.getElementsByClassName("main-game")[0]
+    hide_element(main_game)
+    let this_content_element = document.querySelector("#"+this.id+"-content")
+    console.log(this_content_element)
+    this.change_content(this.content)
     }
     close_pop_up(){
-
+        const main_game = document.getElementsByClassName("main-game")[0]
+        document.querySelector("#"+this.id+"-menu").remove()
+        show_element(main_game,"grid")
+        refresh_place()
+        refresh_stat()
+        refresh_inventory()
+    }
+    /**
+     * 
+     * @param {HTMLElement} element 
+     */
+    change_content(element){
+        document.querySelector("#"+this.id+"-content").innerHTML=''
+        document.querySelector("#"+this.id+"-content").appendChild(element)
+        
     }
 }
     
 
-function test_open_menue(){
-    document.getElementById("shop-menu").classList.remove("hidden");
-    hide_element(document.getElementsByClassName("main-game")[0])
-}
 
-const dialogue_menue = new POPUP_MENUE("Dialogue",document.createElement("div"),"dialogue")
+
+const dialogue_menue = new POPUP_MENUE("Dialogue","dialogue",document.createElement("div"))
 

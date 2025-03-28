@@ -3,7 +3,7 @@ function sendMessage(message){
     let consoleElement=document.getElementById("console-container")
     let message_element = document.createElement("p")
     message_element.className="message"
-    addTextLBL(message,message_element,28)
+    addTextLBL(message,message_element,10)
     consoleElement.appendChild(message_element)
     scrollToBottom(console_menu)
     document.getElementById("clear-console-btn").style.display="block"
